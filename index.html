@@ -4,93 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🐍 LeetCode Mastery: Python & Jupyter Notebooks</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #15357A; /* Deep Navy Blue (McKinsey-inspired) */
-            --accent-color: #FFCD00; /* Yellow/Gold for highlights */
-            --text-dark: #1e1e1e;
-            --text-light: #555555;
-            --background-light: #ffffff;
-            --shadow-subtle: 0 2px 5px rgba(0, 0, 0, 0.05);
+            --mckinsey-blue-dark: #15357A; /* Deep Navy Blue */
+            --mckinsey-blue-text: #1E3755; /* Slightly lighter Navy for main text */
+            --mckinsey-gold: #FFCD00; /* Accent Gold */
+            --background-white: #ffffff;
+            --background-light-blue: #f7f9fb; /* Very light background for body */
+            --border-crisp: 1px solid #e0e0e0;
             --font-main: 'Poppins', sans-serif;
-            --content-width: 960px;
+            --content-width: 1000px;
         }
 
         body {
             font-family: var(--font-main);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            color: var(--text-light);
-            background-color: var(--background-light);
+            line-height: 1.7; /* Increased line height for readability */
+            color: var(--mckinsey-blue-text); /* All text blue */
+            background-color: var(--background-light-blue); /* More Blue Background */
+            font-size: 15px;
         }
 
-        /* Full width header bar */
+        /* Full width header bar with NO margin/padding */
         .header-bar {
-            background-color: var(--primary-color);
+            background-color: var(--mckinsey-blue-dark);
             color: #ffffff;
-            padding: 25px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Removed padding: 30px 0; */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
-        /* Center the content */
+        
+        /* Container to center content */
         .container {
             max-width: var(--content-width);
-            margin: 0 auto; /* Center the content block */
-            padding: 0 30px; /* Internal padding for content readability */
+            margin: 0 auto;
+            padding: 0 40px;
         }
         
         .header-bar .container {
-            padding: 25px 30px;
+            padding: 30px 40px; /* Padding applied inside container for content alignment */
         }
 
-        /* --- Header & Title --- */
-        .header {
-            text-align: left;
-        }
-
+        /* --- Header & Title (Inside Header Bar) --- */
         h1 {
-            color: #ffffff; /* White text on blue background */
+            color: #ffffff;
             font-size: 2.5em;
-            font-weight: 700;
+            font-weight: 600; /* Slightly reduced weight */
             margin: 0;
         }
         
         .tagline {
-            color: #cccccc;
+            color: #c4c4c4;
             font-size: 1.1em;
-            font-weight: 300;
+            font-weight: 400;
             margin-top: 5px;
+            margin-bottom: 0;
         }
 
-        /* --- Main Body Content --- */
+        /* --- Main Body Content Area --- */
         .main-content {
-            padding: 40px 0;
+            padding: 40px 0 60px 0;
+        }
+        
+        .content-block {
+            background-color: var(--background-white);
+            padding: 40px;
+            border: var(--border-crisp);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.03);
         }
 
-        .description-box {
-            border-left: 3px solid var(--accent-color);
-            padding: 20px 20px 20px 25px;
-            margin-bottom: 30px;
-            background-color: #f9f9f9;
-            color: var(--text-dark);
+        /* Introduction paragraph styling */
+        .introduction-text {
+            border-left: 4px solid var(--mckinsey-gold);
+            padding-left: 20px;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--mckinsey-blue-text);
         }
 
-        /* --- Buttons --- */
+        /* --- Buttons (Corporate Style) --- */
         .cta-button {
             display: inline-block;
-            margin: 10px 15px 10px 0;
-            padding: 12px 25px;
-            font-size: 1em;
+            margin: 15px 25px 15px 0;
+            padding: 14px 30px;
+            font-size: 0.95em;
             font-weight: 600;
             color: #ffffff;
-            background-color: var(--primary-color);
+            background-color: var(--mckinsey-blue-dark);
             border: none;
-            border-radius: 4px;
+            border-radius: 0; /* Perfectly square corners */
             text-decoration: none;
-            transition: background-color 0.2s ease, box-shadow 0.1s ease;
-            box-shadow: var(--shadow-subtle);
+            transition: background-color 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
         }
 
         .cta-button:hover {
@@ -98,102 +106,107 @@
         }
 
         .cta-button.secondary {
-            background-color: #4f4f4f; /* Dark Gray secondary button */
+            background-color: #f7f7f7;
+            color: var(--mckinsey-blue-dark);
+            border: 1px solid var(--mckinsey-blue-dark);
         }
         .cta-button.secondary:hover {
-            background-color: #333333;
+            background-color: #e8e8e8;
         }
 
         /* --- Features Section --- */
         h2 {
-            color: var(--text-dark);
+            color: var(--mckinsey-blue-dark);
             font-size: 2em;
             font-weight: 600;
-            margin-top: 35px;
-            margin-bottom: 20px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #eeeeee;
+            margin-top: 50px; /* Increased vertical space */
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: var(--border-crisp);
         }
 
         .feature-list {
             list-style: none;
             padding: 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 30px;
         }
 
         .feature-item {
             padding: 0;
         }
 
-        .feature-item strong {
-            color: var(--primary-color);
+        .feature-item p {
+            margin: 0;
+            color: var(--mckinsey-blue-text); /* Ensure descriptive text is blue */
+        }
+
+        .feature-item span.title {
+            color: var(--mckinsey-blue-dark);
             display: block;
-            font-size: 1.2em;
+            font-size: 1.1em;
+            font-weight: 600;
             margin-bottom: 5px;
         }
         
         .icon {
-            font-size: 1.5em;
-            margin-right: 8px;
-            color: var(--accent-color);
-        }
-        
-        .feature-item p {
-            margin-top: 5px;
+            font-size: 1.7em;
+            margin-right: 10px;
+            color: var(--mckinsey-gold);
         }
     </style>
 </head>
 <body>
     <div class="header-bar">
         <div class="container">
-            <header class="header">
-                <h1>🐍 LeetCode Solutions & Analysis</h1>
-                <p class="tagline">Python Implementations for Data Structures and Algorithms Mastery</p>
-            </header>
+            <h1>🐍 LeetCode Solutions & Analysis</h1>
+            <p class="tagline">Python Implementations for Data Structures and Algorithms Mastery</p>
         </div>
     </div>
     
     <div class="main-content">
         <div class="container">
+            <div class="content-block">
 
-            <div class="description-box">
-                A **personal collection** of LeetCode problem solutions implemented in Python, with detailed algorithmic explanations and complexity analysis stored in organized Jupyter Notebooks. This repository is designed to document my journey in mastering data structures and algorithms.
+                <p class="introduction-text">
+                    A personal collection of LeetCode problem solutions implemented in Python, with detailed algorithmic explanations and complexity analysis stored in organized Jupyter Notebooks. This repository is designed to document my journey in mastering data structures and algorithms.
+                </p>
+                
+                <div>
+                    <a href="https://github.com/lukeclarksf/leetcode" class="cta-button" target="_blank">
+                        View Source Code
+                    </a>
+                    <a href="#features-section" class="cta-button secondary">
+                        Explore Key Features
+                    </a>
+                </div>
+                <h2 id="features-section">Core Features and Methodology</h2>
+                
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <p><span class="icon">📝</span> 
+                        <span class="title">Structured Explanations</span>
+                        Each solution is housed within a dedicated Jupyter Notebook, featuring long-form Markdown covering the chosen approach, core intuition, and strategic rationale.</p>
+                    </li>
+                    <li class="feature-item">
+                        <p><span class="icon">⏱️</span> 
+                        <span class="title">Rigorous Complexity Analysis</span>
+                        Every solution includes a detailed breakdown of the time complexity ($O(n)$) and space complexity ($O(1)$) to assess performance and resource utilization.</p>
+                    </li>
+                    <li class="feature-item">
+                        <p><span class="icon">▶️</span> 
+                        <span class="title">Interactive & Tested Code</span>
+                        Solutions are written purely in Python and are fully executable directly within the notebooks, allowing for immediate testing and verification.</p>
+                    </li>
+                    <li class="feature-item">
+                        <p><span class="icon">🚀</span> 
+                        <span class="title">VS Code Optimized Workflow</span>
+                        The entire repository structure is optimized for seamless integration using VS Code's native support for Jupyter Notebooks, ensuring an efficient development environment.</p>
+                    </li>
+                </ul>
             </div>
-            
-            <div>
-                <a href="https://github.com/lukeclarksf/leetcode" class="cta-button">
-                    💻 View Source Code on GitHub
-                </a>
-                <a href="#features-section" class="cta-button secondary">
-                    ✨ Explore Key Features
-                </a>
-            </div>
-            <h2 id="features-section">Core Features</h2>
-            
-            <ul class="feature-list">
-                <li class="feature-item">
-                    <p><span class="icon">📝</span> 
-                    <strong>Structured Explanations</strong><br>
-                    Each solution is within a dedicated Jupyter Notebook (`.ipynb`), featuring long-form Markdown covering the chosen approach, intuition, and rationale.</p>
-                </li>
-                <li class="feature-item">
-                    <p><span class="icon">▶️</span> 
-                    <strong>Interactive Code</strong><br>
-                    Solutions are written purely in Python and are fully executable directly within the notebooks, allowing for live testing and experimentation.</p>
-                </li>
-                <li class="feature-item">
-                    <p><span class="icon">🚀</span> 
-                    <strong>VS Code Optimized</strong><br>
-                    The entire structure is optimized for a seamless, integrated development workflow using VS Code's native support for Jupyter Notebooks.</p>
-                </li>
-                <li class="feature-item">
-                    <p><span class="icon">⏱️</span> 
-                    <strong>Complexity Analysis</strong><br>
-                    Every solution includes a detailed breakdown of the time complexity and space complexity for thorough performance assessment.</p>
-                </li>
-            </ul>
         </div>
     </div>
 </body>
