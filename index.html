@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeetCode Python - Strategic Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Georgia:wght@700&display=swap" rel="stylesheet">
+    <title>LeetCode Python</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Retaining original colors for consistency */
             --mckinsey-blue-darker: #0D265A; 
             --mckinsey-blue-dark: #15357A;
             --mckinsey-blue-text: #1E3755;
@@ -16,8 +15,7 @@
             --background-light-blue: #f7f9fb;
             --border-crisp: 1px solid #e0e0e0;
             --font-main: 'Poppins', sans-serif;
-            --font-serif: 'Georgia', serif; /* New variable for the bold title */
-            --content-width: 1100px; /* Slightly wider content area */
+            --content-width: 1000px;
         }
 
         body {
@@ -27,69 +25,85 @@
             line-height: 1.7;
             color: var(--mckinsey-blue-text); 
             background-color: var(--background-light-blue);
-            font-size: 16px; /* Slightly larger base font */
+            font-size: 15px;
             font-weight: 400;
         }
-        
-        /* Removed .header-bar and merged styling into .hero-section */
 
+        .header-bar {
+            background-color: var(--mckinsey-blue-darker);
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
         .container {
             max-width: var(--content-width);
             margin: 0 auto;
             padding: 0 40px;
         }
-
-        /* --- Hero Section (Consolidated Header/Intro/Buttons) --- */
-        .hero-section {
-            background-color: var(--mckinsey-blue-darker);
-            color: #ffffff;
-            padding: 100px 0 60px 0; /* Increased top padding for dramatic space */
-        }
         
-        /* New styling for the main headline */
-        .hero-section h1 {
-            font-family: var(--font-serif); 
-            font-size: 3.5em; /* Much larger, reflecting the image's headline */
-            font-weight: 700;
-            line-height: 1.1;
-            margin: 0 0 10px 0;
+        .header-bar .container {
+            padding: 30px 40px; 
+        }
+
+        h1 {
             color: #ffffff;
-            max-width: 70%; /* Keeps the title contained for better reading */
+            font-size: 1.6em; 
+            font-weight: 400;
+            margin: 0;
         }
         
         .tagline {
-            font-size: 1.4em; /* Larger, more impactful tagline */
-            font-weight: 300;
             color: #c4c4c4;
+            font-size: 1.1em;
+            font-weight: 400;
             margin-top: 5px;
-            margin-bottom: 30px;
+            margin-bottom: 0;
+        }
+
+        /* --- Main Body Content Area --- */
+        .main-content {
+            padding: 0; 
+        }
+        
+        .content-block {
+            padding: 0; 
+            border: none;
+            box-shadow: none;
+        }
+
+        /* Introduction Block Styling */
+        .introduction-wrapper {
+            background-color: var(--mckinsey-blue-darker); 
+            margin-bottom: 0; 
+        }
+        
+        .introduction-wrapper .container {
+            padding: 0 40px; 
         }
         
         .introduction-text {
-            /* Styling pulled up from .introduction-wrapper */
-            padding: 0; 
+            padding: 0px; 
+            padding-top: 100px;
             margin: 0; 
             font-size: 1.1em; 
             line-height: 1.8;
             color: #ffffff; 
-            font-weight: 300; /* Lighter font weight for a sophisticated look */
-            max-width: 80%;
+            font-weight: 400;
         }
-
-        /* Adjusted button section margin/padding */
+        
         .button-section-wrapper {
-            background-color: transparent; /* Buttons are within the dark hero section now */
-            padding: 40px 0 0 0; /* Spacing between text and buttons */
-            margin-bottom: 0; 
+            background-color: var(--mckinsey-blue-darker); 
+            padding: 20px 0; 
+            margin-bottom: 40px; 
         }
 
-        /* --- Buttons (Corporate Style - Adjusted) --- */
+        /* --- Buttons (Corporate Style) --- */
         .cta-button {
             display: inline-block;
-            margin: 0 25px 0 0; /* Cleaned up margin */
-            padding: 14px 35px; /* Slightly more padding for a larger target */
-            font-size: 0.9em;
-            font-weight: 500; /* Slightly bolder text */
+            margin: 15px 25px 15px 0;
+            padding: 14px 30px;
+            font-size: 0.95em;
+            font-weight: 400;
             color: #ffffff;
             background-color: var(--mckinsey-blue-dark); 
             border: none;
@@ -97,7 +111,7 @@
             text-decoration: none;
             transition: background-color 0.2s ease;
             text-transform: uppercase;
-            letter-spacing: 1px; /* More defined letter spacing */
+            letter-spacing: 0.8px;
         }
 
         .cta-button:hover {
@@ -105,49 +119,47 @@
         }
 
         .cta-button.secondary {
-            background-color: transparent; /* Changed secondary button to ghost style for contrast */
-            color: #ffffff; 
-            border: 2px solid #ffffff; /* Prominent white border */
+            background-color: #f7f7f7;
+            color: var(--mckinsey-blue-darker); 
+            border: 1px solid var(--mckinsey-blue-darker);
         }
         .cta-button.secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: #e8e8e8;
         }
 
-        /* --- Features Section (Content below Hero) --- */
-        .main-content {
-            padding: 0; 
-        }
-
+        /* --- Features Section (Vertical List Changes) --- */
         h2 {
             color: var(--mckinsey-blue-dark);
-            font-size: 2.2em; /* Slightly larger heading for features */
-            font-weight: 600; /* Bolder sub-heading */
+            font-size: 2em;
+            font-weight: 400;
             margin-top: 70px; 
-            margin-bottom: 40px; 
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--mckinsey-blue-darker); /* Thicker, defined line */
+            margin-bottom: 35px; 
+            padding-bottom: 10px;
+            border-bottom: var(--border-crisp);
         }
         
         .feature-list {
             list-style: none;
             padding: 0;
+            gap: 0; 
             margin-top: 30px;
-            margin-bottom: 60px; /* More space at the end of the list */
+            margin-bottom: 30px;
         }
 
         .feature-item {
             background-color: var(--background-white);
-            padding: 40px 30px; /* Increased padding */
+            padding: 35px 25px; 
             border: var(--border-crisp);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* More noticeable shadow */
-            transition: box-shadow 0.2s ease;
-            margin-bottom: 30px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 40px; 
             width: 100%; 
             box-sizing: border-box; 
         }
         
         .feature-item:hover {
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transform: none; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
 
         .feature-item p {
@@ -159,25 +171,25 @@
         .feature-item span.title {
             color: var(--mckinsey-blue-dark);
             display: block;
-            font-size: 1.5em; /* Larger title within feature box */
+            font-size: 1.4em; 
             font-weight: 600; 
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
         
         .icon {
-            font-size: 1.8em;
-            margin-right: 15px;
+            font-size: 1.7em;
+            margin-right: 10px;
             color: var(--mckinsey-gold);
             font-weight: 400;
         }
 
-        /* --- Footer: Cleaned up spacing --- */
+        /* --- Footer: Adds a large block of dark blue at the bottom --- */
         .footer-bar {
             background-color: var(--mckinsey-blue-darker);
             color: #c4c4c4;
-            padding: 30px 0; 
+            padding: 40px 0; 
             text-align: center;
-            font-size: 0.85em;
+            font-size: 0.9em;
             font-weight: 400;
         }
         .footer-bar a {
@@ -204,20 +216,26 @@
     </script>
     </head>
 <body>
-    
-    <div class="hero-section">
+    <div class="header-bar">
         <div class="container">
-            
             <h1>LeetCode Python</h1>
             <p class="tagline">Driving optimal solution design through rigorous data structure mastery.</p>
-            
-            <div class="content-block">
-                <p class="introduction-text">
-                    This repository provides a strategic framework for mastering advanced data structures and algorithms in Python. It is an organized knowledge asset designed to optimize solution design, accelerate performance, and document a mastery approach to complex computational problems.
-                </p>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="introduction-wrapper">
+            <div class="container">
+                <div class="content-block">
+                    <p class="introduction-text">
+                        This repository provides a strategic framework for mastering advanced data structures and algorithms in Python. It is an organized knowledge asset designed to optimize solution design, accelerate performance, and document a mastery approach to complex computational problems.
+                    </p>
+                </div>
             </div>
-            
-            <div class="button-section-wrapper">
+        </div>
+        
+        <div class="button-section-wrapper">
+            <div class="container">
                 <div>
                     <a href="https://github.com/lukeclarksf/leetcode" class="cta-button">
                         View Source Code
@@ -228,9 +246,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="main-content">
+        
         <div class="container">
             <h2 id="features-section">Core Capabilities</h2>
             
@@ -243,7 +259,7 @@
                 <li class="feature-item">
                     <p>
                     <span class="title"><span class="icon">⏱️</span> Quantified Performance Optimization</span>
-                    Every solution is quantified with Time Complexity ($O(n)$) and Space Complexity analysis, ensuring optimal performance validation and precise resource forecasting before deployment.</p>
+                    Every solution is quantified with Time Complexity and Space Complexity analysis, ensuring optimal performance validation and precise resource forecasting before deployment.</p>
                 </li>
                 <li class="feature-item">
                     <p>
