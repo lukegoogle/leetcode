@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* **MODIFIED: Added a darker blue variable** */
+            --mckinsey-blue-darker: #0D265A; 
             --mckinsey-blue-dark: #15357A;
             --mckinsey-blue-text: #1E3755;
             --mckinsey-gold: #FFCD00;
@@ -29,7 +31,8 @@
         }
 
         .header-bar {
-            background-color: var(--mckinsey-blue-dark);
+            /* **MODIFIED: Use the darker blue** */
+            background-color: var(--mckinsey-blue-darker);
             color: #ffffff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -46,7 +49,8 @@
 
         h1 {
             color: #ffffff;
-            font-size: 2.0em; 
+            /* MODIFIED: Smaller font size (from previous request) */
+            font-size: 1.6em; 
             font-weight: 400;
             margin: 0;
         }
@@ -61,7 +65,7 @@
 
         /* --- Main Body Content Area --- */
         .main-content {
-            padding: 60px 0; 
+            padding: 0; 
         }
         
         .content-block {
@@ -72,8 +76,9 @@
 
         /* Introduction Block Styling */
         .introduction-wrapper {
-            background-color: var(--mckinsey-blue-dark); 
-            margin-bottom: 40px; 
+            /* **MODIFIED: Use the darker blue and remove bottom margin to connect to buttons** */
+            background-color: var(--mckinsey-blue-darker); 
+            margin-bottom: 0; 
         }
         
         .introduction-wrapper .container {
@@ -81,7 +86,7 @@
         }
         
         .introduction-text {
-            padding: 40px; 
+            padding: 0px; 
             margin: 0; 
             /* CHANGE: Reduced font size from 1.3em to 1.1em */
             font-size: 1.1em; 
@@ -90,6 +95,13 @@
             font-weight: 400;
         }
         
+        /* **MODIFIED: Button section background now uses the darker blue** */
+        .button-section-wrapper {
+            background-color: var(--mckinsey-blue-darker); 
+            padding: 20px 0; 
+            margin-bottom: 40px; 
+        }
+
         /* --- Buttons (Corporate Style) --- */
         .cta-button {
             display: inline-block;
@@ -98,7 +110,8 @@
             font-size: 0.95em;
             font-weight: 400;
             color: #ffffff;
-            background-color: var(--mckinsey-blue-dark);
+            /* **MODIFIED: Primary button uses the original dark blue for contrast** */
+            background-color: var(--mckinsey-blue-dark); 
             border: none;
             border-radius: 0; 
             text-decoration: none;
@@ -113,8 +126,9 @@
 
         .cta-button.secondary {
             background-color: #f7f7f7;
-            color: var(--mckinsey-blue-dark);
-            border: 1px solid var(--mckinsey-blue-dark);
+            /* **MODIFIED: Secondary button text/border uses the DARKER blue** */
+            color: var(--mckinsey-blue-darker); 
+            border: 1px solid var(--mckinsey-blue-darker);
         }
         .cta-button.secondary:hover {
             background-color: #e8e8e8;
@@ -130,6 +144,8 @@
             padding-bottom: 10px;
             border-bottom: var(--border-crisp);
         }
+        
+        /* ... (Rest of .feature-list and .feature-item rules) ... */
 
         .feature-list {
             list-style: none;
@@ -164,8 +180,10 @@
         .feature-item span.title {
             color: var(--mckinsey-blue-dark);
             display: block;
-            font-size: 1.1em;
-            font-weight: 400;
+            /* INCREASED FONT SIZE (from previous request) */
+            font-size: 1.4em; 
+            /* INCREASED FONT WEIGHT (from previous request) */
+            font-weight: 600; 
             margin-bottom: 5px;
         }
         
@@ -178,7 +196,8 @@
 
         /* --- Footer: Adds a large block of dark blue at the bottom --- */
         .footer-bar {
-            background-color: var(--mckinsey-blue-dark);
+            /* **MODIFIED: Use the darker blue for consistency** */
+            background-color: var(--mckinsey-blue-darker);
             color: #c4c4c4;
             padding: 40px 0; 
             text-align: center;
@@ -226,22 +245,26 @@
             </div>
         </div>
         
-        <div class="container">
-            <div>
-                <a href="https://github.com/lukeclarksf/leetcode" class="cta-button">
-                    View Source Code
-                </a>
-                <a href="#features-section" class="cta-button secondary">
-                    Explore Key Features
-                </a>
+        <div class="button-section-wrapper">
+            <div class="container">
+                <div>
+                    <a href="https://github.com/lukeclarksf/leetcode" class="cta-button">
+                        View Source Code
+                    </a>
+                    <a href="#features-section" class="cta-button secondary">
+                        Explore Key Features
+                    </a>
+                </div>
             </div>
-            
+        </div>
+        
+        <div class="container">
             <h2 id="features-section">Core Features</h2>
             
             <ul class="feature-list">
                 <li class="feature-item">
                     <p>
-                    <span class="title"><span class="icon">📝</span>  Structured Explanations</span>
+                    <span class="title"><span class="icon">📝</span> Structured Explanations</span>
                     Each solution is housed within a dedicated Jupyter Notebook, featuring long-form Markdown covering the chosen approach, core intuition, and strategic rationale.</p>
                 </li>
                 <li class="feature-item">
@@ -251,7 +274,7 @@
                 </li>
                 <li class="feature-item">
                     <p>
-                    <span class="title"><span class="icon">🚀</span>  Visual Studio Code Optimized Workflow</span>
+                    <span class="title"><span class="icon">🚀</span> Visual Studio Code Optimized Workflow</span>
                     The entire repository structure is optimized for seamless integration using VS Code's native support for Jupyter Notebooks, ensuring an efficient development environment.</p>
                 </li>
             </ul>
