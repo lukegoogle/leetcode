@@ -1,4 +1,4 @@
-# 🐍 LeetCode in Python
+# LeetCode in Python
 
 > **💡 View the project on dedicated website:**
 > [📚 Leetcode](https://lukeclarksf.github.io/leetcode)
