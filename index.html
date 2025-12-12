@@ -64,7 +64,6 @@
             padding: 60px 0; 
         }
         
-        /* CORRECTED: Removed background, padding, border, and shadow */
         .content-block {
             padding: 0; 
             border: none;
@@ -76,7 +75,7 @@
             border-left: 4px solid var(--mckinsey-gold);
             padding-left: 20px;
             margin-bottom: 40px;
-            font-size: 1.1em;
+            font-size: 1.3em; /* FONT SIZE INCREASED */
             line-height: 1.8;
             color: var(--mckinsey-blue-text);
             font-weight: 400;
@@ -130,6 +129,19 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 30px;
+        }
+
+        .feature-item {
+            background-color: var(--background-white);
+            padding: 25px;
+            border: var(--border-crisp);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
         }
 
         .feature-item p {
