@@ -19,8 +19,31 @@ def removeNthFromEnd(head: ListNode, n: int) -> ListNode:
     
     return dummy.next
 
+# Helper functions for example output
+def create_list(arr):
+    dummy = ListNode(0)
+    curr = dummy
+    for x in arr:
+        curr.next = ListNode(x)
+        curr = curr.next
+    return dummy.next
+
+def print_list(node):
+    result = []
+    while node:
+        result.append(node.val)
+        node = node.next
+    return result
+
 # Example Output
 l1 = create_list([1, 2, 3, 4, 5])
-result = removeNthFromEnd(l1, 2)
-print("--- LeetCode 19 ---")
-print(f"Output for [1, 2, 3, 4, 5], n=2: {print_list(result)}")
+result1 = removeNthFromEnd(l1, 2)
+print(f"Output for [1, 2, 3, 4, 5], n=2: {print_list(result1)}")
+
+l2 = create_list([1])
+result2 = removeNthFromEnd(l2, 1)
+print(f"Output for [1], n=1: {print_list(result2)}")
+
+l3 = create_list([1, 2])
+result3 = removeNthFromEnd(l3, 2)
+print(f"Output for [1, 2], n=2: {print_list(result3)}")

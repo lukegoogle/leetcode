@@ -12,8 +12,9 @@ def isValid(s: str) -> bool:
             
     return not stack
 
-# Example Output
-print("--- LeetCode 20 ---")
-print(f"Output for '()[]{}': {isValid('()[]{}')}")
-print(f"Output for '(]': {isValid('(]')}")
-print(f"Output for '([{}])': {isValid('([{}])')}")
+# Corrected f-string usage
+# We replace the literal { and } with {{ and }}
+print(f"Output for '()[]{{}}': {isValid('()[]{{}}')}")
+
+# Example of a correct and valid string for the function
+print(f"Output for '([{{}}])': {isValid('([{{}}])')}")

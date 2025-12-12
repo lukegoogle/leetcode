@@ -34,8 +34,27 @@ def mergeKLists(lists: list[ListNode]) -> ListNode:
         
     return lists[0] if amount > 0 else None
 
+# Helper functions for example output
+def create_list(arr):
+    dummy = ListNode(0)
+    curr = dummy
+    for x in arr:
+        curr.next = ListNode(x)
+        curr = curr.next
+    return dummy.next
+
+def print_list(node):
+    result = []
+    while node:
+        result.append(node.val)
+        node = node.next
+    return result
+
 # Example Output
-lists = [create_list([1, 4, 5]), create_list([1, 3, 4]), create_list([2, 6])]
-result = mergeKLists(lists)
-print("--- LeetCode 23 ---")
-print(f"Output for [[1, 4, 5], [1, 3, 4], [2, 6]]: {print_list(result)}")
+lists1 = [create_list([1, 4, 5]), create_list([1, 3, 4]), create_list([2, 6])]
+result1 = mergeKLists(lists1)
+print(f"Output for [[1, 4, 5], [1, 3, 4], [2, 6]]: {print_list(result1)}")
+
+lists2 = []
+result2 = mergeKLists(lists2)
+print(f"Output for []: {print_list(result2)}")

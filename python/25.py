@@ -32,8 +32,27 @@ def reverseKGroup(head: ListNode, k: int) -> ListNode:
         start.next = end
         current = start
 
+# Helper functions for example output
+def create_list(arr):
+    dummy = ListNode(0)
+    curr = dummy
+    for x in arr:
+        curr.next = ListNode(x)
+        curr = curr.next
+    return dummy.next
+
+def print_list(node):
+    result = []
+    while node:
+        result.append(node.val)
+        node = node.next
+    return result
+
 # Example Output
 l1 = create_list([1, 2, 3, 4, 5])
-result = reverseKGroup(l1, 2)
-print("--- LeetCode 25 ---")
-print(f"Output for [1, 2, 3, 4, 5], k=2: {print_list(result)}")
+result1 = reverseKGroup(l1, 2)
+print(f"Output for [1, 2, 3, 4, 5], k=2: {print_list(result1)}")
+
+l2 = create_list([1, 2, 3, 4, 5])
+result2 = reverseKGroup(l2, 3)
+print(f"Output for [1, 2, 3, 4, 5], k=3: {print_list(result2)}")
