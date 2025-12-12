@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* **MODIFIED: Added a darker blue variable** */
             --mckinsey-blue-darker: #0D265A; 
             --mckinsey-blue-dark: #15357A;
             --mckinsey-blue-text: #1E3755;
@@ -31,7 +30,6 @@
         }
 
         .header-bar {
-            /* **MODIFIED: Use the darker blue** */
             background-color: var(--mckinsey-blue-darker);
             color: #ffffff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -49,7 +47,6 @@
 
         h1 {
             color: #ffffff;
-            /* MODIFIED: Smaller font size (from previous request) */
             font-size: 1.6em; 
             font-weight: 400;
             margin: 0;
@@ -76,7 +73,6 @@
 
         /* Introduction Block Styling */
         .introduction-wrapper {
-            /* **MODIFIED: Use the darker blue and remove bottom margin to connect to buttons** */
             background-color: var(--mckinsey-blue-darker); 
             margin-bottom: 0; 
         }
@@ -89,14 +85,12 @@
             padding: 0px; 
             padding-top: 100px;
             margin: 0; 
-            /* CHANGE: Reduced font size from 1.3em to 1.1em */
             font-size: 1.1em; 
             line-height: 1.8;
             color: #ffffff; 
             font-weight: 400;
         }
         
-        /* **MODIFIED: Button section background now uses the darker blue** */
         .button-section-wrapper {
             background-color: var(--mckinsey-blue-darker); 
             padding: 20px 0; 
@@ -111,7 +105,6 @@
             font-size: 0.95em;
             font-weight: 400;
             color: #ffffff;
-            /* **MODIFIED: Primary button uses the original dark blue for contrast** */
             background-color: var(--mckinsey-blue-dark); 
             border: none;
             border-radius: 0; 
@@ -127,7 +120,6 @@
 
         .cta-button.secondary {
             background-color: #f7f7f7;
-            /* **MODIFIED: Secondary button text/border uses the DARKER blue** */
             color: var(--mckinsey-blue-darker); 
             border: 1px solid var(--mckinsey-blue-darker);
         }
@@ -146,8 +138,6 @@
             border-bottom: var(--border-crisp);
         }
         
-        /* ... (Rest of .feature-list and .feature-item rules) ... */
-
         .feature-list {
             list-style: none;
             padding: 0;
@@ -181,9 +171,7 @@
         .feature-item span.title {
             color: var(--mckinsey-blue-dark);
             display: block;
-            /* INCREASED FONT SIZE (from previous request) */
             font-size: 1.4em; 
-            /* INCREASED FONT WEIGHT (from previous request) */
             font-weight: 600; 
             margin-bottom: 5px;
         }
@@ -197,7 +185,6 @@
 
         /* --- Footer: Adds a large block of dark blue at the bottom --- */
         .footer-bar {
-            /* **MODIFIED: Use the darker blue for consistency** */
             background-color: var(--mckinsey-blue-darker);
             color: #c4c4c4;
             padding: 40px 0; 
@@ -232,6 +219,7 @@
     <div class="header-bar">
         <div class="container">
             <h1>LeetCode Python</h1>
+            <p class="tagline">Driving optimal solution design through rigorous data structure mastery.</p>
         </div>
     </div>
     
@@ -240,7 +228,7 @@
             <div class="container">
                 <div class="content-block">
                     <p class="introduction-text">
-                        A personal collection of LeetCode problem solutions implemented in Python, with detailed algorithmic explanations and complexity analysis stored in organized Jupyter Notebooks. This repository is designed to document my journey in mastering data structures and algorithms.
+                        This repository provides a strategic framework for mastering advanced data structures and algorithms in Python. It is an organized knowledge asset designed to optimize solution design, accelerate performance, and document a mastery approach to complex computational problems.
                     </p>
                 </div>
             </div>
@@ -253,30 +241,30 @@
                         View Source Code
                     </a>
                     <a href="#features-section" class="cta-button secondary">
-                        Explore Key Features
+                        Explore Core Capabilities
                     </a>
                 </div>
             </div>
         </div>
         
         <div class="container">
-            <h2 id="features-section">Core Features</h2>
+            <h2 id="features-section">Core Capabilities</h2>
             
             <ul class="feature-list">
                 <li class="feature-item">
                     <p>
-                    <span class="title"><span class="icon">📝</span> Structured Explanations</span>
-                    Each solution is housed within a dedicated Jupyter Notebook, featuring long-form Markdown covering the chosen approach, core intuition, and strategic rationale.</p>
+                    <span class="title"><span class="icon">📝</span> Framework-Based Solution Architecting</span>
+                    Solutions are delivered in dedicated Jupyter Notebooks, ensuring full transparency on approach selection, strategic rationale, and implementable design intuition—the 'why' behind the code.</p>
                 </li>
                 <li class="feature-item">
                     <p>
-                    <span class="title"><span class="icon">⏱️</span> Rigorous Complexity Analysis</span>
-                    Every solution includes a detailed breakdown of the time complexity \(\text{O}(n)\) and space complexity \(\text{O}(1)\) to assess performance and resource utilization.</p>
+                    <span class="title"><span class="icon">⏱️</span> Quantified Performance Optimization</span>
+                    Every solution is quantified with Time Complexity and Space Complexity analysis, ensuring optimal performance validation and precise resource forecasting before deployment.</p>
                 </li>
                 <li class="feature-item">
                     <p>
-                    <span class="title"><span class="icon">🚀</span> Visual Studio Code Optimized Workflow</span>
-                    The entire repository structure is optimized for seamless integration using VS Code's native support for Jupyter Notebooks, ensuring an efficient development environment.</p>
+                    <span class="title"><span class="icon">🚀</span> High-Efficiency Knowledge Transfer</span>
+                    The asset leverages VS Code's native Notebook integration to ensure a zero-friction knowledge transfer environment, allowing for immediate analysis and accelerated time-to-implementation.</p>
                 </li>
             </ul>
         </div>
@@ -284,7 +272,7 @@
 
     <div class="footer-bar">
         <div class="container">
-            © 2025 LeetCode Python  | 
+            © 2025 LeetCode Python | 
             <a href="https://lukeclarksf.github.io" target="_blank">Luke Clark CV</a>
         </div>
     </div>
