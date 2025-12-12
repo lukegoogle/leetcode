@@ -7,11 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --mckinsey-blue-dark: #15357A; /* Deep Navy Blue for header/footer/accents */
-            --mckinsey-blue-text: #1E3755; /* Slightly lighter Navy for main text */
-            --mckinsey-gold: #FFCD00; /* Accent Gold */
+            --mckinsey-blue-dark: #15357A;
+            --mckinsey-blue-text: #1E3755;
+            --mckinsey-gold: #FFCD00;
             --background-white: #ffffff;
-            --background-light-blue: #f7f9fb; /* Primary background color (~60% of screen) */
+            --background-light-blue: #f7f9fb;
             --border-crisp: 1px solid #e0e0e0;
             --font-main: 'Poppins', sans-serif;
             --content-width: 1000px;
@@ -23,19 +23,17 @@
             padding: 0;
             line-height: 1.7;
             color: var(--mckinsey-blue-text); 
-            background-color: var(--background-light-blue); /* Primary background color */
+            background-color: var(--background-light-blue);
             font-size: 15px;
-            font-weight: 400; /* Ensure body text is not heavy */
+            font-weight: 400;
         }
 
-        /* Full width header bar with no margin/padding */
         .header-bar {
             background-color: var(--mckinsey-blue-dark);
             color: #ffffff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         
-        /* Container to center content */
         .container {
             max-width: var(--content-width);
             margin: 0 auto;
@@ -46,18 +44,17 @@
             padding: 30px 40px; 
         }
 
-        /* --- Header & Title --- */
         h1 {
             color: #ffffff;
             font-size: 2.5em;
-            font-weight: 400; /* Reduced from 500 */
+            font-weight: 400;
             margin: 0;
         }
         
         .tagline {
             color: #c4c4c4;
             font-size: 1.1em;
-            font-weight: 400; /* No change, already normal */
+            font-weight: 400;
             margin-top: 5px;
             margin-bottom: 0;
         }
@@ -67,11 +64,11 @@
             padding: 60px 0; 
         }
         
+        /* CORRECTED: Removed background, padding, border, and shadow */
         .content-block {
-            background-color: var(--background-white);
-            padding: 40px;
-            border: var(--border-crisp);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); 
+            padding: 0; 
+            border: none;
+            box-shadow: none;
         }
 
         /* Introduction paragraph styling */
@@ -82,7 +79,7 @@
             font-size: 1.1em;
             line-height: 1.8;
             color: var(--mckinsey-blue-text);
-            font-weight: 400; /* Ensure this paragraph is not heavy */
+            font-weight: 400;
         }
 
         /* --- Buttons (Corporate Style) --- */
@@ -91,7 +88,7 @@
             margin: 15px 25px 15px 0;
             padding: 14px 30px;
             font-size: 0.95em;
-            font-weight: 400; /* Reduced from 500 */
+            font-weight: 400;
             color: #ffffff;
             background-color: var(--mckinsey-blue-dark);
             border: none;
@@ -119,7 +116,7 @@
         h2 {
             color: var(--mckinsey-blue-dark);
             font-size: 2em;
-            font-weight: 400; /* Reduced from 600 */
+            font-weight: 400;
             margin-top: 50px; 
             margin-bottom: 25px;
             padding-bottom: 10px;
@@ -138,14 +135,14 @@
         .feature-item p {
             margin: 0;
             color: var(--mckinsey-blue-text); 
-            font-weight: 400; /* Ensure feature text is not heavy */
+            font-weight: 400;
         }
 
         .feature-item span.title {
             color: var(--mckinsey-blue-dark);
             display: block;
             font-size: 1.1em;
-            font-weight: 400; /* Reduced from 600 */
+            font-weight: 400;
             margin-bottom: 5px;
         }
         
@@ -153,7 +150,7 @@
             font-size: 1.7em;
             margin-right: 10px;
             color: var(--mckinsey-gold);
-            font-weight: 400; /* Ensure icon wrapper is not heavy */
+            font-weight: 400;
         }
 
         /* --- Footer: Adds a large block of dark blue at the bottom --- */
@@ -163,12 +160,12 @@
             padding: 40px 0; 
             text-align: center;
             font-size: 0.9em;
-            font-weight: 400; /* Ensure footer text is not heavy */
+            font-weight: 400;
         }
         .footer-bar a {
             color: #ffffff;
             text-decoration: none;
-            font-weight: 400; /* Reduced from 500 */
+            font-weight: 400;
             margin: 0 10px;
         }
         .footer-bar a:hover {
