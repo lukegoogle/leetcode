@@ -1,28 +1,27 @@
 def isMatch(s: str, p: str) -> bool:
-    m = len(s)
-    n = len(p)
+    memo = {}
     
-    dp = [[False] * (n + 1) for _ in range(m + 1)]
-    
-    dp[0][0] = True
-    
-    for j in range(1, n + 1):
-        if p[j - 1] == '*':
-            dp[0][j] = dp[0][j - 2]
+    def dp(i, j):
+        if (i, j) in memo:
+            return memo[(i, j)]
             
-    for i in range(1, m + 1):
-        for j in range(1, n + 1):
+        if j == len(p):
+            return i == len(s)
             
-            if p[j - 1] == s[i - 1] or p[j - 1] == '.':
-                dp[i][j] = dp[i - 1][j - 1]
+        first_match = i < len(s) and (p[j] == s[i] or p[j] == '.')
+        
+        if j + 1 < len(p) and p[j+1] == '*':
+            result = dp(i, j + 2) or (first_match and dp(i + 1, j))
+        else:
+            result = first_match and dp(i + 1, j + 1)
             
-            elif p[j - 1] == '*':
-                dp[i][j] = dp[i][j - 2]
-                
-                if p[j - 2] == s[i - 1] or p[j - 2] == '.':
-                    dp[i][j] = dp[i][j] or dp[i - 1][j]
-                    
-            else:
-                dp[i][j] = False
-                
-    return dp[m][n]
+        memo[(i, j)] = result
+        return result
+
+    return dp(0, 0)
+
+# Example Output
+print("--- LeetCode 10 ---")
+print(f"Output for ('aa', 'a'): {isMatch('aa', 'a')}")
+print(f"Output for ('aa', 'a*'): {isMatch('aa', 'a*')}")
+print(f"Output for ('ab', '.*'): {isMatch('ab', '.*')}")

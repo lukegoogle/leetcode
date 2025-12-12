@@ -1,35 +1,32 @@
 def findMedianSortedArrays(nums1: list[int], nums2: list[int]) -> float:
     A, B = nums1, nums2
-    m, n = len(A), len(B)
+    total = len(nums1) + len(nums2)
+    half = total // 2
     
-    if m > n:
-        A, B, m, n = B, A, n, m
-
-    total = m + n
-    half = (total + 1) // 2
-    
-    low, high = 0, m
-    
-    while low <= high:
-        i = (low + high) // 2
-        j = half - i
+    if len(A) > len(B):
+        A, B = B, A
         
-        L1 = A[i - 1] if i > 0 else float('-inf')
-        R1 = A[i] if i < m else float('inf')
-
-        L2 = B[j - 1] if j > 0 else float('-inf')
-        R2 = B[j] if j < n else float('inf')
+    l, r = 0, len(A) - 1
+    
+    while True:
+        i = (l + r) // 2
+        j = half - i - 2
         
-        if L1 <= R2 and L2 <= R1:
-            if total % 2 == 1:
-                return max(L1, L2)
-            else:
-                return (max(L1, L2) + min(R1, R2)) / 2.0
-                
-        elif L1 > R2:
-            high = i - 1
-            
+        Aleft = A[i] if i >= 0 else float("-inf")
+        Aright = A[i + 1] if i + 1 < len(A) else float("inf")
+        Bleft = B[j] if j >= 0 else float("-inf")
+        Bright = B[j + 1] if j + 1 < len(B) else float("inf")
+        
+        if Aleft <= Bright and Bleft <= Aright:
+            if total % 2:
+                return min(Aright, Bright)
+            return (max(Aleft, Bleft) + min(Aright, Bright)) / 2
+        elif Aleft > Bright:
+            r = i - 1
         else:
-            low = i + 1
-            
-    return 0.0
+            l = i + 1
+
+# Example Output
+print("--- LeetCode 4 ---")
+print(f"Output for [1, 3], [2]: {findMedianSortedArrays([1, 3], [2])}")
+print(f"Output for [1, 2], [3, 4]: {findMedianSortedArrays([1, 2], [3, 4])}")

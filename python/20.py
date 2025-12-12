@@ -11,3 +11,9 @@ def isValid(s: str) -> bool:
             stack.append(char)
             
     return not stack
+
+# Example Output
+print("--- LeetCode 20 ---")
+print(f"Output for '()[]{}': {isValid('()[]{}')}")
+print(f"Output for '(]': {isValid('(]')}")
+print(f"Output for '([{}])': {isValid('([{}])')}")

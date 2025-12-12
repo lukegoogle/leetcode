@@ -31,3 +31,9 @@ def reverseKGroup(head: ListNode, k: int) -> ListNode:
         current.next = reverse_linked_list(start, end)
         start.next = end
         current = start
+
+# Example Output
+l1 = create_list([1, 2, 3, 4, 5])
+result = reverseKGroup(l1, 2)
+print("--- LeetCode 25 ---")
+print(f"Output for [1, 2, 3, 4, 5], k=2: {print_list(result)}")

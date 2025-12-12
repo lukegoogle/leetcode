@@ -14,3 +14,8 @@ def generateParenthesis(n: int) -> list[str]:
 
     backtrack("", 0, 0)
     return result
+
+# Example Output
+print("--- LeetCode 22 ---")
+print(f"Output for n=3: {generateParenthesis(3)}")
+print(f"Output for n=1: {generateParenthesis(1)}")

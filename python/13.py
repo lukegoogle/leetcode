@@ -14,3 +14,9 @@ def romanToInt(s: str) -> int:
         prev_value = current_value
         
     return total
+
+# Example Output
+print("--- LeetCode 13 ---")
+print(f"Output for 'III': {romanToInt('III')}")
+print(f"Output for 'LVIII': {romanToInt('LVIII')}")
+print(f"Output for 'MCMXCIV': {romanToInt('MCMXCIV')}")

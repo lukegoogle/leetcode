@@ -30,3 +30,8 @@ def threeSum(nums: list[int]) -> list[list[int]]:
                 right -= 1
                 
     return result
+
+# Example Output
+print("--- LeetCode 15 ---")
+print(f"Output for [-1, 0, 1, 2, -1, -4]: {threeSum([-1, 0, 1, 2, -1, -4])}")
+print(f"Output for [0, 1, 1]: {threeSum([0, 1, 1])}")

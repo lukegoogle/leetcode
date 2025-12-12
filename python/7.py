@@ -1,24 +1,29 @@
 def reverse(x: int) -> int:
-    MAX_INT = 2**31 - 1
     MIN_INT = -2**31
+    MAX_INT = 2**31 - 1
     
-    reversed_num = 0
+    sign = -1 if x < 0 else 1
+    abs_x = abs(x)
+    reversed_x = 0
     
-    temp = abs(x)
-
-    while temp != 0:
-        digit = temp % 10
-        temp //= 10
+    while abs_x != 0:
+        digit = abs_x % 10
         
-        # Positive overflow check
-        if reversed_num > MAX_INT // 10 or (reversed_num == MAX_INT // 10 and digit > 7):
+        if reversed_x > MAX_INT // 10 or (reversed_x == MAX_INT // 10 and digit > 7):
             return 0
+            
+        reversed_x = reversed_x * 10 + digit
+        abs_x //= 10
         
-        # Negative overflow check (magnitude check)
-        # -2**31 is -2147483648 (last digit 8)
-        if x < 0 and (reversed_num > MAX_INT // 10 or (reversed_num == MAX_INT // 10 and digit > 8)):
-             return 0
+    final_result = reversed_x * sign
+    
+    if final_result < MIN_INT or final_result > MAX_INT:
+        return 0
+        
+    return final_result
 
-        reversed_num = reversed_num * 10 + digit
-        
-    return reversed_num if x >= 0 else -reversed_num
+# Example Output
+print("--- LeetCode 7 ---")
+print(f"Output for 123: {reverse(123)}")
+print(f"Output for -123: {reverse(-123)}")
+print(f"Output for 120: {reverse(120)}")

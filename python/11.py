@@ -16,3 +16,8 @@ def maxArea(height: list[int]) -> int:
             right -= 1
             
     return max_area
+
+# Example Output
+print("--- LeetCode 11 ---")
+print(f"Output for [1, 8, 6, 2, 5, 4, 8, 3, 7]: {maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])}")
+print(f"Output for [1, 1]: {maxArea([1, 1])}")

@@ -21,3 +21,8 @@ def threeSumClosest(nums: list[int], target: int) -> int:
                 return target
                 
     return closest_sum
+
+# Example Output
+print("--- LeetCode 16 ---")
+print(f"Output for ([-1, 2, 1, -4], 1): {threeSumClosest([-1, 2, 1, -4], 1)}")
+print(f"Output for ([0, 0, 0], 1): {threeSumClosest([0, 0, 0], 1)}")

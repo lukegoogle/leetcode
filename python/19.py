@@ -18,3 +18,9 @@ def removeNthFromEnd(head: ListNode, n: int) -> ListNode:
     slow.next = slow.next.next
     
     return dummy.next
+
+# Example Output
+l1 = create_list([1, 2, 3, 4, 5])
+result = removeNthFromEnd(l1, 2)
+print("--- LeetCode 19 ---")
+print(f"Output for [1, 2, 3, 4, 5], n=2: {print_list(result)}")

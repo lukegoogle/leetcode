@@ -34,3 +34,8 @@ def fourSum(nums: list[int], target: int) -> list[list[int]]:
                     right -= 1
                     
     return result
+
+# Example Output
+print("--- LeetCode 18 ---")
+print(f"Output for ([1, 0, -1, 0, -2, 2], 0): {fourSum([1, 0, -1, 0, -2, 2], 0)}")
+print(f"Output for ([2, 2, 2, 2, 2], 8): {fourSum([2, 2, 2, 2, 2], 8)}")

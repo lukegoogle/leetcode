@@ -19,3 +19,10 @@ def mergeTwoLists(list1: ListNode, list2: ListNode) -> ListNode:
     current.next = list1 if list1 else list2
     
     return dummy.next
+
+# Example Output
+l1 = create_list([1, 2, 4])
+l2 = create_list([1, 3, 4])
+result = mergeTwoLists(l1, l2)
+print("--- LeetCode 21 ---")
+print(f"Output for [1, 2, 4] and [1, 3, 4]: {print_list(result)}")

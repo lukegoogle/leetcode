@@ -19,3 +19,9 @@ def swapPairs(head: ListNode) -> ListNode:
         current = current.next.next
         
     return dummy.next
+
+# Example Output
+l1 = create_list([1, 2, 3, 4])
+result = swapPairs(l1)
+print("--- LeetCode 24 ---")
+print(f"Output for [1, 2, 3, 4]: {print_list(result)}")

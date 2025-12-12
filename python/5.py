@@ -1,26 +1,27 @@
 def longestPalindrome(s: str) -> str:
-    n = len(s)
-    if n < 2:
-        return s
+    res = ""
+    res_len = 0
     
-    start = 0
-    max_len = 1
-    
-    def expand_around_center(left, right):
-        nonlocal start, max_len
-        while left >= 0 and right < n and s[left] == s[right]:
-            current_len = right - left + 1
-            if current_len > max_len:
-                max_len = current_len
-                start = left
-            left -= 1
-            right += 1
-    
-    for i in range(n):
-        # Case 1: Odd length
-        expand_around_center(i, i)
-        
-        # Case 2: Even length
-        expand_around_center(i, i + 1)
-        
-    return s[start : start + max_len]
+    for i in range(len(s)):
+        l, r = i, i
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            if (r - l + 1) > res_len:
+                res = s[l:r+1]
+                res_len = r - l + 1
+            l -= 1
+            r += 1
+            
+        l, r = i, i + 1
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            if (r - l + 1) > res_len:
+                res = s[l:r+1]
+                res_len = r - l + 1
+            l -= 1
+            r += 1
+            
+    return res
+
+# Example Output
+print("--- LeetCode 5 ---")
+print(f"Output for 'babad': {longestPalindrome('babad')}")
+print(f"Output for 'cbbd': {longestPalindrome('cbbd')}")

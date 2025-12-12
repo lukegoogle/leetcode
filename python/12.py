@@ -13,3 +13,9 @@ def intToRoman(num: int) -> str:
             i += 1
             
     return result
+
+# Example Output
+print("--- LeetCode 12 ---")
+print(f"Output for 3: {intToRoman(3)}")
+print(f"Output for 58: {intToRoman(58)}")
+print(f"Output for 1994: {intToRoman(1994)}")

@@ -11,3 +11,8 @@ def longestCommonPrefix(strs: list[str]) -> str:
                 return ""
     
     return lcp
+
+# Example Output
+print("--- LeetCode 14 ---")
+print(f"Output for ['flower', 'flow', 'flight']: {longestCommonPrefix(['flower', 'flow', 'flight'])}")
+print(f"Output for ['dog', 'racecar', 'car']: {longestCommonPrefix(['dog', 'racecar', 'car'])}")

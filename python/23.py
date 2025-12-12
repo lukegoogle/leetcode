@@ -33,3 +33,9 @@ def mergeKLists(lists: list[ListNode]) -> ListNode:
         interval *= 2
         
     return lists[0] if amount > 0 else None
+
+# Example Output
+lists = [create_list([1, 4, 5]), create_list([1, 3, 4]), create_list([2, 6])]
+result = mergeKLists(lists)
+print("--- LeetCode 23 ---")
+print(f"Output for [[1, 4, 5], [1, 3, 4], [2, 6]]: {print_list(result)}")

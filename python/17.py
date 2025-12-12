@@ -24,3 +24,8 @@ def letterCombinations(digits: str) -> list[str]:
 
     backtrack(0, [])
     return result
+
+# Example Output
+print("--- LeetCode 17 ---")
+print(f"Output for '23': {letterCombinations('23')}")
+print(f"Output for '2': {letterCombinations('2')}")
