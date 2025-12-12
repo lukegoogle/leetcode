@@ -1,4 +1,4 @@
-# 🐍 LeetCode Solutions: Python & Jupyter Notebooks
+# 🐍 LeetCode in Python
 
 > **💡 View the project on dedicated website:**
 > [📚 Leetcode](https://lukeclarksf.github.io/leetcode)
