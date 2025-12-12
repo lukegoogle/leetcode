@@ -1,6 +1,6 @@
 # LeetCode Python
 
-> **💡 View the project on dedicated website:**
+> **View the project on dedicated website:**
 > [LeetCode](https://lukeclarksf.github.io/leetcode)
 
 A personal collection of LeetCode problem solutions implemented in Python, with detailed algorithmic explanations and complexity analysis stored in organized Jupyter Notebooks. This repository is designed to document my journey in mastering data structures and algorithms.
