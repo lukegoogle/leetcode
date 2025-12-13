@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#12-integer-to-roman" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -634,6 +639,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 12
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -650,6 +673,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#12-integer-to-roman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Integer to Roman
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Integer to Roman">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-roman-numeral-system-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Roman Numeral System Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-greedy-approach-with-ordered-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Greedy Approach with Ordered Mappings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-and-conversion-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iteration and Conversion Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-greedy-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example of Greedy Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1465,6 +1566,75 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#12-integer-to-roman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Integer to Roman
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Integer to Roman">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-roman-numeral-system-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Roman Numeral System Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-greedy-approach-with-ordered-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Greedy Approach with Ordered Mappings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-and-conversion-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iteration and Conversion Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-greedy-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example of Greedy Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1503,6 +1673,26 @@
 
         <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="12-integer-to-roman">12. Integer to Roman<a class="headerlink" href="#12-integer-to-roman" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-roman-numeral-system-basics">Problem Statement and Roman Numeral System Basics<a class="headerlink" href="#problem-statement-and-roman-numeral-system-basics" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 12, "Integer to Roman," requires converting a given integer into its Roman numeral representation. The input is guaranteed to be within the standard range of Roman numeral representation, specifically from 1 to 3999 (inclusive). This constraint ensures that we do not need to deal with very large numbers requiring bars over the letters or other advanced Roman numeral notation.</p>
+<p>The Roman numeral system is based on seven symbols, each representing a specific value: <span class="arithmatex">\(I=1, V=5, X=10, L=50, C=100, D=500, M=1000\)</span>. The system uses additive notation (e.g., <span class="arithmatex">\(VI = 5+1 = 6\)</span>) but also incorporates a crucial <strong>subtractive notation</strong> rule for four and nine units of magnitude. These subtractive pairs are: <span class="arithmatex">\(IV=4, IX=9\)</span> (for tens), <span class="arithmatex">\(XL=40, XC=90\)</span> (for hundreds), and <span class="arithmatex">\(CD=400, CM=900\)</span> (for thousands). The solution must adhere to the standard convention of always choosing the largest possible symbol or subtractive combination at each place value.</p>
+<h3 id="the-greedy-approach-with-ordered-mappings">The Greedy Approach with Ordered Mappings<a class="headerlink" href="#the-greedy-approach-with-ordered-mappings" title="Permanent link">&para;</a></h3>
+<p>Since the Roman numeral system has fixed values and the largest symbol is always preferred, this problem is perfectly suited for a <strong>Greedy Algorithm</strong>. A greedy approach makes the locally optimal choice at each step, and because the Roman numeral system is well-behaved in this range (e.g., you would never use two 'V's instead of one 'X'), this local optimum leads directly to the global optimum.</p>
+<p>The implementation involves defining two synchronized arrays (or a map of pairs) that store the values and their corresponding Roman symbols, <strong>ordered from largest value to smallest</strong>. This ordering is crucial because it includes the subtractive pairs (<span class="arithmatex">\(900, 400, 90, 40, 9, 4\)</span>) which must be checked before their simpler, larger components (<span class="arithmatex">\(1000, 500, 100, 50, 10, 5\)</span>). [Table showing Roman Numeral Mappings]</p>
+<h3 id="iteration-and-conversion-logic">Iteration and Conversion Logic<a class="headerlink" href="#iteration-and-conversion-logic" title="Permanent link">&para;</a></h3>
+<p>We iterate through the ordered list of value-symbol pairs. For each pair <span class="arithmatex">\((\text{value}, \text{symbol})\)</span>, we check if the remaining input number, <span class="arithmatex">\(num\)</span>, is greater than or equal to <span class="arithmatex">\(\text{value}\)</span>.</p>
+<p>If <span class="arithmatex">\(num \ge \text{value}\)</span>, it means the current symbol or combination is the largest possible representation that can be used at this stage. We apply the greedy choice: we append the <span class="arithmatex">\(\text{symbol}\)</span> to our result string and simultaneously subtract the <span class="arithmatex">\(\text{value}\)</span> from <span class="arithmatex">\(num\)</span>. We repeat this process with the same pair until <span class="arithmatex">\(num\)</span> drops below <span class="arithmatex">\(\text{value}\)</span>. This ensures that repeated symbols are correctly handled (e.g., <span class="arithmatex">\(3000\)</span> requires three 'M's).</p>
+<h3 id="example-of-greedy-selection">Example of Greedy Selection<a class="headerlink" href="#example-of-greedy-selection" title="Permanent link">&para;</a></h3>
+<p>Consider converting the number 1994. The algorithm proceeds as follows:
+1.  Check 1000 (<span class="arithmatex">\(M\)</span>): <span class="arithmatex">\(1994 \ge 1000\)</span>. Result becomes "M", <span class="arithmatex">\(num\)</span> becomes 994.
+2.  Check 900 (<span class="arithmatex">\(CM\)</span>): <span class="arithmatex">\(994 \ge 900\)</span>. Result becomes "MCM", <span class="arithmatex">\(num\)</span> becomes 94.
+3.  Check 500 (<span class="arithmatex">\(D\)</span>): <span class="arithmatex">\(94 &lt; 500\)</span>. Skip.
+4.  ...
+5.  Check 90 (<span class="arithmatex">\(XC\)</span>): <span class="arithmatex">\(94 \ge 90\)</span>. Result becomes "MCMXC", <span class="arithmatex">\(num\)</span> becomes 4.
+6.  Check 50 (<span class="arithmatex">\(L\)</span>): <span class="arithmatex">\(4 &lt; 50\)</span>. Skip.
+7.  Check 4 (<span class="arithmatex">\(IV\)</span>): <span class="arithmatex">\(4 \ge 4\)</span>. Result becomes "MCMXCIV", <span class="arithmatex">\(num\)</span> becomes 0.</p>
+<p>The process stops when <span class="arithmatex">\(num\)</span> reaches 0. Because the number of symbols in the mapping is a small constant (13 pairs), the number of iterations required is very small and does not depend on the magnitude of the input integer <span class="arithmatex">\(num\)</span> but rather on the number of fixed place values. Therefore, the time complexity is effectively <strong><span class="arithmatex">\(O(1)\)</span></strong> (constant time) due to the fixed constraint of the input range (1 to 3999).</p>
 
 
 
