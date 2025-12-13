@@ -13,3 +13,9 @@ class Solution:
             max_length = max(max_length, right - left + 1)
             
         return max_length
+    
+# Example Usage:
+sol = Solution()
+print(sol.lengthOfLongestSubstring("abcabcbb")) # Output: 3 ("abc")
+print(sol.lengthOfLongestSubstring("bbbbb"))    # Output: 1 ("b")
+print(sol.lengthOfLongestSubstring("pwwkew"))   # Output: 3 ("wke")

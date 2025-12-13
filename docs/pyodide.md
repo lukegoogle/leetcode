@@ -1,4 +1,4 @@
-```pyodide height="20"
+```pyodide height="22"
 
 # Leetcode 2 Verbose
 
