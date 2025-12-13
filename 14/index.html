@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#14-longest-common-prefix" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -690,6 +695,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 14
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -706,6 +729,95 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#14-longest-common-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Longest Common Prefix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Longest Common Prefix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-core-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Core Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-brute-force-and-vertical-scanning-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Brute Force and Vertical Scanning Approaches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-optimized-horizontal-scanning-technique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Optimized Horizontal Scanning Technique
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-of-the-lcp-refinement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details of the LCP Refinement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-advanced-approaches-trie-and-divide-and-conquer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Advanced Approaches (Trie and Divide and Conquer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1465,6 +1577,86 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#14-longest-common-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Longest Common Prefix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Longest Common Prefix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-core-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Core Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-brute-force-and-vertical-scanning-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Brute Force and Vertical Scanning Approaches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-optimized-horizontal-scanning-technique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Optimized Horizontal Scanning Technique
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-of-the-lcp-refinement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Details of the LCP Refinement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-advanced-approaches-trie-and-divide-and-conquer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Advanced Approaches (Trie and Divide and Conquer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1501,6 +1693,23 @@
 
         <span class="k">return</span> <span class="n">prefix</span>
 </code></pre></div>
+<h2 id="14-longest-common-prefix">14. Longest Common Prefix<a class="headerlink" href="#14-longest-common-prefix" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-core-objective">Problem Statement and Core Objective<a class="headerlink" href="#problem-statement-and-core-objective" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 14, "Longest Common Prefix," is a fundamental string processing task. Given an array of strings, <span class="arithmatex">\(\text{strs}\)</span>, the objective is to find the longest string that is a prefix of <em>all</em> strings within the array. If no common prefix exists among the strings (i.e., they all start with different characters), the function must return an empty string, "".</p>
+<p>This problem highlights the need for efficient comparison across multiple string inputs. The resulting Longest Common Prefix (LCP) must adhere strictly to the definition of a prefix, meaning it must be a contiguous substring starting at the beginning of each string. For example, in the array ["flower", "flow", "flight"], the LCP is "fl".</p>
+<h3 id="the-brute-force-and-vertical-scanning-approaches">The Brute Force and Vertical Scanning Approaches<a class="headerlink" href="#the-brute-force-and-vertical-scanning-approaches" title="Permanent link">&para;</a></h3>
+<p>A brute force approach might involve checking every possible prefix of the shortest string against all other strings. This involves unnecessary repetition. A slightly more refined, but still potentially inefficient, method is <strong>Vertical Scanning</strong>. This method iterates through the characters of the strings from left to right, column by column.</p>
+<p>For index <span class="arithmatex">\(j=0, 1, 2, \dots\)</span>, we check if the character at position <span class="arithmatex">\(j\)</span> in the first string, <span class="arithmatex">\(\text{strs}[0][j]\)</span>, is the same as the character at position <span class="arithmatex">\(j\)</span> in <em>all</em> subsequent strings, <span class="arithmatex">\(\text{strs}[i][j]\)</span>. If we find a mismatch at any string or if we reach the end of any string, the common prefix is the substring of <span class="arithmatex">\(\text{strs}[0]\)</span> up to index <span class="arithmatex">\(j-1\)</span>. While easier than Brute Force, Vertical Scanning can be slow if the array contains many long strings with a very long LCP, as it performs many redundant character comparisons. The worst-case time complexity is <span class="arithmatex">\(O(S)\)</span>, where <span class="arithmatex">\(S\)</span> is the sum of the lengths of all strings, as in the scenario where all strings are identical.</p>
+<h3 id="the-optimized-horizontal-scanning-technique">The Optimized Horizontal Scanning Technique<a class="headerlink" href="#the-optimized-horizontal-scanning-technique" title="Permanent link">&para;</a></h3>
+<p>The most intuitive and often simplest efficient method is <strong>Horizontal Scanning</strong>. This approach works by incrementally refining a candidate LCP string by comparing it sequentially with every string in the input array.</p>
+<p>We start by assuming the first string in the array, <span class="arithmatex">\(\text{strs}[0]\)</span>, is the initial LCP candidate. We then iterate through the rest of the strings, from <span class="arithmatex">\(\text{strs}[1]\)</span> to <span class="arithmatex">\(\text{strs}[n-1]\)</span>. For each string <span class="arithmatex">\(\text{strs}[i]\)</span>, we update the LCP to be the common prefix between the <em>current</em> LCP and <span class="arithmatex">\(\text{strs}[i]\)</span>. [Diagram illustrating Horizontal Scanning for LCP]</p>
+<h3 id="details-of-the-lcp-refinement">Details of the LCP Refinement<a class="headerlink" href="#details-of-the-lcp-refinement" title="Permanent link">&para;</a></h3>
+<p>The refinement step for a string <span class="arithmatex">\(\text{strs}[i]\)</span> and the current LCP is performed using a simple check. We ask: "Does <span class="arithmatex">\(\text{strs}[i]\)</span> start with the current LCP?" In many programming languages, this is done with a function like <code>indexOf(LCP) == 0</code>.</p>
+<p>If <span class="arithmatex">\(\text{strs}[i]\)</span> does <em>not</em> start with the current LCP, it means the LCP is too long. We must shorten the current LCP by removing its last character (<span class="arithmatex">\(\text{LCP} = \text{LCP}[:-1]\)</span>). We repeatedly shorten the LCP until <span class="arithmatex">\(\text{strs}[i]\)</span> <em>does</em> start with the truncated LCP, or until the LCP becomes empty. If the LCP becomes an empty string, we can immediately terminate the entire process and return "" because no subsequent string can possibly share a prefix with all previous strings. Once <span class="arithmatex">\(\text{strs}[i]\)</span>'s prefix is matched, we move on to the next string in the array with the new, refined LCP. Upon completing the iteration through all strings, the final remaining LCP is the correct answer. The worst-case time complexity for Horizontal Scanning is also <span class="arithmatex">\(O(S)\)</span>, but it often performs better in practice when the LCP is short.</p>
+<h3 id="other-advanced-approaches-trie-and-divide-and-conquer">Other Advanced Approaches (Trie and Divide and Conquer)<a class="headerlink" href="#other-advanced-approaches-trie-and-divide-and-conquer" title="Permanent link">&para;</a></h3>
+<p>More advanced solutions exist, such as using a <strong>Trie (Prefix Tree)</strong> or a <strong>Divide and Conquer</strong> approach.
+* <strong>Trie:</strong> By inserting all strings into a Trie, the LCP is represented by the longest path from the root that has only one child node (since it must be common to all strings). This method is optimal in terms of comparisons but adds <span class="arithmatex">\(O(S)\)</span> overhead for building the Trie.
+* <strong>Divide and Conquer:</strong> This recursive approach divides the array of strings into two halves, finds the LCP of each half, and then finds the LCP of those two results. This has the same <span class="arithmatex">\(O(S)\)</span> time complexity but is often less efficient due to recursion overhead compared to the simple iterative Horizontal Scanning.</p>
 
 
 
