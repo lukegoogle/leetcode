@@ -1,3 +1,3 @@
 ## LeetCode Python
 
-This repository contains my solutions to LeetCode problems, implemented in Python.
+This repository holds my Python solutions for various LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment.
