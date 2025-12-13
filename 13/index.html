@@ -1482,7 +1482,28 @@
 
   <h1>Problem 13</h1>
 
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">romanToInt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="n">value_map</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">1000</span>
+        <span class="p">}</span>
+
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">prev_value</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+            <span class="n">current_value</span> <span class="o">=</span> <span class="n">value_map</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">current_value</span> <span class="o">&lt;</span> <span class="n">prev_value</span><span class="p">:</span>
+                <span class="n">total</span> <span class="o">-=</span> <span class="n">current_value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">total</span> <span class="o">+=</span> <span class="n">current_value</span>
+
+            <span class="n">prev_value</span> <span class="o">=</span> <span class="n">current_value</span>
+
+        <span class="k">return</span> <span class="n">total</span>
 </code></pre></div>
 
 

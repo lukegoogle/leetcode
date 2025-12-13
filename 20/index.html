@@ -1482,7 +1482,22 @@
 
   <h1>Problem 20</h1>
 
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">isValid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;)&quot;</span><span class="p">:</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;}&quot;</span><span class="p">:</span> <span class="s2">&quot;{&quot;</span><span class="p">,</span> <span class="s2">&quot;]&quot;</span><span class="p">:</span> <span class="s2">&quot;[&quot;</span><span class="p">}</span>
+
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">mapping</span><span class="p">:</span>
+                <span class="n">top_element</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="k">if</span> <span class="n">stack</span> <span class="k">else</span> <span class="s1">&#39;#&#39;</span>
+
+                <span class="k">if</span> <span class="n">mapping</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">!=</span> <span class="n">top_element</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="ow">not</span> <span class="n">stack</span>
 </code></pre></div>
 
 

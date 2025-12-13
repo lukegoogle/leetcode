@@ -1482,7 +1482,26 @@
 
   <h1>Problem 12</h1>
 
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">intToRoman</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+        <span class="n">mappings</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">900</span><span class="p">,</span> <span class="s2">&quot;CM&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="s2">&quot;CD&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;XC&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="s2">&quot;XL&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;IX&quot;</span><span class="p">),</span> 
+            <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;V&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;IV&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">value</span><span class="p">,</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">mappings</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>
+
+            <span class="n">count</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">symbol</span> <span class="o">*</span> <span class="n">count</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div>
 
 

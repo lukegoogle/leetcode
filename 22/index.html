@@ -1482,7 +1482,24 @@
 
   <h1>Problem 22</h1>
 
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generateParenthesis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">(</span><span class="n">open_count</span><span class="p">,</span> <span class="n">close_count</span><span class="p">,</span> <span class="n">current_string</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">current_string</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">:</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_string</span><span class="p">)</span>
+                <span class="k">return</span>
+
+            <span class="k">if</span> <span class="n">open_count</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+                <span class="n">backtrack</span><span class="p">(</span><span class="n">open_count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">close_count</span><span class="p">,</span> <span class="n">current_string</span> <span class="o">+</span> <span class="s2">&quot;(&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">close_count</span> <span class="o">&lt;</span> <span class="n">open_count</span><span class="p">:</span>
+                <span class="n">backtrack</span><span class="p">(</span><span class="n">open_count</span><span class="p">,</span> <span class="n">close_count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">current_string</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
+
+        <span class="n">backtrack</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
 </code></pre></div>
 
 

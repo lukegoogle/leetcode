@@ -1482,7 +1482,29 @@
 
   <h1>Problem 21</h1>
 
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ListNode</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mergeTwoLists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list1</span><span class="p">:</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">list2</span><span class="p">:</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="n">dummy</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">dummy</span>
+
+        <span class="k">while</span> <span class="n">list1</span> <span class="ow">and</span> <span class="n">list2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">list1</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;=</span> <span class="n">list2</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
+                <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">list1</span>
+                <span class="n">list1</span> <span class="o">=</span> <span class="n">list1</span><span class="o">.</span><span class="n">next</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">list2</span>
+                <span class="n">list2</span> <span class="o">=</span> <span class="n">list2</span><span class="o">.</span><span class="n">next</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+
+        <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">list1</span> <span class="k">if</span> <span class="n">list1</span> <span class="k">else</span> <span class="n">list2</span>
+
+        <span class="k">return</span> <span class="n">dummy</span><span class="o">.</span><span class="n">next</span>
 </code></pre></div>
 
 
