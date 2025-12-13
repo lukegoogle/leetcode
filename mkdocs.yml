@@ -2,6 +2,8 @@
 site_name: LeetCode Python
 site_url: https://lukeclarksf.github.io/leetcode/
 site_description: A collection of Python solutions for LeetCode problems with detailed explanations.
+repo_url: https://github.com/lukeclarksf/leetcode
+edit_uri: edit/main/docs/
 
 # 2. Theme Configuration (Use the Material theme)
 theme:
@@ -30,6 +32,9 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight
+  - pymdownx.snippets:
+      check_paths: true
+      base_path: [docs/snippets, "."]
 
 extra_javascript:
   # The configuration file (optional, but good practice)
@@ -43,6 +48,8 @@ extra_javascript:
 plugins:
   - search
   - include-markdown # <--- Add the plugin here
+  - execute
+  - markdown-exec
 
 # Inside mkdocs.yml
 
