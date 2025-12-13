@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#11-container-with-most-water" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -606,6 +611,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 11
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -622,6 +645,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-container-with-most-water" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Container With Most Water
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Container With Most Water">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-geometrical-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Geometrical Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-inefficient-brute-force-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Inefficient Brute Force Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-optimized-two-pointer-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Optimized Two-Pointer Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-governing-movement-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Governing Movement Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1465,6 +1566,75 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-container-with-most-water" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Container With Most Water
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Container With Most Water">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-geometrical-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Geometrical Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-inefficient-brute-force-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Inefficient Brute Force Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-optimized-two-pointer-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Optimized Two-Pointer Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-governing-movement-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Governing Movement Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1501,6 +1671,27 @@
 
         <span class="k">return</span> <span class="n">max_area</span>
 </code></pre></div>
+<h2 id="11-container-with-most-water">11. Container With Most Water<a class="headerlink" href="#11-container-with-most-water" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-geometrical-interpretation">Problem Statement and Geometrical Interpretation<a class="headerlink" href="#problem-statement-and-geometrical-interpretation" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 11, "Container With Most Water," is a geometrical optimization problem. We are given an array of <span class="arithmatex">\(n\)</span> non-negative integers, say <span class="arithmatex">\(\text{heights}\)</span>, where each element <span class="arithmatex">\(\text{heights}[i]\)</span> represents the height of a vertical line drawn at coordinate <span class="arithmatex">\((i, \text{heights}[i])\)</span>. The goal is to find two of these lines that, together with the x-axis, form a container capable of holding the maximum amount of water.</p>
+<p>The container formed by two lines at indices <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(R\)</span> (where <span class="arithmatex">\(L &lt; R\)</span>) has a height determined by the shorter of the two lines, <span class="arithmatex">\(\min(\text{heights}[L], \text{heights}[R])\)</span>. The width of the container is the distance between the lines, <span class="arithmatex">\((R - L)\)</span>. The area, which corresponds to the amount of water the container can hold, is calculated as: <span class="arithmatex">\(\text{Area} = \text{width} \times \text{height} = (R - L) \times \min(\text{heights}[L], \text{heights}[R])\)</span>. The challenge is to maximize this area by optimally choosing the indices <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(R\)</span>.</p>
+<h3 id="the-inefficient-brute-force-approach">The Inefficient Brute Force Approach<a class="headerlink" href="#the-inefficient-brute-force-approach" title="Permanent link">&para;</a></h3>
+<p>A straightforward, yet inefficient, approach is to use <strong>Brute Force</strong> by checking the area generated by every possible pair of lines. This involves nested loops: the outer loop iterates with index <span class="arithmatex">\(L\)</span> from 0 to <span class="arithmatex">\(n-2\)</span>, and the inner loop iterates with index <span class="arithmatex">\(R\)</span> from <span class="arithmatex">\(L+1\)</span> to <span class="arithmatex">\(n-1\)</span>.</p>
+<p>In each iteration, the area is calculated, and the maximum area found so far is tracked. Since every pair is examined, the Brute Force solution yields an <span class="arithmatex">\(O(n^2)\)</span> time complexity. While this works, it is too slow for large arrays and fails to meet the implicit requirement for an optimal solution. An <span class="arithmatex">\(O(n)\)</span> solution is required for efficient execution.</p>
+<h3 id="the-optimized-two-pointer-approach">The Optimized Two-Pointer Approach<a class="headerlink" href="#the-optimized-two-pointer-approach" title="Permanent link">&para;</a></h3>
+<p>The necessary optimization comes from recognizing a crucial pattern and applying the <strong>Two-Pointer</strong> technique. This approach starts by considering the container formed by the two lines that are farthest apart—the leftmost line (<span class="arithmatex">\(L=0\)</span>) and the rightmost line (<span class="arithmatex">\(R=n-1\)</span>). This gives the maximum possible width.</p>
+<p>After calculating the area for the current <span class="arithmatex">\((L, R)\)</span> pair, the strategy is to determine which pointer to move inward to potentially find a larger area. Moving a pointer always results in a decrease in width, <span class="arithmatex">\((R - L)\)</span>. Therefore, to compensate for the reduced width, the move must aim to find a line with a <em>greater height</em>.</p>
+<h3 id="the-governing-movement-logic">The Governing Movement Logic<a class="headerlink" href="#the-governing-movement-logic" title="Permanent link">&para;</a></h3>
+<p>The critical decision lies in identifying which of the two pointers, <span class="arithmatex">\(L\)</span> or <span class="arithmatex">\(R\)</span>, has a shorter line. Since the height of the current container is limited by <span class="arithmatex">\(\min(\text{heights}[L], \text{heights}[R])\)</span>, increasing the height of the container can only be achieved by replacing the shorter of the two boundary lines with a potentially taller line. </p>
+<ol>
+<li>
+<p><strong>If <span class="arithmatex">\(\text{heights}[L] &lt; \text{heights}[R]\)</span>:</strong> The current container's height is limited by <span class="arithmatex">\(\text{heights}[L]\)</span>. Any container involving <span class="arithmatex">\(\text{heights}[L]\)</span> and a line to its right (say, <span class="arithmatex">\(R' &lt; R\)</span>) will have a width less than <span class="arithmatex">\((R - L)\)</span> and a height limited by <span class="arithmatex">\(\min(\text{heights}[L], \text{heights}[R'])\)</span>. Because <span class="arithmatex">\(R'\)</span> is to the left of <span class="arithmatex">\(R\)</span>, <span class="arithmatex">\(\text{heights}[R]\)</span> is irrelevant. Thus, moving <span class="arithmatex">\(R\)</span> inward would only decrease the width, and the height would still be restricted by the relatively short <span class="arithmatex">\(\text{heights}[L]\)</span> or an even shorter height. Moving <span class="arithmatex">\(L\)</span> inward (<span class="arithmatex">\(\text{increment } L\)</span>) is the only logical move, as it offers the possibility of finding a taller line that can increase the container's height, offsetting the loss of width.</p>
+</li>
+<li>
+<p><strong>If <span class="arithmatex">\(\text{heights}[L] \ge \text{heights}[R]\)</span>:</strong> The current container's height is limited by <span class="arithmatex">\(\text{heights}[R]\)</span>. By the same logic, we must move the right pointer inward (<span class="arithmatex">\(\text{decrement } R\)</span>) to search for a potentially taller line at the right boundary.</p>
+</li>
+</ol>
+<p>The loop continues until the two pointers meet (<span class="arithmatex">\(L &lt; R\)</span>). Since <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(R\)</span> traverse the array only once, and each iteration moves at least one pointer, the total time complexity is strictly <span class="arithmatex">\(O(n)\)</span>, making it a highly efficient solution.</p>
 
 
 
