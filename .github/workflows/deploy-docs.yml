@@ -34,7 +34,7 @@ jobs:
       # 3. Installs MkDocs and any required plugins/themes (like Material for MkDocs)
       - name: Install dependencies
         run: |
-          pip install mkdocs mkdocs-material mkdocs-include-markdown-plugin
+          pip install mkdocs mkdocs-material mkdocs-include-markdown-plugin mkdocs-execute-plugin pymdown-extensions
 
       # 4. Deploys the documentation using the built-in MkDocs gh-deploy command
       - name: Deploy MkDocs site
