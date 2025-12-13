@@ -1,0 +1,31 @@
+# 1. Basic Settings
+site_name: LeetCode Python
+site_url: https://lukeclarksf.github.io/leetcode/
+site_description: A collection of Python solutions for LeetCode problems with detailed explanations.
+
+# 2. Theme Configuration (Use the Material theme)
+theme:
+  name: material
+  palette:
+    scheme: light
+    primary: blue
+    accent: light blue
+  features:
+    - navigation.tabs
+    - search.suggest
+    - search.highlight
+
+# 3. Extensions (For better Markdown features)
+markdown_extensions:
+  - attr_list
+  - admonition # Allows note/warning boxes
+  - pymdownx.details
+  - pymdownx.superfences # Allows better code blocks
+  - pymdownx.highlight # Syntax highlighting
+  - toc:
+      permalink: true # Creates a link anchor for every heading
+
+# 4. Navigation (The most important part)
+# This maps the menu items to the .md files in your docs/ folder
+nav:
+  - Introduction: 'index.md'
