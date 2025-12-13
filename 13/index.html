@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#13-roman-to-integer" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -662,6 +667,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 13
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -678,6 +701,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#13-roman-to-integer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Roman to Integer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Roman to Integer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-the-subtraction-rule-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and The Subtraction Rule Challenge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-and-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapping and Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-lookahead-comparison-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Lookahead Comparison Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalizing-the-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finalizing the Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1465,6 +1566,75 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#13-roman-to-integer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Roman to Integer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Roman to Integer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-the-subtraction-rule-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and The Subtraction Rule Challenge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-and-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapping and Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-lookahead-comparison-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Lookahead Comparison Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finalizing-the-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finalizing the Conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1505,6 +1675,22 @@
 
         <span class="k">return</span> <span class="n">total</span>
 </code></pre></div>
+<h2 id="13-roman-to-integer">13. Roman to Integer<a class="headerlink" href="#13-roman-to-integer" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-the-subtraction-rule-challenge">Problem Statement and The Subtraction Rule Challenge<a class="headerlink" href="#problem-statement-and-the-subtraction-rule-challenge" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 13, "Roman to Integer," involves converting a given Roman numeral string, <span class="arithmatex">\(s\)</span>, into its corresponding integer value. The input is guaranteed to be a valid Roman numeral within the standard range of 1 to 3999. Unlike converting from an integer to a Roman numeral (which relies on a greedy build-up), converting <em>to</em> an integer requires a careful sequential interpretation of the Roman characters.</p>
+<p>The main complexity arises from the <strong>subtractive notation</strong>. Normally, symbols are additive (e.g., <span class="arithmatex">\(VI = 5 + 1 = 6\)</span>). However, a smaller value symbol placed <em>before</em> a larger value symbol indicates subtraction (e.g., <span class="arithmatex">\(IV = 5 - 1 = 4\)</span>, <span class="arithmatex">\(CM = 1000 - 100 = 900\)</span>). The algorithm must correctly identify these subtractive pairs and adjust the running total accordingly, which cannot be done by simply summing the values of the individual characters from left to right.</p>
+<h3 id="mapping-and-initialization">Mapping and Initialization<a class="headerlink" href="#mapping-and-initialization" title="Permanent link">&para;</a></h3>
+<p>The solution begins by establishing a map or dictionary to store the integer value for each of the seven Roman symbols (<span class="arithmatex">\(I, V, X, L, C, D, M\)</span>). [Table showing Roman Numeral Mappings] The conversion process must then handle the string <span class="arithmatex">\(s\)</span> by processing it sequentially. A variable, often called <code>total</code> or <code>result</code>, is initialized to 0 to accumulate the final integer value.</p>
+<p>The most robust approach involves iterating through the Roman numeral string from <strong>left to right</strong>, comparing the value of the current symbol with the value of the next symbol. This lookahead comparison is the key mechanism for identifying the subtractive rule.</p>
+<h3 id="the-lookahead-comparison-logic">The Lookahead Comparison Logic<a class="headerlink" href="#the-lookahead-comparison-logic" title="Permanent link">&para;</a></h3>
+<p>We iterate through the string using an index <span class="arithmatex">\(i\)</span> from the beginning up to the second-to-last character. In each step, we retrieve the value of the current symbol, <span class="arithmatex">\(\text{current\_val} = \text{map}[s[i]]\)</span>, and the value of the next symbol, <span class="arithmatex">\(\text{next\_val} = \text{map}[s[i+1]]\)</span>.</p>
+<ol>
+<li><strong>Subtractive Case:</strong> If <span class="arithmatex">\(\text{current\_val} &lt; \text{next\_val}\)</span> (e.g., <span class="arithmatex">\(I\)</span> followed by <span class="arithmatex">\(V\)</span> in <span class="arithmatex">\(IV\)</span>), this signals a subtractive pair. The correct way to handle this is to subtract the current value from the running <code>total</code>. This is because the <span class="arithmatex">\(\text{current\_val}\)</span> is not being added normally but is being used to subtract from the subsequent, larger value.</li>
+<li><strong>Additive Case:</strong> If <span class="arithmatex">\(\text{current\_val} \ge \text{next\_val}\)</span> (e.g., <span class="arithmatex">\(V\)</span> followed by <span class="arithmatex">\(I\)</span> in <span class="arithmatex">\(VI\)</span>, or two identical symbols like <span class="arithmatex">\(X\)</span> followed by <span class="arithmatex">\(X\)</span>), the current value is purely additive. We add <span class="arithmatex">\(\text{current\_val}\)</span> to the running <code>total</code>.</li>
+</ol>
+<h3 id="finalizing-the-conversion">Finalizing the Conversion<a class="headerlink" href="#finalizing-the-conversion" title="Permanent link">&para;</a></h3>
+<p>After the loop completes, the last character of the Roman numeral string (at index <span class="arithmatex">\(n-1\)</span>) will not have been processed, as the loop only goes up to <span class="arithmatex">\(n-2\)</span> to allow for the <span class="arithmatex">\(i+1\)</span> lookahead. The last symbol can never be part of a subtractive pair (as there is no symbol following it), so its value is always additive.</p>
+<p>Therefore, the final step is to retrieve the value of the last character, <span class="arithmatex">\(\text{map}[s[n-1]]\)</span>, and add it to the accumulated <code>total</code>. This approach correctly handles all symbols and the subtractive rule, resulting in the correct integer. Since the algorithm requires only a single pass through the string, the time complexity is linear, <span class="arithmatex">\(O(n)\)</span>, where <span class="arithmatex">\(n\)</span> is the length of the Roman numeral string. Given the input constraint of 1 to 3999, <span class="arithmatex">\(n\)</span> is at most 15, so the time complexity is very fast in practice.</p>
 
 
 
