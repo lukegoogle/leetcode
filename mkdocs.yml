@@ -7,7 +7,7 @@ edit_uri: edit/main/docs/
 
 # 2. Theme Configuration (Use the Material theme)
 theme:
-  name: material
+  name: material #pyodide-mkdocs-theme #material
   palette:
     scheme: light
     primary: blue
@@ -18,6 +18,13 @@ theme:
     - search.highlight
     - content.code.copy
     - content.code.select
+
+extra_javascript:
+  # 1. The main Pyodide library from CDN
+  - https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.js
+  
+  # 2. Your custom script (path is relative to the 'docs' directory)
+  - pyodide_setup.js
 
 markdown_extensions:
   # Standard Extensions
@@ -57,9 +64,9 @@ plugins:
 # ... (other sections like theme, extensions, and plugins) ...
 
 nav:
-  - Luke CV: 'https://lukeclarksf.com'
   - Python:
     - About: 'index.md'
+
     - 1. (Easy) Two Sum: '1.md'
     - 2. (Medium) Add Two Numbers: '2.md'
     - 3. (Medium) Longest Substring Without Repeating Characters: '3.md'
@@ -380,3 +387,5 @@ nav:
     - 318. (Medium) Maximum Product of Word Lengths: '318.md'
     - 319. (Medium) Bulb Switcher: '319.md'
     - 320. (Medium) Generalized Abbreviation (Locked): '320.md'
+  - Run Code: 'pyodide.md'
+  - Luke CV: 'https://lukeclarksf.com'

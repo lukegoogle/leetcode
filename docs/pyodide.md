@@ -1,3 +1,7 @@
+```pyodide height="20"
+
+# Leetcode 2 Verbose
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -17,6 +21,7 @@ class Solution:
             total_sum = val1 + val2 + carry
             carry = total_sum // 10
             new_digit = total_sum % 10
+            print(f"(new_digit) {new_digit}: (total_sum) {total_sum} = (Val1) {val1} + (Val2) {val2} + (carry) {carry}")
 
             current.next = ListNode(new_digit)
             current = current.next
@@ -58,3 +63,5 @@ print(linked_list_to_list(Solution().addTwoNumbers(l1_ex2, l2_ex2)), "\n")
 l1_ex3 = create_linked_list([9, 9, 9, 9, 9, 9, 9])
 l2_ex3 = create_linked_list([9, 9, 9, 9])
 print(linked_list_to_list(Solution().addTwoNumbers(l1_ex3, l2_ex3)))
+
+```
