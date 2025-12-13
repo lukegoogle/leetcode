@@ -9644,9 +9644,9 @@
 
 <div class="pyodide">
 <div class="pyodide-editor-bar">
-<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-4--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
+<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-9--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
 </div>
-<div><pre id="exec-4--editor" class="pyodide-editor">class Solution:
+<div><pre id="exec-9--editor" class="pyodide-editor">class Solution:
     def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
         A, B = nums1, nums2
         m, n = len(A), len(B)
@@ -9682,23 +9682,29 @@
             else:
                 low = partitionA + 1
 
-        return 0.0</pre></div>
+        return 0.0
+
+# Example Usage:
+sol = Solution()
+print(sol.findMedianSortedArrays([1, 3], [2]))       # Output: 2.0
+print(sol.findMedianSortedArrays([1, 2], [3, 4]))    # Output: 2.5
+print(sol.findMedianSortedArrays([0, 0], [0, 0]))    # Output: 0.0</pre></div>
 <div class="pyodide-editor-bar">
-<span class="pyodide-bar-item">Output</span><span id="exec-4--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
+<span class="pyodide-bar-item">Output</span><span id="exec-9--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
-<pre><code id="exec-4--output" class="pyodide-output"></code></pre>
+<pre><code id="exec-9--output" class="pyodide-output"></code></pre>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     setupPyodide(
-        'exec-4--',
+        'exec-9--',
         install=[],
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=37,
-        maxLines=37,
+        minLines=43,
+        maxLines=43,
     );
 });
 </script>
@@ -9740,6 +9746,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 <span class="n">low</span> <span class="o">=</span> <span class="n">partitionA</span> <span class="o">+</span> <span class="mi">1</span>
 
         <span class="k">return</span> <span class="mf">0.0</span>
+
+<span class="c1"># Example Usage:</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">findMedianSortedArrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">]))</span>       <span class="c1"># Output: 2.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">findMedianSortedArrays</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>    <span class="c1"># Output: 2.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">findMedianSortedArrays</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>    <span class="c1"># Output: 0.0</span>
 </code></pre></div>
 <h2 id="4-median-of-two-sorted-arrays">4. Median of Two Sorted Arrays<a class="headerlink" href="#4-median-of-two-sorted-arrays" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-efficiency-constraint">Problem Statement and Efficiency Constraint<a class="headerlink" href="#problem-statement-and-efficiency-constraint" title="Permanent link">&para;</a></h3>

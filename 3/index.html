@@ -9622,9 +9622,9 @@
 
 <div class="pyodide">
 <div class="pyodide-editor-bar">
-<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-3--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
+<span class="pyodide-bar-item">Editor (session: default)</span><span id="exec-8--run" title="Run: press Ctrl-Enter" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5.14v14l11-7-11-7Z"></path></svg></span> Run</span>
 </div>
-<div><pre id="exec-3--editor" class="pyodide-editor">class Solution:
+<div><pre id="exec-8--editor" class="pyodide-editor">class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         char_set = set()
         left = 0
@@ -9638,23 +9638,29 @@
             char_set.add(s[right])
             max_length = max(max_length, right - left + 1)
 
-        return max_length</pre></div>
+        return max_length
+
+# Example Usage:
+sol = Solution()
+print(sol.lengthOfLongestSubstring("abcabcbb")) # Output: 3 ("abc")
+print(sol.lengthOfLongestSubstring("bbbbb"))    # Output: 1 ("b")
+print(sol.lengthOfLongestSubstring("pwwkew"))   # Output: 3 ("wke")</pre></div>
 <div class="pyodide-editor-bar">
-<span class="pyodide-bar-item">Output</span><span id="exec-3--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
+<span class="pyodide-bar-item">Output</span><span id="exec-8--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
-<pre><code id="exec-3--output" class="pyodide-output"></code></pre>
+<pre><code id="exec-8--output" class="pyodide-output"></code></pre>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     setupPyodide(
-        'exec-3--',
+        'exec-8--',
         install=[],
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=15,
-        maxLines=15,
+        minLines=21,
+        maxLines=21,
     );
 });
 </script>
@@ -9674,6 +9680,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             <span class="n">max_length</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_length</span><span class="p">,</span> <span class="n">right</span> <span class="o">-</span> <span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">max_length</span>
+
+<span class="c1"># Example Usage:</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">lengthOfLongestSubstring</span><span class="p">(</span><span class="s2">&quot;abcabcbb&quot;</span><span class="p">))</span> <span class="c1"># Output: 3 (&quot;abc&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">lengthOfLongestSubstring</span><span class="p">(</span><span class="s2">&quot;bbbbb&quot;</span><span class="p">))</span>    <span class="c1"># Output: 1 (&quot;b&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">lengthOfLongestSubstring</span><span class="p">(</span><span class="s2">&quot;pwwkew&quot;</span><span class="p">))</span>   <span class="c1"># Output: 3 (&quot;wke&quot;)</span>
 </code></pre></div>
 <h2 id="3-longest-substring-without-repeating-characters">3. Longest Substring Without Repeating Characters<a class="headerlink" href="#3-longest-substring-without-repeating-characters" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-definition">Problem Statement and Definition<a class="headerlink" href="#problem-statement-and-definition" title="Permanent link">&para;</a></h3>
