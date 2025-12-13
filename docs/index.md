@@ -10,4 +10,4 @@ Luke Clark
 
 Contact at me [lukeclarksf@gmail.com](mailto:lukeclarksf@gmail.com)
 
-Look at my [CV](https://lukeclarksf.github.io)
+Look at my [CV](https://lukeclarksf.com)
