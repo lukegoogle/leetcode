@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#9-palindrome-number" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -550,6 +555,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 9
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -566,6 +589,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#9-palindrome-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Palindrome Number
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Palindrome Number">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-brute-force-reversal-pitfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Brute Force Reversal Pitfall
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-optimized-half-reversal-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Optimized Half-Reversal Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-comparison-and-edge-case-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Comparison and Edge Case Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1465,6 +1566,75 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#9-palindrome-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Palindrome Number
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Palindrome Number">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-brute-force-reversal-pitfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Brute Force Reversal Pitfall
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-optimized-half-reversal-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Optimized Half-Reversal Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-comparison-and-edge-case-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Comparison and Edge Case Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1495,6 +1665,27 @@
 
         <span class="k">return</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="n">reverted_number</span> <span class="o">//</span> <span class="mi">10</span>
 </code></pre></div>
+<h2 id="9-palindrome-number">9. Palindrome Number<a class="headerlink" href="#9-palindrome-number" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-constraints">Problem Statement and Constraints<a class="headerlink" href="#problem-statement-and-constraints" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 9, "Palindrome Number," asks for a determination of whether a given integer <span class="arithmatex">\(x\)</span> is a palindrome. An integer is defined as a palindrome if it reads the same forwards and backwards. For instance, 121 is a palindrome, but 123 is not. The primary constraint on the solution is the requirement to solve the problem <strong>without converting the integer to a string</strong>. This mandates an approach using only mathematical operations, such as modulo and division.</p>
+<p>Initial checks reveal immediate non-palindromes: all negative numbers are non-palindromes because the minus sign only appears at the beginning (e.g., <span class="arithmatex">\(-121\)</span> reads <span class="arithmatex">\(121-\)</span> backward). Additionally, any positive number that ends in 0 (other than 0 itself, which is a palindrome) cannot be a palindrome, as the leading digit of the reversed number would be 0, which is invalid for an integer representation (e.g., <span class="arithmatex">\(120\)</span> reverses to <span class="arithmatex">\(021\)</span>). If <span class="arithmatex">\(x\)</span> is negative or ends in 0 (and is not 0), we can immediately return <code>false</code>.</p>
+<h3 id="the-brute-force-reversal-pitfall">The Brute Force Reversal Pitfall<a class="headerlink" href="#the-brute-force-reversal-pitfall" title="Permanent link">&para;</a></h3>
+<p>A straightforward approach would be to fully reverse the entire integer <span class="arithmatex">\(x\)</span> and then compare the reversed value with the original <span class="arithmatex">\(x\)</span>. While this method works for most integers, it suffers from the same vulnerability as the "Reverse Integer" problem (LeetCode 7): <strong>integer overflow</strong>. If the original number <span class="arithmatex">\(x\)</span> is large, reversing it could cause the resulting number to exceed the maximum value allowed by the integer data type (<span class="arithmatex">\(\text{INT\_MAX}\)</span>).</p>
+<p>Since the problem requires a robust solution, we must devise a method that avoids the potential for overflow entirely. Reversing the number and then performing the comparison, while simple to code, is mathematically risky without dedicated overflow handling, which complicates the logic unnecessarily when a safer method exists.</p>
+<h3 id="the-optimized-half-reversal-approach">The Optimized Half-Reversal Approach<a class="headerlink" href="#the-optimized-half-reversal-approach" title="Permanent link">&para;</a></h3>
+<p>The most elegant and efficient solution involves reversing only the <strong>second half</strong> of the number. If a number is a palindrome, its second half, when reversed, must be identical to its first half. This technique avoids the risk of overflow because we are only building a reversed number that is at most half the length of the original.</p>
+<p>We use a loop to iteratively build a <code>reversed_half</code> variable. The loop continues as long as the original number <span class="arithmatex">\(x\)</span> is greater than <code>reversed_half</code>. In each iteration:
+1.  We extract the last digit of <span class="arithmatex">\(x\)</span> using <span class="arithmatex">\(\text{digit} = x \pmod{10}\)</span>.
+2.  We append this digit to <code>reversed_half</code>: <span class="arithmatex">\(\text{reversed\_half} = \text{reversed\_half} \times 10 + \text{digit}\)</span>.
+3.  We remove the last digit from <span class="arithmatex">\(x\)</span>: <span class="arithmatex">\(x = x / 10\)</span>.</p>
+<p>This process effectively transfers the digits from the tail of <span class="arithmatex">\(x\)</span> to the head of <code>reversed\_half</code> until <span class="arithmatex">\(x\)</span> is no longer greater than <code>reversed\_half</code>, signifying that we have processed at least half the digits.</p>
+<h3 id="final-comparison-and-edge-case-handling">Final Comparison and Edge Case Handling<a class="headerlink" href="#final-comparison-and-edge-case-handling" title="Permanent link">&para;</a></h3>
+<p>When the loop terminates, we compare the remaining portion of <span class="arithmatex">\(x\)</span> with the constructed <code>reversed_half</code>. Two distinct scenarios are possible, depending on the length of the original number:</p>
+<ol>
+<li><strong>Even Number of Digits:</strong> If the original number had an even number of digits (e.g., 1221), the loop stops when <span class="arithmatex">\(x\)</span> and <code>reversed_half</code> have the same value (i.e., <span class="arithmatex">\(x = 12\)</span> and <span class="arithmatex">\(\text{reversed\_half} = 12\)</span>). The palindrome check is simply <span class="arithmatex">\(x == \text{reversed\_half}\)</span>.</li>
+<li><strong>Odd Number of Digits:</strong> If the original number had an odd number of digits (e.g., 121), the loop stops when the middle digit has been transferred to <span class="arithmatex">\(\text{reversed\_half}\)</span> (i.e., <span class="arithmatex">\(x = 1\)</span> and <span class="arithmatex">\(\text{reversed\_half} = 12\)</span>). The middle digit of an odd-length palindrome is irrelevant to the comparison. To align the values, we remove the middle digit from <code>reversed_half</code> via integer division: <span class="arithmatex">\(\text{reversed\_half} / 10\)</span>. The palindrome check is <span class="arithmatex">\(x == \text{reversed\_half} / 10\)</span>.</li>
+</ol>
+<p>By combining these two checks with a logical OR operation, we can cover all valid cases: <span class="arithmatex">\(x == \text{reversed\_half}\)</span> OR <span class="arithmatex">\(x == \text{reversed\_half} / 10\)</span>. This half-reversal strategy ensures an optimal <span class="arithmatex">\(O(\log_{10} x)\)</span> time complexity, which is proportional to the number of digits, and maintains <span class="arithmatex">\(O(1)\)</span> space complexity without risking integer overflow.</p>
 
 
 
