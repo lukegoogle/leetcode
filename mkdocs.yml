@@ -32,7 +32,7 @@ markdown_extensions:
 
 extra_javascript:
   # The configuration file (optional, but good practice)
-  #- 'javascripts/mathjax.js' 
+  - 'mathjax.js' 
   # Load MathJax library from a CDN
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
