@@ -38,4 +38,4 @@ jobs:
 
       # 4. Deploys the documentation using the built-in MkDocs gh-deploy command
       - name: Deploy MkDocs site
-        run: mkdocs gh-deploy
+        run: mkdocs gh-deploy --force
