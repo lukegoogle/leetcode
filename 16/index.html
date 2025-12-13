@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#16-3sum-closest" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -746,6 +751,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 16
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -762,6 +785,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#16-3sum-closest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. 3Sum Closest
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. 3Sum Closest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-target-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Target Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal-approach-sorting-and-two-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimal Approach: Sorting and Two Pointers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-inner-two-pointer-search-and-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Inner Two-Pointer Search and Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governing-movement-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governing Movement Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1465,6 +1566,75 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#16-3sum-closest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. 3Sum Closest
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. 3Sum Closest">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-target-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Target Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal-approach-sorting-and-two-pointers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimal Approach: Sorting and Two Pointers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-inner-two-pointer-search-and-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Inner Two-Pointer Search and Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governing-movement-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governing Movement Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1508,6 +1678,45 @@
 
         <span class="k">return</span> <span class="n">closest_sum</span>
 </code></pre></div>
+<h2 id="16-3sum-closest">16. 3Sum Closest<a class="headerlink" href="#16-3sum-closest" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-target-definition">Problem Statement and Target Definition<a class="headerlink" href="#problem-statement-and-target-definition" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 16, "3Sum Closest," is a variation of the classic 3Sum problem (LeetCode 15). Given an array of <span class="arithmatex">\(n\)</span> integers, <span class="arithmatex">\(nums\)</span>, and a specific integer <strong>target</strong>, the objective is to find three integers in <span class="arithmatex">\(nums\)</span> such that their sum is the closest possible value to the target. It is generally guaranteed that there will be exactly one solution, simplifying the task of choosing between sums that are equally close.</p>
+<p>The core challenge is not to find a sum <em>equal</em> to the target, but to <strong>minimize the absolute difference</strong> between the triplet sum and the target: <span class="arithmatex">\(\min(|(\text{nums}[i] + \text{nums}[j] + \text{nums}[k]) - \text{target}|)\)</span>. Similar to the 3Sum problem, a brute force approach of checking all <span class="arithmatex">\(O(n^3)\)</span> combinations is prohibitively slow, demanding an optimized <span class="arithmatex">\(O(n^2)\)</span> solution.</p>
+<h3 id="optimal-approach-sorting-and-two-pointers">Optimal Approach: Sorting and Two Pointers<a class="headerlink" href="#optimal-approach-sorting-and-two-pointers" title="Permanent link">&para;</a></h3>
+<p>The most efficient solution strategy mirrors that of the 3Sum problem, relying on <strong>Sorting</strong> followed by the <strong>Two-Pointer</strong> technique.</p>
+<ol>
+<li>
+<p><strong>Sorting:</strong> The input array <span class="arithmatex">\(nums\)</span> is sorted first in <span class="arithmatex">\(O(n \log n)\)</span> time. Sorting is crucial because it allows us to efficiently control the magnitude of the three-number sum. By knowing the array is sorted, we can predict whether moving our pointers will increase or decrease the sum relative to the target.</p>
+</li>
+<li>
+<p><strong>Fixing the First Number:</strong> We iterate through the array with a primary pointer <span class="arithmatex">\(i\)</span>, fixing the first number <span class="arithmatex">\(a = \text{nums}[i]\)</span>. The search for the remaining two numbers, <span class="arithmatex">\(b\)</span> and <span class="arithmatex">\(c\)</span>, then focuses on the subarray starting from <span class="arithmatex">\(i+1\)</span>.</p>
+</li>
+</ol>
+<h3 id="the-inner-two-pointer-search-and-tracking">The Inner Two-Pointer Search and Tracking<a class="headerlink" href="#the-inner-two-pointer-search-and-tracking" title="Permanent link">&para;</a></h3>
+<p>For each fixed <span class="arithmatex">\(\text{nums}[i]\)</span>, we initialize a left pointer <span class="arithmatex">\(L\)</span> at <span class="arithmatex">\(i+1\)</span> and a right pointer <span class="arithmatex">\(R\)</span> at the end of the array. The inner loop moves <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(R\)</span> towards each other, trying to find a sum <span class="arithmatex">\(\text{current\_sum} = \text{nums}[i] + \text{nums}[L] + \text{nums}[R]\)</span> that is closest to the <code>target</code>.</p>
+<p>We maintain two variables: one to store the best sum found so far, <span class="arithmatex">\(\text{closest\_sum}\)</span>, and one to track the minimum difference, <span class="arithmatex">\(\text{min\_diff}\)</span>. In each iteration:</p>
+<ol>
+<li>
+<p><strong>Calculate the Current Sum and Difference:</strong> Compute <span class="arithmatex">\(\text{current\_sum}\)</span> and the current difference <span class="arithmatex">\(\text{current\_diff} = \text{current\_sum} - \text{target}\)</span>.</p>
+</li>
+<li>
+<p><strong>Update the Closest Sum:</strong> We check if the absolute value of <span class="arithmatex">\(\text{current\_diff}\)</span> is smaller than the absolute value of the difference associated with <span class="arithmatex">\(\text{closest\_sum}\)</span> found so far. If it is, <span class="arithmatex">\(\text{closest\_sum}\)</span> is updated to <span class="arithmatex">\(\text{current\_sum}\)</span>.</p>
+</li>
+<li>
+<p><strong>Perfect Match Check:</strong> If <span class="arithmatex">\(\text{current\_sum}\)</span> equals the <span class="arithmatex">\(\text{target}\)</span>, we have found the exact solution, and we can immediately return <span class="arithmatex">\(\text{target}\)</span>, as no other sum can be closer.</p>
+</li>
+</ol>
+<h3 id="governing-movement-logic">Governing Movement Logic<a class="headerlink" href="#governing-movement-logic" title="Permanent link">&para;</a></h3>
+<p>The decision of which pointer to move (<span class="arithmatex">\(L\)</span> or <span class="arithmatex">\(R\)</span>) is the key to minimizing the search space and ensuring <span class="arithmatex">\(O(n)\)</span> time for the inner loop. The movement is dictated by the sign of the <span class="arithmatex">\(\text{current\_diff}\)</span>:</p>
+<ol>
+<li>
+<p><strong>Sum is Too Small (<span class="arithmatex">\(\text{current\_diff} &lt; 0\)</span>):</strong> If the <span class="arithmatex">\(\text{current\_sum}\)</span> is less than the <span class="arithmatex">\(\text{target}\)</span>, we need a larger sum. Since the array is sorted, moving the left pointer <span class="arithmatex">\(L\)</span> one step to the right will incorporate a larger number <span class="arithmatex">\(\text{nums}[L]\)</span>, thus increasing the total sum. Therefore, we increment <span class="arithmatex">\(L\)</span>.</p>
+</li>
+<li>
+<p><strong>Sum is Too Large (<span class="arithmatex">\(\text{current\_diff} &gt; 0\)</span>):</strong> If the <span class="arithmatex">\(\text{current\_sum}\)</span> is greater than the <span class="arithmatex">\(\text{target}\)</span>, we need a smaller sum. Moving the right pointer <span class="arithmatex">\(R\)</span> one step to the left will incorporate a smaller number <span class="arithmatex">\(\text{nums}[R]\)</span>, thus decreasing the total sum. Therefore, we decrement <span class="arithmatex">\(R\)</span>.</p>
+</li>
+</ol>
+<p>This two-pointer loop continues until <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(R\)</span> cross (<span class="arithmatex">\(L &lt; R\)</span>). The total time complexity is <span class="arithmatex">\(O(n \log n)\)</span> for sorting plus <span class="arithmatex">\(O(n^2)\)</span> for the nested search (<span class="arithmatex">\(O(n)\)</span> outer loop <span class="arithmatex">\(\times\)</span> <span class="arithmatex">\(O(n)\)</span> inner loop), resulting in an optimal overall time complexity of <span class="arithmatex">\(O(n^2)\)</span>.  Unlike the 3Sum problem, we do not need complex duplicate checking because we are looking for <em>a</em> closest sum, not a set of <em>unique</em> triplets.</p>
 
 
 

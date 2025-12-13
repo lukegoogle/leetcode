@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#18-4sum" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -802,6 +807,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 18
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -818,6 +841,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#18-4sum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. 4Sum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. 4Sum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-generalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Generalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-optimal-approach-sorting-and-two-nested-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Optimal Approach: Sorting and Two Nested Loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-inner-two-pointer-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Inner Two-Pointer Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprehensive-duplicate-elimination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprehensive Duplicate Elimination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1465,6 +1566,75 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#18-4sum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. 4Sum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. 4Sum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-generalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and Generalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-optimal-approach-sorting-and-two-nested-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Optimal Approach: Sorting and Two Nested Loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-inner-two-pointer-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Inner Two-Pointer Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprehensive-duplicate-elimination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprehensive Duplicate Elimination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1522,6 +1692,53 @@
 
         <span class="k">return</span> <span class="n">result</span>
 </code></pre></div>
+<h2 id="18-4sum">18. 4Sum<a class="headerlink" href="#18-4sum" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-generalization">Problem Statement and Generalization<a class="headerlink" href="#problem-statement-and-generalization" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 18, "4Sum," is the natural generalization of the 3Sum (LeetCode 15) and 2Sum problems. Given an array of <span class="arithmatex">\(n\)</span> integers, <span class="arithmatex">\(nums\)</span>, and a specific integer <strong>target</strong>, the objective is to find all unique quadruplets <span class="arithmatex">\([a, b, c, d]\)</span> within <span class="arithmatex">\(nums\)</span> such that their sum equals the target: <span class="arithmatex">\(a + b + c + d = \text{target}\)</span>. The crucial constraint, identical to 3Sum, is that the resulting list must contain only <strong>unique</strong> quadruplets.</p>
+<p>A naive brute force approach using four nested loops would result in an unacceptable time complexity of <span class="arithmatex">\(O(n^4)\)</span>. To solve this problem efficiently and pass typical time limits, we must reduce the complexity to <span class="arithmatex">\(O(n^3)\)</span> by applying a structure similar to the 3Sum solution: fixing two numbers and then using a linear-time technique (the Two-Pointer method) to find the remaining pair.</p>
+<h3 id="the-optimal-approach-sorting-and-two-nested-loops">The Optimal Approach: Sorting and Two Nested Loops<a class="headerlink" href="#the-optimal-approach-sorting-and-two-nested-loops" title="Permanent link">&para;</a></h3>
+<p>The optimal <span class="arithmatex">\(O(n^3)\)</span> solution combines <strong>Sorting</strong> and a nested search structure.</p>
+<ol>
+<li>
+<p><strong>Sorting:</strong> First, sort the input array <span class="arithmatex">\(nums\)</span> in <span class="arithmatex">\(O(n \log n)\)</span> time. Sorting is mandatory as it enables the crucial efficiency gains: easy detection and skipping of duplicates, and the linear-time search via the two-pointer technique.</p>
+</li>
+<li>
+<p><strong>Fixing the First Two Numbers:</strong> We use two nested loops to fix the first two numbers, <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span>.</p>
+<ul>
+<li>The outer loop iterates with index <span class="arithmatex">\(i\)</span> for the first number <span class="arithmatex">\(a = \text{nums}[i]\)</span>.</li>
+<li>The inner loop iterates with index <span class="arithmatex">\(j\)</span> for the second number <span class="arithmatex">\(b = \text{nums}[j]\)</span>, starting from <span class="arithmatex">\(i+1\)</span>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Target Reduction:</strong> With <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> fixed, the problem is reduced to finding two remaining numbers, <span class="arithmatex">\(c\)</span> and <span class="arithmatex">\(d\)</span>, in the rest of the array such that <span class="arithmatex">\(c + d = \text{target} - \text{nums}[i] - \text{nums}[j}\)</span>. We calculate this remaining value as <span class="arithmatex">\(\text{new\_target} = \text{target} - \text{nums}[i] - \text{nums}[j]\)</span>.</p>
+</li>
+</ol>
+<h3 id="the-inner-two-pointer-search">The Inner Two-Pointer Search<a class="headerlink" href="#the-inner-two-pointer-search" title="Permanent link">&para;</a></h3>
+<p>For each pair <span class="arithmatex">\((\text{nums}[i], \text{nums}[j])\)</span>, the remaining task is a classic <strong>Two Sum</strong> problem on the subarray starting from index <span class="arithmatex">\(j+1\)</span> up to the end of the array. We initialize a left pointer <span class="arithmatex">\(L\)</span> at <span class="arithmatex">\(j+1\)</span> and a right pointer <span class="arithmatex">\(R\)</span> at the end of the array.</p>
+<p>The inner search proceeds as follows:
+* Calculate the <span class="arithmatex">\(\text{current\_sum} = \text{nums}[L] + \text{nums}[R]\)</span>.
+* <strong>If <span class="arithmatex">\(\text{current\_sum} &lt; \text{new\_target}\)</span>:</strong> The sum needs to be larger. Since the array is sorted, we move <span class="arithmatex">\(L\)</span> one step to the right (<span class="arithmatex">\(\text{increment } L\)</span>).
+* <strong>If <span class="arithmatex">\(\text{current\_sum} &gt; \text{new\_target}\)</span>:</strong> The sum needs to be smaller. We move <span class="arithmatex">\(R\)</span> one step to the left (<span class="arithmatex">\(\text{decrement } R\)</span>).
+* <strong>If <span class="arithmatex">\(\text{current\_sum} = \text{new\_target}\)</span>:</strong> A valid quadruplet is found. <span class="arithmatex">\([ \text{nums}[i], \text{nums}[j], \text{nums}[L], \text{nums}[R] ]\)</span> is added to the result list.</p>
+<h3 id="comprehensive-duplicate-elimination">Comprehensive Duplicate Elimination<a class="headerlink" href="#comprehensive-duplicate-elimination" title="Permanent link">&para;</a></h3>
+<p>The most challenging part of 4Sum is correctly and efficiently eliminating all duplicate quadruplets. This requires checks at three distinct points in the iteration:</p>
+<ol>
+<li>
+<p><strong>Skipping Duplicates for <span class="arithmatex">\(a\)</span> (Outer Loop):</strong> Before the inner loop starts, if <span class="arithmatex">\(i &gt; 0\)</span> and <span class="arithmatex">\(\text{nums}[i] == \text{nums}[i-1]\)</span>, we skip the current iteration. This prevents using the same value for <span class="arithmatex">\(a\)</span> consecutively.</p>
+</li>
+<li>
+<p><strong>Skipping Duplicates for <span class="arithmatex">\(b\)</span> (Inner Loop):</strong> Before the two-pointer search starts, if <span class="arithmatex">\(j &gt; i+1\)</span> and <span class="arithmatex">\(\text{nums}[j] == \text{nums}[j-1]\)</span>, we skip the current iteration. This prevents using the same value for <span class="arithmatex">\(b\)</span> consecutively with a fixed <span class="arithmatex">\(a\)</span>.</p>
+</li>
+<li>
+<p><strong>Skipping Duplicates for <span class="arithmatex">\(c\)</span> and <span class="arithmatex">\(d\)</span> (Two-Pointer Movement):</strong> After finding a valid quadruplet, we must advance <span class="arithmatex">\(L\)</span> and retreat <span class="arithmatex">\(R\)</span> while skipping any duplicates for the newly found <span class="arithmatex">\(c\)</span> and <span class="arithmatex">\(d\)</span>:</p>
+<ul>
+<li>Advance <span class="arithmatex">\(L\)</span> while <span class="arithmatex">\(L &lt; R\)</span> and <span class="arithmatex">\(\text{nums}[L] == \text{nums}[L+1]\)</span>.</li>
+<li>Retreat <span class="arithmatex">\(R\)</span> while <span class="arithmatex">\(L &lt; R\)</span> and <span class="arithmatex">\(\text{nums}[R] == \text{nums}[R-1]\)</span>.</li>
+<li>Finally, perform the actual moves: <span class="arithmatex">\(\text{increment } L\)</span> and <span class="arithmatex">\(\text{decrement } R\)</span>.</li>
+</ul>
+</li>
+</ol>
+<p>By correctly implementing these three checks, the solution ensures that every returned quadruplet is unique. The overall complexity is dominated by the nested loops and the two-pointer search, resulting in the desired <span class="arithmatex">\(O(n^3)\)</span> time complexity. [Image illustrating the 4Sum Two-Pointer structure]</p>
 
 
 

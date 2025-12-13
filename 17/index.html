@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#17-letter-combinations-of-a-phone-number" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -774,6 +779,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problem 17
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -790,6 +813,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#17-letter-combinations-of-a-phone-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Letter Combinations of a Phone Number
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Letter Combinations of a Phone Number">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-the-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and The Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-recursivebacktracking-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Recursive/Backtracking Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-recursivedfs-function-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Recursive/DFS Function Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1465,6 +1566,75 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#17-letter-combinations-of-a-phone-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Letter Combinations of a Phone Number
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Letter Combinations of a Phone Number">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement-and-the-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement and The Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-recursivebacktracking-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Recursive/Backtracking Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-recursivedfs-function-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Recursive/DFS Function Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1511,6 +1681,40 @@
         <span class="n">backtrack</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[])</span>
         <span class="k">return</span> <span class="n">result</span>
 </code></pre></div>
+<h2 id="17-letter-combinations-of-a-phone-number">17. Letter Combinations of a Phone Number<a class="headerlink" href="#17-letter-combinations-of-a-phone-number" title="Permanent link">&para;</a></h2>
+<h3 id="problem-statement-and-the-mapping">Problem Statement and The Mapping<a class="headerlink" href="#problem-statement-and-the-mapping" title="Permanent link">&para;</a></h3>
+<p>LeetCode problem 17, "Letter Combinations of a Phone Number," requires generating all possible letter combinations that a given digit string can represent, based on the standard telephone keypad mapping. The input is a string of digits, and the output is a list of all possible letter sequences. For example, if the input is "23", the digit '2' maps to "abc" and '3' maps to "def". The resulting combinations are "ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf".</p>
+<p>The core challenge is the combinatorial nature of the problem: if the input has <span class="arithmatex">\(N\)</span> digits, and each digit maps to 3 or 4 letters, the total number of combinations grows exponentially. This type of problem, where we need to explore all possible paths to build a final result, is a classic application for <strong>Depth-First Search (DFS)</strong>, typically implemented using <strong>Recursion</strong> or <strong>Backtracking</strong>.</p>
+<h3 id="the-recursivebacktracking-approach">The Recursive/Backtracking Approach<a class="headerlink" href="#the-recursivebacktracking-approach" title="Permanent link">&para;</a></h3>
+<p>The optimal solution uses a recursive helper function that implements the <strong>Backtracking</strong> algorithm. Backtracking is an algorithmic technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem at any point in time (the "backtracking" part).</p>
+<p>For this problem, the state of the recursion is defined by two variables:
+1.  <strong>Current Combination:</strong> The string of letters built so far.
+2.  <strong>Next Digit Index:</strong> The index of the digit in the input string we are currently processing.</p>
+<p>The main function initializes the mapping (e.g., '2' to "abc", '3' to "def", etc.) and starts the recursive process. </p>
+<h3 id="the-recursivedfs-function-logic">The Recursive/DFS Function Logic<a class="headerlink" href="#the-recursivedfs-function-logic" title="Permanent link">&para;</a></h3>
+<p>The recursive function takes the current combination string and the index of the digit being considered.</p>
+<ol>
+<li>
+<p><strong>Base Case:</strong> If the <code>next digit index</code> is equal to the length of the input digit string, it means we have successfully built a complete combination. We add the <code>current combination</code> to the final result list and return. This is the exit condition for the recursion.</p>
+</li>
+<li>
+<p><strong>Recursive Step (The Choice):</strong></p>
+<ul>
+<li>We retrieve the current digit from the input string using the <code>next digit index</code>.</li>
+<li>We look up the corresponding letters for this digit from the mapping (e.g., "def" for '3').</li>
+<li>We iterate through each letter in the retrieved string (e.g., 'd', 'e', 'f'). For each letter, this represents a <strong>choice</strong> we can make at the current step.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exploration and Backtracking:</strong></p>
+<ul>
+<li>For each chosen letter, we recursively call the function, passing the <code>current combination</code> appended with the chosen letter, and advancing the <code>next digit index</code> by one. This represents exploring a new path in the decision tree.</li>
+<li>Once the recursive call returns (meaning all combinations starting with that choice have been explored), the mechanism of <strong>Backtracking</strong> is implicitly handled by the return from the function call. Since the combination is usually passed by value or built in a separate string builder/list that is not modified after the call, no explicit state cleanup is needed, allowing the loop to proceed to the next letter for the current digit.</li>
+</ul>
+</li>
+</ol>
+<h3 id="complexity-analysis">Complexity Analysis<a class="headerlink" href="#complexity-analysis" title="Permanent link">&para;</a></h3>
+<p>The time complexity of this solution is directly proportional to the total number of combinations generated. If <span class="arithmatex">\(N\)</span> is the length of the input digits and <span class="arithmatex">\(M\)</span> is the maximum number of letters a digit maps to (usually 3 or 4), the complexity is <span class="arithmatex">\(O(M^N)\)</span>. For instance, with 4 digits and 3 letters per digit, the complexity is <span class="arithmatex">\(O(3^N)\)</span>. The space complexity is also <span class="arithmatex">\(O(M^N)\)</span> to store the output combinations, plus <span class="arithmatex">\(O(N)\)</span> for the recursion depth (call stack). This efficiency is optimal because the algorithm must, by definition, generate and store every single possible combination.</p>
 
 
 
