@@ -17,7 +17,6 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
-    - content.code.select
 
 extra_javascript:
   # 1. The main Pyodide library from CDN
