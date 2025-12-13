@@ -15,15 +15,30 @@ theme:
     - search.suggest
     - search.highlight
 
-# 3. Extensions (For better Markdown features)
 markdown_extensions:
+  # Standard Extensions
   - attr_list
-  - admonition # Allows note/warning boxes
-  - pymdownx.details
-  - pymdownx.superfences # Allows better code blocks
-  - pymdownx.highlight # Syntax highlighting
+  - admonition
   - toc:
-      permalink: true # Creates a link anchor for every heading
+      permalink: true
+
+  # Pymdown Extensions
+  - pymdownx.details
+  - pymdownx.superfences:
+      # Ensure code blocks are processed correctly by highlight
+      custom_fences:
+        - name: code # Define the custom 'code' fence for compatibility
+          class: language-
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true # Allows linking to specific lines
+      line_spans: __span # Crucial for inline highlighting
+      pygments_lang_class: true # Ensures 'language-python' class is addedmarkdown_extensions:
+  # Standard Extensions
+  - attr_list
+  - admonition
+  - toc:
+      permalink: true
 
 # 3.1 Plugins
 plugins:
@@ -35,6 +50,7 @@ plugins:
 # ... (other sections like theme, extensions, and plugins) ...
 
 nav:
+  - Home: 'index.md'
   - LeetCode Solutions:
     - Problem 1: '1.md'
     - Problem 2: '2.md'

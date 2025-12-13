@@ -13,6 +13,8 @@
         <link rel="canonical" href="https://lukeclarksf.github.io/leetcode/1/">
       
       
+        <link rel="prev" href="..">
+      
       
         <link rel="next" href="../2/">
       
@@ -181,6 +183,25 @@
   
   
   
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
     
   
   
@@ -236,6 +257,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -255,10 +303,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -276,8 +324,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -358,45 +406,6 @@
     <span class="md-ellipsis">
       
         📝 Problem Statement
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#approach-hash-map-one-pass" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🧠 Approach: Hash Map (One-Pass)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧠 Approach: Hash Map (One-Pass)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-core-idea-searching-for-the-complement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Core Idea: Searching for the Complement
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#python-code-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        💻 Python Code Implementation
       
     </span>
   </a>
@@ -568,45 +577,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#approach-hash-map-one-pass" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🧠 Approach: Hash Map (One-Pass)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧠 Approach: Hash Map (One-Pass)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-core-idea-searching-for-the-complement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Core Idea: Searching for the Complement
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#python-code-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        💻 Python Code Implementation
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -624,52 +594,26 @@
 
 
 
-<h1 id="1-two-sum-easy">🧩 1. Two Sum (Easy)<a class="headerlink" href="#1-two-sum-easy" title="Permanent link">&para;</a></h1>
+<h1 id="1-two-sum-easy">1. Two Sum (Easy)<a class="headerlink" href="#1-two-sum-easy" title="Permanent link">&para;</a></h1>
 <p><strong>[Problem Link (External)]</strong>: <a href="https://leetcode.com/problems/two-sum/">LeetCode - Two Sum</a></p>
 <h2 id="problem-statement">📝 Problem Statement<a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h2>
 <p>Given an array of integers <code>nums</code> and an integer <code>target</code>, return indices of the two numbers such that they add up to <code>target</code>.</p>
 <p>You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.</p>
-<hr />
-<h2 id="approach-hash-map-one-pass">🧠 Approach: Hash Map (One-Pass)<a class="headerlink" href="#approach-hash-map-one-pass" title="Permanent link">&para;</a></h2>
-<p>The most efficient solution avoids the $O(n^2)$ brute force method by leveraging a <strong>Hash Map</strong> (Python <code>dict</code>) for $O(1)$ lookups.</p>
-<h3 id="the-core-idea-searching-for-the-complement">The Core Idea: Searching for the Complement<a class="headerlink" href="#the-core-idea-searching-for-the-complement" title="Permanent link">&para;</a></h3>
-<p>Instead of searching the rest of the array for the second number, we determine the <strong>complement</strong> required for the current number to hit the target.</p>
-<ol>
-<li>We iterate through the array once.</li>
-<li>At each element <code>num</code>, we calculate: <code>complement = target - num</code>.</li>
-<li>We check if this <code>complement</code> already exists in our <code>num_map</code> (our dictionary).<ul>
-<li><strong>If found:</strong> We have our two numbers! We return the stored index of the complement and the current index.</li>
-<li><strong>If not found:</strong> We store the current number and its index in the map for future lookups.</li>
-</ul>
-</li>
-</ol>
-<hr />
-<p><strong>New Optimized Code Block (using the plugin):</strong></p>
-<p>```markdown</p>
-<h2 id="python-code-implementation">💻 Python Code Implementation<a class="headerlink" href="#python-code-implementation" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">Single Source of Truth</p>
-<p>This code snippet is loaded directly from the <strong><code>../../solutions/1.py</code></strong> file. You only need to edit the code in that file, and the documentation will update automatically!</p>
-</div>
-<h1 id="correct-syntax-example">Correct Syntax Example<a class="headerlink" href="#correct-syntax-example" title="Permanent link">&para;</a></h1>
-<p>```python title="path/to/file.py"</p>
-<h1 id="your-python-code-goes-here">Your Python code goes here<a class="headerlink" href="#your-python-code-goes-here" title="Permanent link">&para;</a></h1>
-<p>def solution():
-    return True</p>
-<p>```python title="../python/1.py"
-class Solution:
-    def twoSum(self, nums: list[int], target: int) -&gt; list[int]:
-        num_map = {}
-        for i, num in enumerate(nums):
-            complement = target - num
-            if complement in num_map:
-                return [num_map[complement], i]
-            num_map[num] = i</p>
-<div class="highlight"><pre><span></span><code>    return []
-</code></pre></div>
-<p>if <strong>name</strong> == '<strong>main</strong>':
-    s = Solution()
-    print(s.twoSum([2,7,11,15], 9)) # Expected: [0, 1]</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">num_map</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            <span class="n">complement</span> <span class="o">=</span> <span class="n">target</span> <span class="o">-</span> <span class="n">num</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            <span class="k">if</span> <span class="n">complement</span> <span class="ow">in</span> <span class="n">num_map</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                <span class="k">return</span> <span class="p">[</span><span class="n">num_map</span><span class="p">[</span><span class="n">complement</span><span class="p">],</span> <span class="n">i</span><span class="p">]</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            <span class="n">num_map</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="k">return</span> <span class="p">[]</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">twoSum</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span> <span class="mi">9</span><span class="p">))</span> <span class="c1"># Expected: [0, 1]</span>
+</span></code></pre></div>
 
 
 
