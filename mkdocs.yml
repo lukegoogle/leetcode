@@ -18,6 +18,10 @@ theme:
     - search.highlight
     - content.code.copy
 
+extra_css:
+  - stylesheets/extra.css
+
+
 extra_javascript:
   # 1. The main Pyodide library from CDN
   - https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.js
