@@ -2520,7 +2520,49 @@
 
             reversed_x = reversed_x * 10 + digit
 
-        return reversed_x</pre></div>
+        return reversed_x
+
+sol = Solution()
+print("--- Reverse Integer Examples ---")
+
+# Test Case 1: Positive number
+x1 = 123
+result1 = sol.reverse(x1)
+print(f"Input: {x1}")
+print(f"Output: {result1} (Expected: 321)")
+
+# Test Case 2: Negative number
+x2 = -123
+result2 = sol.reverse(x2)
+print(f"Input: {x2}")
+print(f"Output: {result2} (Expected: -321)")
+
+# Test Case 3: Number with trailing zeros
+x3 = 120
+result3 = sol.reverse(x3)
+print(f"Input: {x3}")
+print(f"Output: {result3} (Expected: 21)")
+
+# Test Case 4: Positive Overflow Check (Max is 2147483647)
+# Reversing 1534236469 gives 9646324351, which exceeds INT_MAX
+x4 = 1534236469 
+result4 = sol.reverse(x4)
+print(f"Input: {x4}")
+print(f"Output: {result4} (Expected: 0 - Overflow)")
+
+# Test Case 5: Negative Overflow Check (Min is -2147483648)
+# Reversing -1534236469 gives -9646324351, which is less than INT_MIN
+x5 = -1534236469
+result5 = sol.reverse(x5)
+print(f"Input: {x5}")
+print(f"Output: {result5} (Expected: 0 - Overflow)")
+
+# Test Case 6: Exact INT_MAX reversal (No Overflow)
+# Reversing 1463847412 (214748364 * 10 + 7) -> 2147483641
+x6 = 1463847412 # Just a large number whose reverse is safe
+result6 = sol.reverse(x6)
+print(f"Input: {x6}")
+print(f"Output: {result6} (Expected: 2147483641)")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-38--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2535,8 +2577,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=24,
-        maxLines=24,
+        minLines=66,
+        maxLines=66,
     );
 });
 </script>
@@ -2567,6 +2609,48 @@ document.addEventListener('DOMContentLoaded', (event) => {
             <span class="n">reversed_x</span> <span class="o">=</span> <span class="n">reversed_x</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">digit</span>
 
         <span class="k">return</span> <span class="n">reversed_x</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Reverse Integer Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Positive number</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2"> (Expected: 321)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Negative number</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">123</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: -321)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Number with trailing zeros</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2"> (Expected: 21)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Positive Overflow Check (Max is 2147483647)</span>
+<span class="c1"># Reversing 1534236469 gives 9646324351, which exceeds INT_MAX</span>
+<span class="n">x4</span> <span class="o">=</span> <span class="mi">1534236469</span> 
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">x4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2"> (Expected: 0 - Overflow)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 5: Negative Overflow Check (Min is -2147483648)</span>
+<span class="c1"># Reversing -1534236469 gives -9646324351, which is less than INT_MIN</span>
+<span class="n">x5</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1534236469</span>
+<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">x5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2"> (Expected: 0 - Overflow)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 6: Exact INT_MAX reversal (No Overflow)</span>
+<span class="c1"># Reversing 1463847412 (214748364 * 10 + 7) -&gt; 2147483641</span>
+<span class="n">x6</span> <span class="o">=</span> <span class="mi">1463847412</span> <span class="c1"># Just a large number whose reverse is safe</span>
+<span class="n">result6</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">x6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">x6</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result6</span><span class="si">}</span><span class="s2"> (Expected: 2147483641)&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="7-reverse-integer">7. Reverse Integer<a class="headerlink" href="#7-reverse-integer" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-the-integer-limit-constraint">Problem Statement and The Integer Limit Constraint<a class="headerlink" href="#problem-statement-and-the-integer-limit-constraint" title="Permanent link">&para;</a></h3>
