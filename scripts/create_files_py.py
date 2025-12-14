@@ -25,6 +25,6 @@ def create_python_files(start_num, end_num):
     print("Files were created in the current working directory.")
 
 START_NUMBER = 1
-END_NUMBER = 1000 #3772
+END_NUMBER = 100 #1000 #3772
 
 create_python_files(START_NUMBER, END_NUMBER)

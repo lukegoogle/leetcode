@@ -19,11 +19,6 @@ def create_md_files(start_num, end_num, content=None):
 %}\n\
 ```\n\
 \n\
-```python\n\
-{% \n\
-    include "../python/'+f"{i}"+'.py" \n\
-    preserve-includer-indent=false \n\
-%}\n\
 ```'
         file_content = content if content is not None else default_content + str(i)
 
@@ -40,7 +35,7 @@ def create_md_files(start_num, end_num, content=None):
     print("File creation complete!")
 
 START_NUMBER = 1
-END_NUMBER = 1000 #3772
+END_NUMBER = 100 #1000 #3772
 FILE_CONTENT = None
 
 create_md_files(START_NUMBER, END_NUMBER, FILE_CONTENT)
