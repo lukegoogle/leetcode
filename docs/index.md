@@ -4,7 +4,7 @@ Here you will find my Python solutions for LeetCode problems, typically develope
 
 Browse source code here (sidebar to the left) or visit [GitHub](https://github.com/lukeclarksf/leetcode). Run your code with Pyodide.
 
-Verify problems directly on [LeetCode](https://leetcode.com/problemset/).
+Verify problems directly on [LeetCode](https://leetcode.com/problems/add-two-numbers/).
 
 Static site generation is done with Python Make Docs. 
 
