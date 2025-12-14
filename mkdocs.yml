@@ -27,7 +27,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.js
   
   # 2. Your custom script (path is relative to the 'docs' directory)
-  - pyodide_setup.js
+  - javascripts/pyodide_setup.js
 
 markdown_extensions:
   # Standard Extensions
