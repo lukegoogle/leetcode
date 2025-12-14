@@ -40,7 +40,7 @@ class Solution:
             l2 (Optional[ListNode]): The head of the second linked list (number 2).
 
         Returns:
-            l (Optional[ListNode]): The head of a new linked list representing the sum 
+            dummy_head (Optional[ListNode]): The head of a new linked list representing the sum 
                                 of the two input numbers.
 
         Examples:
