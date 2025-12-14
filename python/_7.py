@@ -22,3 +22,45 @@ class Solution:
             reversed_x = reversed_x * 10 + digit
             
         return reversed_x
+
+sol = Solution()
+print("--- Reverse Integer Examples ---")
+    
+# Test Case 1: Positive number
+x1 = 123
+result1 = sol.reverse(x1)
+print(f"Input: {x1}")
+print(f"Output: {result1} (Expected: 321)")
+
+# Test Case 2: Negative number
+x2 = -123
+result2 = sol.reverse(x2)
+print(f"Input: {x2}")
+print(f"Output: {result2} (Expected: -321)")
+
+# Test Case 3: Number with trailing zeros
+x3 = 120
+result3 = sol.reverse(x3)
+print(f"Input: {x3}")
+print(f"Output: {result3} (Expected: 21)")
+
+# Test Case 4: Positive Overflow Check (Max is 2147483647)
+# Reversing 1534236469 gives 9646324351, which exceeds INT_MAX
+x4 = 1534236469 
+result4 = sol.reverse(x4)
+print(f"Input: {x4}")
+print(f"Output: {result4} (Expected: 0 - Overflow)")
+
+# Test Case 5: Negative Overflow Check (Min is -2147483648)
+# Reversing -1534236469 gives -9646324351, which is less than INT_MIN
+x5 = -1534236469
+result5 = sol.reverse(x5)
+print(f"Input: {x5}")
+print(f"Output: {result5} (Expected: 0 - Overflow)")
+    
+# Test Case 6: Exact INT_MAX reversal (No Overflow)
+# Reversing 1463847412 (214748364 * 10 + 7) -> 2147483641
+x6 = 1463847412 # Just a large number whose reverse is safe
+result6 = sol.reverse(x6)
+print(f"Input: {x6}")
+print(f"Output: {result6} (Expected: 2147483641)")
