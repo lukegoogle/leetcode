@@ -64,8 +64,6 @@ plugins:
      handlers:
       python:
         paths: ['python_str']
-        options:
-          show_members: true
 
 # Inside mkdocs.yml
 
