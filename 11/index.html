@@ -2514,7 +2514,46 @@
             else:
                 right -= 1
 
-        return max_area</pre></div>
+        return max_area
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Container With Most Water Examples ---")
+
+# Test Case 1: Standard Example
+# The maximum area is 49, formed by the lines of height 8 and 7, which are 7 units apart.
+h1 = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+result1 = sol.maxArea(h1)
+print(f"Input: {h1}")
+print(f"Output: {result1} (Expected: 49)")
+
+# Test Case 2: Simple Example
+h2 = [1, 1]
+result2 = sol.maxArea(h2)
+print(f"Input: {h2}")
+print(f"Output: {result2} (Expected: 1)")
+
+# Test Case 3: Decreasing heights
+# Max area is formed by the first and last line: min(5, 1) * 4 = 4
+h3 = [5, 4, 3, 2, 1]
+result3 = sol.maxArea(h3)
+print(f"Input: {h3}")
+print(f"Output: {result3} (Expected: 4)")
+
+# Test Case 4: Increasing heights
+# Max area is formed by the first and last line: min(1, 5) * 4 = 4
+h4 = [1, 2, 3, 4, 5]
+result4 = sol.maxArea(h4)
+print(f"Input: {h4}")
+print(f"Output: {result4} (Expected: 4)")
+
+# Test Case 5: Large example with max area far from edges
+h5 = [2, 3, 4, 5, 18, 17, 6]
+# Max area is min(18, 17) * 1 = 17 OR min(5, 6) * 3 = 15. The true max is likely from 18 and 17.
+result5 = sol.maxArea(h5)
+print(f"Input: {h5}")
+print(f"Output: {result5} (Expected: 17)")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-3--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2529,8 +2568,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=18,
-        maxLines=18,
+        minLines=57,
+        maxLines=57,
     );
 });
 </script>
@@ -2555,6 +2594,45 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 <span class="n">right</span> <span class="o">-=</span> <span class="mi">1</span>
 
         <span class="k">return</span> <span class="n">max_area</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Container With Most Water Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard Example</span>
+<span class="c1"># The maximum area is 49, formed by the lines of height 8 and 7, which are 7 units apart.</span>
+<span class="n">h1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">maxArea</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">h1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2"> (Expected: 49)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Simple Example</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">maxArea</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">h2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: 1)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Decreasing heights</span>
+<span class="c1"># Max area is formed by the first and last line: min(5, 1) * 4 = 4</span>
+<span class="n">h3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">maxArea</span><span class="p">(</span><span class="n">h3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">h3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2"> (Expected: 4)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Increasing heights</span>
+<span class="c1"># Max area is formed by the first and last line: min(1, 5) * 4 = 4</span>
+<span class="n">h4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">maxArea</span><span class="p">(</span><span class="n">h4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">h4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2"> (Expected: 4)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 5: Large example with max area far from edges</span>
+<span class="n">h5</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="c1"># Max area is min(18, 17) * 1 = 17 OR min(5, 6) * 3 = 15. The true max is likely from 18 and 17.</span>
+<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">maxArea</span><span class="p">(</span><span class="n">h5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">h5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2"> (Expected: 17)&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="11-container-with-most-water">11. Container With Most Water<a class="headerlink" href="#11-container-with-most-water" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-geometrical-interpretation">Problem Statement and Geometrical Interpretation<a class="headerlink" href="#problem-statement-and-geometrical-interpretation" title="Permanent link">&para;</a></h3>
