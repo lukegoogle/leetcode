@@ -1,5 +1,5 @@
 # 1. Basic Settings
-site_name: LeetCode Python
+site_name: Python LeetCode
 site_url: https://lukeclarksf.github.io/leetcode/
 site_description: A collection of Python solutions for LeetCode problems with detailed explanations.
 repo_url: https://github.com/lukeclarksf/leetcode
@@ -123,5 +123,5 @@ nav:
       - 49. Group Anagrams: '49.md'
       - 50. Pow(x, n): '50.md'
 
-  - Pyodide Run Code: 'pyodide.md'
+  - Run Code Pyodide: 'pyodide.md'
   - Luke CV: 'https://lukeclarksf.com'

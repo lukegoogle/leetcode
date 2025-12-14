@@ -10,3 +10,28 @@
   /* Background color for code blocks */
   --md-code-bg-color: #113768;
 }
+
+.md-header__topic:first-child{
+  font-weight: normal;
+  font-size: 13pt;
+}
+.md-header__button.md-logo
+{
+  display: none;
+}
+
+.md-header__inner {
+  padding-bottom: 50px;
+}
+
+.md-tabs__link {
+  margin: 10px;
+}
+
+.md-tabs__item:hover {
+  background: #112233;
+}
+
+.md-footer {
+  display: none;
+}
