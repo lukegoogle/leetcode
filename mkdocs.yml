@@ -73,6 +73,7 @@ plugins:
 nav:
   - Python:
     - About: 'index.md'
+    - Verify LeetCode: 'https://leetcode.com/problems/add-two-numbers/'
     - Strings & Arrays (1-10):
         - 1. Two Sum (Easy): '1.md'
         - 2. Add Two Numbers (Medium): '2.md'
