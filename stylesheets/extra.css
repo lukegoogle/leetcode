@@ -8,7 +8,7 @@
   /* Accent color */
   --md-accent-fg-color: #113768;
   /* Background color for code blocks */
-  --md-code-bg-color: #113768;
+  --md-code-bg-color: #f0f0f0;
 }
 
 .md-header__topic:first-child{
