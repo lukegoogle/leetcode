@@ -19,7 +19,7 @@ Luke Clark
 
 Send me an email at [lukeclarksf@gmail.com](mailto:lukeclarksf@gmail.com). See my [Resume](https://lukeclarksf.com).
 
-## Learn Data Structures and Algorithms
+## Learn Data Structures and Alghorithms
 
 <img src="images/Python.png" width="600" style="margin:10px 0 10px 0">
 
