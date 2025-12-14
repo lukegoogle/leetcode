@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#function-description" class="md-skip">
+        <a href="#pyodide" class="md-skip">
           Skip to content
         </a>
       
@@ -243,6 +243,25 @@
     
   
   Resume
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://leetcode.com/problemset/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  LeetCode Verify
 
       </a>
     </li>
@@ -490,6 +509,28 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pyodide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pyodide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#function-description" class="md-nav__link">
@@ -2275,6 +2316,33 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://leetcode.com/problemset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LeetCode Verify
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2298,6 +2366,28 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pyodide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pyodide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#function-description" class="md-nav__link">
@@ -2415,6 +2505,7 @@
 
   <h1>1. Two Sum (Easy)</h1>
 
+<h2 id="pyodide">Pyodide<a class="headerlink" href="#pyodide" title="Permanent link">&para;</a></h2>
 <p>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.16.0/ace.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -2458,6 +2549,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 </script>
 </p>
+<h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">num_map</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="n">complement</span> <span class="o">=</span> <span class="n">target</span> <span class="o">-</span> <span class="n">num</span>
+            <span class="k">if</span> <span class="n">complement</span> <span class="ow">in</span> <span class="n">num_map</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">num_map</span><span class="p">[</span><span class="n">complement</span><span class="p">],</span> <span class="n">i</span><span class="p">]</span>
+            <span class="n">num_map</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+
+        <span class="k">return</span> <span class="p">[]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Solution</span><span class="p">()</span><span class="o">.</span><span class="n">twoSum</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
 <h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
 
 
