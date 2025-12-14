@@ -59,6 +59,12 @@ plugins:
   - search
   - include-markdown # <--- Add the plugin here
   - markdown-exec
+  - mkdocstrings:
+     handlers:
+      python:
+        paths: ['python']
+        options:
+          show_members: true
 
 # Inside mkdocs.yml
 
