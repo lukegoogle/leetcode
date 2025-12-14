@@ -2516,7 +2516,45 @@
 
             result.append(symbol * count)
 
-        return "".join(result)</pre></div>
+        return "".join(result)
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Integer to Roman Examples ---")
+
+# Test Case 1: Simple addition
+num1 = 3
+result1 = sol.intToRoman(num1)
+print(f"Input: {num1}")
+print(f"Output: '{result1}' (Expected: 'III')")
+
+# Test Case 2: Subtractive notation (IV)
+num2 = 4
+result2 = sol.intToRoman(num2)
+print(f"Input: {num2}")
+print(f"Output: '{result2}' (Expected: 'IV')")
+
+# Test Case 3: Mixed addition and subtraction
+num3 = 58
+# 50 (L) + 5 (V) + 3 (III)
+result3 = sol.intToRoman(num3)
+print(f"Input: {num3}")
+print(f"Output: '{result3}' (Expected: 'LVIII')")
+
+# Test Case 4: Complex number using multiple subtractive rules
+num4 = 1994
+# 1000 (M) + 900 (CM) + 90 (XC) + 4 (IV)
+result4 = sol.intToRoman(num4)
+print(f"Input: {num4}")
+print(f"Output: '{result4}' (Expected: 'MCMXCIV')")
+
+# Test Case 5: Maximum allowed input (3999)
+num5 = 3999
+# 3000 (MMM) + 900 (CM) + 90 (XC) + 9 (IX)
+result5 = sol.intToRoman(num5)
+print(f"Input: {num5}")
+print(f"Output: '{result5}' (Expected: 'MMMCMXCIX')")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-4--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2531,8 +2569,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=20,
-        maxLines=20,
+        minLines=58,
+        maxLines=58,
     );
 });
 </script>
@@ -2559,6 +2597,44 @@ document.addEventListener('DOMContentLoaded', (event) => {
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">symbol</span> <span class="o">*</span> <span class="n">count</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Integer to Roman Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Simple addition</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">intToRoman</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">num1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;III&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Subtractive notation (IV)</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">intToRoman</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">num2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;IV&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Mixed addition and subtraction</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="mi">58</span>
+<span class="c1"># 50 (L) + 5 (V) + 3 (III)</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">intToRoman</span><span class="p">(</span><span class="n">num3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">num3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;LVIII&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Complex number using multiple subtractive rules</span>
+<span class="n">num4</span> <span class="o">=</span> <span class="mi">1994</span>
+<span class="c1"># 1000 (M) + 900 (CM) + 90 (XC) + 4 (IV)</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">intToRoman</span><span class="p">(</span><span class="n">num4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">num4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;MCMXCIV&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 5: Maximum allowed input (3999)</span>
+<span class="n">num5</span> <span class="o">=</span> <span class="mi">3999</span>
+<span class="c1"># 3000 (MMM) + 900 (CM) + 90 (XC) + 9 (IX)</span>
+<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">intToRoman</span><span class="p">(</span><span class="n">num5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">num5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;MMMCMXCIX&#39;)&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="12-integer-to-roman">12. Integer to Roman<a class="headerlink" href="#12-integer-to-roman" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-roman-numeral-system-basics">Problem Statement and Roman Numeral System Basics<a class="headerlink" href="#problem-statement-and-roman-numeral-system-basics" title="Permanent link">&para;</a></h3>
