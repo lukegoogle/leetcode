@@ -62,7 +62,7 @@ plugins:
   - mkdocstrings:
      handlers:
       python:
-        paths: ['python']
+        paths: ['python_str']
         options:
           show_members: true
 
@@ -129,5 +129,5 @@ nav:
         - 49. Group Anagrams (Medium): '49.md'
         - 50. Pow(x, n) (Medium): '50.md'
 
-  - Run Code Pyodide: 'pyodide.md'
-  - Luke CV: 'https://lukeclarksf.com'
+  - Pyodide Run: 'pyodide.md'
+  - Resume: 'https://lukeclarksf.com'
