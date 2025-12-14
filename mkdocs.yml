@@ -60,7 +60,6 @@ plugins:
   - search
   - include-markdown # <--- Add the plugin here
   - markdown-exec
-  - jupyterlite
 
 # Inside mkdocs.yml
 
@@ -396,5 +395,4 @@ nav:
     - 319. (Medium) Bulb Switcher (Concept Math): '319.md'
     - 320. (Medium) Generalized Abbreviation (Locked) (Concept Backtracking): '320.md'
   - Pyodide Run Code: 'pyodide.md'
-  - Jyputer Notebook: 'book.ipynb'
   - Luke CV: 'https://lukeclarksf.com'
