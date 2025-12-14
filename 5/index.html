@@ -2585,7 +2585,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p><a target="__blank" href="https://leetcode.com/problems/longest-palindromic-substring/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">expand_around_center</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+            <span class="k">while</span> <span class="n">left</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">]:</span>
+                <span class="n">left</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="n">right</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">right</span><span class="p">]</span>
+
+        <span class="n">longest</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+
+            <span class="c1"># Odd length palindromes (center is s[i])</span>
+            <span class="n">palindrome1</span> <span class="o">=</span> <span class="n">expand_around_center</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">palindrome1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span>
+                <span class="n">longest</span> <span class="o">=</span> <span class="n">palindrome1</span>
+
+            <span class="c1"># Even length palindromes (center is s[i] and s[i+1])</span>
+            <span class="n">palindrome2</span> <span class="o">=</span> <span class="n">expand_around_center</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">palindrome2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span>
+                <span class="n">longest</span> <span class="o">=</span> <span class="n">palindrome2</span>
+
+        <span class="k">return</span> <span class="n">longest</span>
 </code></pre></div>
 <h2 id="5-longest-palindromic-substring">5. Longest Palindromic Substring<a class="headerlink" href="#5-longest-palindromic-substring" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-core-challenge">Problem Statement and Core Challenge<a class="headerlink" href="#problem-statement-and-core-challenge" title="Permanent link">&para;</a></h3>

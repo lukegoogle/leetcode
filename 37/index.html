@@ -2491,7 +2491,100 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p><a target="__blank" href="https://leetcode.com/problems/sudoku-solver/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">solveSudoku</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># 1. Initialize constraint sets</span>
+        <span class="c1"># row_constraints[r] is a set of digits present in row r</span>
+        <span class="n">row_constraints</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+        <span class="c1"># col_constraints[c] is a set of digits present in column c</span>
+        <span class="n">col_constraints</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+        <span class="c1"># box_constraints[b] is a set of digits present in box b (where b is 0-8)</span>
+        <span class="c1"># The box index b can be calculated as b = (r // 3) * 3 + (c // 3)</span>
+        <span class="n">box_constraints</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+
+        <span class="c1"># 2. Pre-fill the constraints and collect empty cells</span>
+        <span class="n">empty_cells</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
+                    <span class="n">box_idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>
+                    <span class="n">row_constraints</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+                    <span class="n">col_constraints</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+                    <span class="n">box_constraints</span><span class="p">[</span><span class="n">box_idx</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">empty_cells</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+
+        <span class="c1"># 3. Optimized validity check (O(1))</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">is_valid_optimized</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+            <span class="n">box_idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">val</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">row_constraints</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="ow">and</span>
+                    <span class="n">val</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">col_constraints</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="ow">and</span>
+                    <span class="n">val</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">box_constraints</span><span class="p">[</span><span class="n">box_idx</span><span class="p">])</span>
+
+        <span class="c1"># 4. Backtracking with constraint updates</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+            <span class="c1"># Base case: All empty cells have been filled</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">empty_cells</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">True</span>
+
+            <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">empty_cells</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+            <span class="n">box_idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>
+
+            <span class="c1"># Iterate through possible values &#39;1&#39; to &#39;9&#39;</span>
+            <span class="k">for</span> <span class="n">val_char</span> <span class="ow">in</span> <span class="s2">&quot;123456789&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">is_valid_optimized</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">val_char</span><span class="p">):</span>
+
+                    <span class="c1"># Place the value and update constraints</span>
+                    <span class="n">board</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">val_char</span>
+                    <span class="n">row_constraints</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">val_char</span><span class="p">)</span>
+                    <span class="n">col_constraints</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">val_char</span><span class="p">)</span>
+                    <span class="n">box_constraints</span><span class="p">[</span><span class="n">box_idx</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">val_char</span><span class="p">)</span>
+
+                    <span class="c1"># Recurse to the next empty cell</span>
+                    <span class="k">if</span> <span class="n">backtrack</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                        <span class="k">return</span> <span class="kc">True</span>
+
+                    <span class="c1"># Backtrack: Reset the cell and constraints</span>
+                    <span class="n">board</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>
+                    <span class="n">row_constraints</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">val_char</span><span class="p">)</span>
+                    <span class="n">col_constraints</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">val_char</span><span class="p">)</span>
+                    <span class="n">box_constraints</span><span class="p">[</span><span class="n">box_idx</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">val_char</span><span class="p">)</span>
+
+            <span class="c1"># If no value works for this cell, return False</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="c1"># Start backtracking from the first empty cell</span>
+        <span class="n">backtrack</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+<span class="c1"># (The usage code remains the same, just replace &#39;Solution&#39; with &#39;SolutionOptimized&#39;)</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Sudoku Solver Examples (Optimized) ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard Sudoku puzzle</span>
+<span class="n">board1</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;9&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;9&quot;</span><span class="p">,</span> <span class="s2">&quot;8&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;8&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;8&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;7&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;8&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;9&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;8&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;7&quot;</span><span class="p">,</span> <span class="s2">&quot;9&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input Board:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">board1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+<span class="n">sol</span><span class="o">.</span><span class="n">solveSudoku</span><span class="p">(</span><span class="n">board1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Output Solved Board (Optimized):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">board1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 </code></pre></div>
 
 

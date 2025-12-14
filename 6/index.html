@@ -2569,7 +2569,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p><a target="__blank" href="https://leetcode.com/problems/zigzag-conversion/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">numRows</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">numRows</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">numRows</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">s</span>
+
+        <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">numRows</span>
+        <span class="n">current_row</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">going_down</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="n">rows</span><span class="p">[</span><span class="n">current_row</span><span class="p">]</span> <span class="o">+=</span> <span class="n">char</span>
+
+            <span class="k">if</span> <span class="n">current_row</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">current_row</span> <span class="o">==</span> <span class="n">numRows</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">going_down</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">going_down</span>
+
+            <span class="k">if</span> <span class="n">going_down</span><span class="p">:</span>
+                <span class="n">current_row</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">current_row</span> <span class="o">-=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="6-zigzag-conversion">6. Zigzag Conversion<a class="headerlink" href="#6-zigzag-conversion" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-visualization">Problem Statement and Visualization<a class="headerlink" href="#problem-statement-and-visualization" title="Permanent link">&para;</a></h3>

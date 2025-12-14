@@ -2647,60 +2647,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <p><a target="__blank" href="https://leetcode.com/problems/add-two-numbers/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Definition for singly-linked list.</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">ListNode</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Represents a node in a singly-linked list.</span>
-
-<span class="sd">    A singly-linked list is a linear data structure where each element (node) </span>
-<span class="sd">    points to the next node in the sequence. This structure is commonly used</span>
-<span class="sd">    to represent large numbers where digits are stored in reverse order.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Initializes a new ListNode.</span>
-
-<span class="sd">        :param val: The value (digit) stored in the node. Defaults to 0.</span>
-<span class="sd">        :type val: int</span>
-<span class="sd">        :param next: A reference to the next node in the list. Defaults to None for the tail node.</span>
-<span class="sd">        :type next: Optional[ListNode]</span>
-<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="nb">next</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Contains the method to add two numbers represented by linked lists.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">addTwoNumbers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Adds two non-negative numbers represented as two singly-linked lists.</span>
-
-<span class="sd">        The digits are stored in **reverse order** (the head is the 1&#39;s place), </span>
-<span class="sd">        and each node contains a single digit. The process simulates manual </span>
-<span class="sd">        addition, moving from the least significant digit to the most significant </span>
-<span class="sd">        digit while managing a carry. </span>
-
-<span class="sd">        The time complexity is $O(\max(L_1, L_2))$, where $L_1$ and $L_2$ are the </span>
-<span class="sd">        lengths of the input linked lists, as we traverse the lists once.</span>
-
-<span class="sd">        Args:</span>
-<span class="sd">            l1 (Optional[ListNode]): The head of the first linked list (number 1).</span>
-<span class="sd">            l2 (Optional[ListNode]): The head of the second linked list (number 2).</span>
-
-<span class="sd">        Returns:</span>
-<span class="sd">            dummy_head (Optional[ListNode]): The head of a new linked list representing the sum </span>
-<span class="sd">                                of the two input numbers.</span>
-
-<span class="sd">        Examples:</span>
-<span class="sd">            &gt;&gt;&gt; # l1: (2 -&gt; 4 -&gt; 3) which is 342</span>
-<span class="sd">            &gt;&gt;&gt; # l2: (5 -&gt; 6 -&gt; 4) which is 465</span>
-<span class="sd">            &gt;&gt;&gt; # Sum: 342 + 465 = 807</span>
-<span class="sd">            &gt;&gt;&gt; # Result linked list: (7 -&gt; 0 -&gt; 8)</span>
-<span class="sd">            &gt;&gt;&gt; l1 = create_linked_list([2, 4, 3])</span>
-<span class="sd">            &gt;&gt;&gt; l2 = create_linked_list([5, 6, 4])</span>
-<span class="sd">            &gt;&gt;&gt; result = Solution().addTwoNumbers(l1, l2)</span>
-<span class="sd">            &gt;&gt;&gt; linked_list_to_list(result)</span>
-<span class="sd">            [7, 0, 8]</span>
-<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">dummy_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">current</span> <span class="o">=</span> <span class="n">dummy_head</span>
         <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span>

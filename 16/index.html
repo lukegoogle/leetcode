@@ -2581,7 +2581,68 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p><a target="__blank" href="https://leetcode.com/problems/3sum-closest/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">threeSumClosest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+
+        <span class="n">nums</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="n">closest_sum</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="n">L</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+
+            <span class="k">while</span> <span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">:</span>
+                <span class="n">current_sum</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">L</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">R</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">current_sum</span> <span class="o">-</span> <span class="n">target</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">closest_sum</span> <span class="o">-</span> <span class="n">target</span><span class="p">):</span>
+                    <span class="n">closest_sum</span> <span class="o">=</span> <span class="n">current_sum</span>
+
+                <span class="k">if</span> <span class="n">current_sum</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
+                    <span class="n">L</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">elif</span> <span class="n">current_sum</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
+                    <span class="n">R</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">current_sum</span>
+
+        <span class="k">return</span> <span class="n">closest_sum</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- 3Sum Closest Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard example</span>
+<span class="n">nums1</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">target1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">threeSumClosest</span><span class="p">(</span><span class="n">nums1</span><span class="p">,</span> <span class="n">target1</span><span class="p">)</span>
+<span class="c1"># Expected: 2 (since -1 + 2 + 1 = 2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: nums=</span><span class="si">{</span><span class="n">nums1</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2"> (Expected: 2)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Target is 0</span>
+<span class="n">nums2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">target2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">threeSumClosest</span><span class="p">(</span><span class="n">nums2</span><span class="p">,</span> <span class="n">target2</span><span class="p">)</span>
+<span class="c1"># Expected: 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: nums=</span><span class="si">{</span><span class="n">nums2</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: 0)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Negative numbers and target</span>
+<span class="n">nums3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">target3</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">threeSumClosest</span><span class="p">(</span><span class="n">nums3</span><span class="p">,</span> <span class="n">target3</span><span class="p">)</span>
+<span class="c1"># Expected: 2 (1 + 1 + 0 = 2, the closest sum possible)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: nums=</span><span class="si">{</span><span class="n">nums3</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2"> (Expected: 2)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Target is reached exactly</span>
+<span class="n">nums4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">target4</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">threeSumClosest</span><span class="p">(</span><span class="n">nums4</span><span class="p">,</span> <span class="n">target4</span><span class="p">)</span>
+<span class="c1"># Expected: 7 (2 + 1 + 4 = 7, or 3 + 2 + 2 = 7 etc.)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: nums=</span><span class="si">{</span><span class="n">nums4</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="n">target4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2"> (Expected: 7)&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="16-3sum-closest">16. 3Sum Closest<a class="headerlink" href="#16-3sum-closest" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-target-definition">Problem Statement and Target Definition<a class="headerlink" href="#problem-statement-and-target-definition" title="Permanent link">&para;</a></h3>

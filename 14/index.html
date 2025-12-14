@@ -2600,7 +2600,65 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p><a target="__blank" href="https://leetcode.com/problems/longest-common-prefix/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">longestCommonPrefix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">strs</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="n">prefix</span> <span class="o">=</span> <span class="n">strs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">strs</span><span class="p">)):</span>
+            <span class="n">current_string</span> <span class="o">=</span> <span class="n">strs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+            <span class="k">while</span> <span class="n">current_string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">prefix</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">prefix</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Longest Common Prefix Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard common prefix</span>
+<span class="n">strs1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;flower&quot;</span><span class="p">,</span> <span class="s2">&quot;flow&quot;</span><span class="p">,</span> <span class="s2">&quot;flight&quot;</span><span class="p">]</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestCommonPrefix</span><span class="p">(</span><span class="n">strs1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">strs1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;fl&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: No common prefix</span>
+<span class="n">strs2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;racecar&quot;</span><span class="p">,</span> <span class="s2">&quot;car&quot;</span><span class="p">]</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestCommonPrefix</span><span class="p">(</span><span class="n">strs2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">strs2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Common prefix is the full word</span>
+<span class="n">strs3</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;app&quot;</span><span class="p">,</span> <span class="s2">&quot;apricot&quot;</span><span class="p">]</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestCommonPrefix</span><span class="p">(</span><span class="n">strs3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">strs3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;ap&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Empty input list</span>
+<span class="n">strs4</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestCommonPrefix</span><span class="p">(</span><span class="n">strs4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">strs4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 5: List with one string</span>
+<span class="n">strs5</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;solo&quot;</span><span class="p">]</span>
+<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestCommonPrefix</span><span class="p">(</span><span class="n">strs5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">strs5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;solo&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 6: Vertically aligned mismatch</span>
+<span class="n">strs6</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<span class="n">result6</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestCommonPrefix</span><span class="p">(</span><span class="n">strs6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">strs6</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result6</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;a&#39;)&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="14-longest-common-prefix">14. Longest Common Prefix<a class="headerlink" href="#14-longest-common-prefix" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-core-objective">Problem Statement and Core Objective<a class="headerlink" href="#problem-statement-and-core-objective" title="Permanent link">&para;</a></h3>
