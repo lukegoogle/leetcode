@@ -63,7 +63,7 @@ plugins:
   - mkdocstrings:
      handlers:
       python:
-        paths: ['python_str']
+        paths: ['python_mod']
 
 # Inside mkdocs.yml
 
