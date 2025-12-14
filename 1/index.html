@@ -503,6 +503,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1.Solution.twoSum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        twoSum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-two-sum" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2289,6 +2311,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1.Solution.twoSum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        twoSum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-two-sum" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2415,7 +2459,351 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </script>
 </p>
 <h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
-<h2 id="1-two-sum">1. Two Sum<a class="headerlink" href="#1-two-sum" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_1.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+        <p>Solution class for LeetCode problem 1: Two Sum.</p>
+<p>The problem asks to find two indices of the numbers in a list that add up
+to a specific target. The provided solution implements an efficient
+O(n) approach using a hash map (dictionary) for quick lookups.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python_str/_1.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Solution class for LeetCode problem 1: Two Sum.</span>
+
+<span class="sd">    The problem asks to find two indices of the numbers in a list that add up</span>
+<span class="sd">    to a specific target. The provided solution implements an efficient</span>
+<span class="sd">    O(n) approach using a hash map (dictionary) for quick lookups.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Finds two numbers in the input list that add up to a specific target.</span>
+
+<span class="sd">        This method uses a hash map (dictionary in Python) to store the numbers</span>
+<span class="sd">        encountered so far and their indices. For each number, it calculates the</span>
+<span class="sd">        &#39;complement&#39; (the number needed to reach the target) and checks if this</span>
+<span class="sd">        complement is already in the hash map. If it is, the indices of the</span>
+<span class="sd">        complement and the current number are returned. Otherwise, the current</span>
+<span class="sd">        number and its index are added to the hash map.</span>
+
+<span class="sd">        The time complexity is O(n) because the list is traversed only once,</span>
+<span class="sd">        and hash map lookups are O(1) on average.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            nums (list[int]): The list of integers to search within.</span>
+<span class="sd">            target (int): The target sum.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list[int]: A list containing the indices of the two numbers that</span>
+<span class="sd">                       add up to the target. Returns an empty list if no such</span>
+<span class="sd">                       pair is found.</span>
+
+<span class="sd">        Examples:</span>
+<span class="sd">            &gt;&gt;&gt; solution = Solution()</span>
+<span class="sd">            &gt;&gt;&gt; solution.twoSum([2, 7, 11, 15], 9)</span>
+<span class="sd">            [0, 1]</span>
+<span class="sd">            &gt;&gt;&gt; solution.twoSum([3, 2, 4], 6)</span>
+<span class="sd">            [1, 2]</span>
+<span class="sd">            &gt;&gt;&gt; solution.twoSum([3, 3], 6)</span>
+<span class="sd">            [0, 1]</span>
+<span class="sd">            &gt;&gt;&gt; solution.twoSum([1, 2, 3, 4], 10)</span>
+<span class="sd">            []</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">num_map</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="n">complement</span> <span class="o">=</span> <span class="n">target</span> <span class="o">-</span> <span class="n">num</span>
+            <span class="k">if</span> <span class="n">complement</span> <span class="ow">in</span> <span class="n">num_map</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">num_map</span><span class="p">[</span><span class="n">complement</span><span class="p">],</span> <span class="n">i</span><span class="p">]</span>
+            <span class="n">num_map</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+
+        <span class="k">return</span> <span class="p">[]</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_1.Solution.twoSum" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">twoSum</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span></code>
+
+<a href="#_1.Solution.twoSum" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Finds two numbers in the input list that add up to a specific target.</p>
+<p>This method uses a hash map (dictionary in Python) to store the numbers
+encountered so far and their indices. For each number, it calculates the
+'complement' (the number needed to reach the target) and checks if this
+complement is already in the hash map. If it is, the indices of the
+complement and the current number are returned. Otherwise, the current
+number and its index are added to the hash map.</p>
+<p>The time complexity is O(n) because the list is traversed only once,
+and hash map lookups are O(1) on average.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>nums</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span>[<span title="int">int</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The list of integers to search within.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>target</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The target sum.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="list">list</span>[<span title="int">int</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list[int]: A list containing the indices of the two numbers that
+       add up to the target. Returns an empty list if no such
+       pair is found.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Examples:</span></p>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span><span class="o">.</span><span class="n">twoSum</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">9</span><span class="p">)</span>
+<span class="go">[0, 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span><span class="o">.</span><span class="n">twoSum</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">6</span><span class="p">)</span>
+<span class="go">[1, 2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span><span class="o">.</span><span class="n">twoSum</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">6</span><span class="p">)</span>
+<span class="go">[0, 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span><span class="o">.</span><span class="n">twoSum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">[]</span>
+</code></pre></div>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python_str/_1.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Finds two numbers in the input list that add up to a specific target.</span>
+
+<span class="sd">    This method uses a hash map (dictionary in Python) to store the numbers</span>
+<span class="sd">    encountered so far and their indices. For each number, it calculates the</span>
+<span class="sd">    &#39;complement&#39; (the number needed to reach the target) and checks if this</span>
+<span class="sd">    complement is already in the hash map. If it is, the indices of the</span>
+<span class="sd">    complement and the current number are returned. Otherwise, the current</span>
+<span class="sd">    number and its index are added to the hash map.</span>
+
+<span class="sd">    The time complexity is O(n) because the list is traversed only once,</span>
+<span class="sd">    and hash map lookups are O(1) on average.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        nums (list[int]): The list of integers to search within.</span>
+<span class="sd">        target (int): The target sum.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[int]: A list containing the indices of the two numbers that</span>
+<span class="sd">                   add up to the target. Returns an empty list if no such</span>
+<span class="sd">                   pair is found.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; solution = Solution()</span>
+<span class="sd">        &gt;&gt;&gt; solution.twoSum([2, 7, 11, 15], 9)</span>
+<span class="sd">        [0, 1]</span>
+<span class="sd">        &gt;&gt;&gt; solution.twoSum([3, 2, 4], 6)</span>
+<span class="sd">        [1, 2]</span>
+<span class="sd">        &gt;&gt;&gt; solution.twoSum([3, 3], 6)</span>
+<span class="sd">        [0, 1]</span>
+<span class="sd">        &gt;&gt;&gt; solution.twoSum([1, 2, 3, 4], 10)</span>
+<span class="sd">        []</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">num_map</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+        <span class="n">complement</span> <span class="o">=</span> <span class="n">target</span> <span class="o">-</span> <span class="n">num</span>
+        <span class="k">if</span> <span class="n">complement</span> <span class="ow">in</span> <span class="n">num_map</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">num_map</span><span class="p">[</span><span class="n">complement</span><span class="p">],</span> <span class="n">i</span><span class="p">]</span>
+        <span class="n">num_map</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+
+    <span class="k">return</span> <span class="p">[]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="1-two-sum">1. Two Sum<a class="headerlink" href="#1-two-sum" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-core-objective">Problem Statement and Core Objective<a class="headerlink" href="#problem-statement-and-core-objective" title="Permanent link">&para;</a></h3>
 <p>The LeetCode <strong>Two Sum</strong> problem, designated as problem number 1, is a foundational question in computer science that introduces key concepts in algorithm design, particularly focusing on efficient searching and data structures. The primary objective is straightforward: given an array of integers, let's call it <code>nums</code>, and a specific target integer, the task is to identify and return the indices of two distinct numbers within <code>nums</code> whose sum equals the <code>target</code>.</p>
 <p>It is typically specified that the input array will contain exactly one valid solution pair, simplifying the process by eliminating the need to handle multiple possible answers or the non-existence of a solution. Furthermore, the constraint "you may not use the same element twice" means that even if an array contains duplicates (e.g., <code>[3, 3]</code> for a target of 6), the solution must involve two separate entries at two different indices.</p>
