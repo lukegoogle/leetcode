@@ -5,7 +5,7 @@ hide:
 
 # Python LeetCode
 
-Here you will find my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment.
+Here you will find my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment. LeetCode includes Data Structures and Alghoritms to practice.
 
 Browse source code here (sidebar to the left) or visit [GitHub](https://github.com/lukeclarksf/leetcode). Run your code with Pyodide.
 
