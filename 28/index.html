@@ -2385,7 +2385,47 @@
             if haystack[i:i + len(needle)] == needle:
                 return i
 
-        return -1</pre></div>
+        return -1
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Find the Index of the First Occurrence in a String Examples ---")
+
+# Test Case 1: Standard match
+haystack1 = "sadbutsad"
+needle1 = "sad"
+result1 = sol.strStr(haystack1, needle1)
+print(f"Haystack: '{haystack1}', Needle: '{needle1}'")
+print(f"Output: {result1} (Expected: 0)")
+
+# Test Case 2: No match
+haystack2 = "leetcode"
+needle2 = "leeto"
+result2 = sol.strStr(haystack2, needle2)
+print(f"\nHaystack: '{haystack2}', Needle: '{needle2}'")
+print(f"Output: {result2} (Expected: -1)")
+
+# Test Case 3: Empty needle
+haystack3 = "abc"
+needle3 = ""
+result3 = sol.strStr(haystack3, needle3)
+print(f"\nHaystack: '{haystack3}', Needle: '{needle3}'")
+print(f"Output: {result3} (Expected: 0)")
+
+# Test Case 4: Match in the middle
+haystack4 = "hello"
+needle4 = "ll"
+result4 = sol.strStr(haystack4, needle4)
+print(f"\nHaystack: '{haystack4}', Needle: '{needle4}'")
+print(f"Output: {result4} (Expected: 2)")
+
+# Test Case 5: Match at the end
+haystack5 = "mississippi"
+needle5 = "pi"
+result5 = sol.strStr(haystack5, needle5)
+print(f"\nHaystack: '{haystack5}', Needle: '{needle5}'")
+print(f"Output: {result5} (Expected: 9)")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-21--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2400,8 +2440,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=11,
-        maxLines=11,
+        minLines=51,
+        maxLines=51,
     );
 });
 </script>
@@ -2419,6 +2459,46 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 <span class="k">return</span> <span class="n">i</span>
 
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Find the Index of the First Occurrence in a String Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard match</span>
+<span class="n">haystack1</span> <span class="o">=</span> <span class="s2">&quot;sadbutsad&quot;</span>
+<span class="n">needle1</span> <span class="o">=</span> <span class="s2">&quot;sad&quot;</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">strStr</span><span class="p">(</span><span class="n">haystack1</span><span class="p">,</span> <span class="n">needle1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Haystack: &#39;</span><span class="si">{</span><span class="n">haystack1</span><span class="si">}</span><span class="s2">&#39;, Needle: &#39;</span><span class="si">{</span><span class="n">needle1</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2"> (Expected: 0)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: No match</span>
+<span class="n">haystack2</span> <span class="o">=</span> <span class="s2">&quot;leetcode&quot;</span>
+<span class="n">needle2</span> <span class="o">=</span> <span class="s2">&quot;leeto&quot;</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">strStr</span><span class="p">(</span><span class="n">haystack2</span><span class="p">,</span> <span class="n">needle2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Haystack: &#39;</span><span class="si">{</span><span class="n">haystack2</span><span class="si">}</span><span class="s2">&#39;, Needle: &#39;</span><span class="si">{</span><span class="n">needle2</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: -1)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Empty needle</span>
+<span class="n">haystack3</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
+<span class="n">needle3</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">strStr</span><span class="p">(</span><span class="n">haystack3</span><span class="p">,</span> <span class="n">needle3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Haystack: &#39;</span><span class="si">{</span><span class="n">haystack3</span><span class="si">}</span><span class="s2">&#39;, Needle: &#39;</span><span class="si">{</span><span class="n">needle3</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2"> (Expected: 0)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Match in the middle</span>
+<span class="n">haystack4</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="n">needle4</span> <span class="o">=</span> <span class="s2">&quot;ll&quot;</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">strStr</span><span class="p">(</span><span class="n">haystack4</span><span class="p">,</span> <span class="n">needle4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Haystack: &#39;</span><span class="si">{</span><span class="n">haystack4</span><span class="si">}</span><span class="s2">&#39;, Needle: &#39;</span><span class="si">{</span><span class="n">needle4</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2"> (Expected: 2)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 5: Match at the end</span>
+<span class="n">haystack5</span> <span class="o">=</span> <span class="s2">&quot;mississippi&quot;</span>
+<span class="n">needle5</span> <span class="o">=</span> <span class="s2">&quot;pi&quot;</span>
+<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">strStr</span><span class="p">(</span><span class="n">haystack5</span><span class="p">,</span> <span class="n">needle5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Haystack: &#39;</span><span class="si">{</span><span class="n">haystack5</span><span class="si">}</span><span class="s2">&#39;, Needle: &#39;</span><span class="si">{</span><span class="n">needle5</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2"> (Expected: 9)&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
