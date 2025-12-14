@@ -2585,72 +2585,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p><a target="__blank" href="https://leetcode.com/problems/longest-palindromic-substring/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-
-        <span class="k">def</span><span class="w"> </span><span class="nf">expand_around_center</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
-            <span class="k">while</span> <span class="n">left</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">]:</span>
-                <span class="n">left</span> <span class="o">-=</span> <span class="mi">1</span>
-                <span class="n">right</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">right</span><span class="p">]</span>
-
-        <span class="n">longest</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-
-            <span class="c1"># Odd length palindromes (center is s[i])</span>
-            <span class="n">palindrome1</span> <span class="o">=</span> <span class="n">expand_around_center</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">palindrome1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span>
-                <span class="n">longest</span> <span class="o">=</span> <span class="n">palindrome1</span>
-
-            <span class="c1"># Even length palindromes (center is s[i] and s[i+1])</span>
-            <span class="n">palindrome2</span> <span class="o">=</span> <span class="n">expand_around_center</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">palindrome2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span>
-                <span class="n">longest</span> <span class="o">=</span> <span class="n">palindrome2</span>
-
-        <span class="k">return</span> <span class="n">longest</span>
-
-<span class="c1"># --- Output Examples Code ---</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Longest Palindromic Substring Examples ---&quot;</span><span class="p">)</span>
-
-<span class="c1"># Create an instance of the Solution class</span>
-<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-
-<span class="c1"># Test Case 1: Odd length palindrome (bab or aba)</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;babad&quot;</span>
-<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s1</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;bab&#39; or &#39;aba&#39;)&quot;</span><span class="p">)</span> 
-
-<span class="c1"># Test Case 2: Even length palindrome</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;cbbd&quot;</span>
-<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s2</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;bb&#39;)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 3: Whole string is a palindrome</span>
-<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;racecar&quot;</span>
-<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s3</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;racecar&#39;)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 4: Long even length palindrome in the middle</span>
-<span class="n">s4</span> <span class="o">=</span> <span class="s2">&quot;forgeeksskeegfor&quot;</span>
-<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s4</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;geeksskeeg&#39;)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 5: Single character string</span>
-<span class="n">s5</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span>
-<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s5</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;x&#39;)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 6: Empty string</span>
-<span class="n">s6</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="n">result6</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s6</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result6</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;&#39;)&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h2 id="5-longest-palindromic-substring">5. Longest Palindromic Substring<a class="headerlink" href="#5-longest-palindromic-substring" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-core-challenge">Problem Statement and Core Challenge<a class="headerlink" href="#problem-statement-and-core-challenge" title="Permanent link">&para;</a></h3>

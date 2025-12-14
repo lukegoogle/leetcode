@@ -2590,77 +2590,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p><a target="__blank" href="https://leetcode.com/problems/regular-expression-matching/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">isMatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-
-        <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-        <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
-
-        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
-
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span><span class="p">:</span>
-                <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
-
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
-                    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-                <span class="k">elif</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span><span class="p">:</span>
-                    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
-
-                    <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
-                        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="ow">or</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
-
-        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">]</span>
-
-<span class="c1"># --- Example Usage Code ---</span>
-
-<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Regular Expression Matching Examples ---&quot;</span><span class="p">)</span>
-<span class="c1"># </span>
-
-<span class="c1"># Test Case 1: Simple mismatch</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;aa&quot;</span>
-<span class="n">p1</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
-<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isMatch</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: s=&#39;</span><span class="si">{</span><span class="n">s1</span><span class="si">}</span><span class="s2">&#39;, p=&#39;</span><span class="si">{</span><span class="n">p1</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2"> (Expected: False)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 2: Simple * match (one or more &#39;a&#39;)</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;aa&quot;</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="s2">&quot;a*&quot;</span>
-<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isMatch</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: s=&#39;</span><span class="si">{</span><span class="n">s2</span><span class="si">}</span><span class="s2">&#39;, p=&#39;</span><span class="si">{</span><span class="n">p2</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: True)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 3: Zero * match (zero &#39;a&#39;)</span>
-<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;ab&quot;</span>
-<span class="n">p3</span> <span class="o">=</span> <span class="s2">&quot;.*&quot;</span>
-<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isMatch</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: s=&#39;</span><span class="si">{</span><span class="n">s3</span><span class="si">}</span><span class="s2">&#39;, p=&#39;</span><span class="si">{</span><span class="n">p3</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2"> (Expected: True)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 4: Multiple characters and *</span>
-<span class="n">s4</span> <span class="o">=</span> <span class="s2">&quot;aab&quot;</span>
-<span class="n">p4</span> <span class="o">=</span> <span class="s2">&quot;c*a*b&quot;</span>
-<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isMatch</span><span class="p">(</span><span class="n">s4</span><span class="p">,</span> <span class="n">p4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: s=&#39;</span><span class="si">{</span><span class="n">s4</span><span class="si">}</span><span class="s2">&#39;, p=&#39;</span><span class="si">{</span><span class="n">p4</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2"> (Expected: True) (c* matches zero c&#39;s, a* matches two a&#39;s)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 5: Complex match with &#39;.&#39; and &#39;*&#39;</span>
-<span class="n">s5</span> <span class="o">=</span> <span class="s2">&quot;mississippi&quot;</span>
-<span class="n">p5</span> <span class="o">=</span> <span class="s2">&quot;mis*is*p*.&quot;</span>
-<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isMatch</span><span class="p">(</span><span class="n">s5</span><span class="p">,</span> <span class="n">p5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: s=&#39;</span><span class="si">{</span><span class="n">s5</span><span class="si">}</span><span class="s2">&#39;, p=&#39;</span><span class="si">{</span><span class="n">p5</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2"> (Expected: False)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 6: Edge Case (Pattern starts with &#39;.*&#39;)</span>
-<span class="n">s6</span> <span class="o">=</span> <span class="s2">&quot;abcd&quot;</span>
-<span class="n">p6</span> <span class="o">=</span> <span class="s2">&quot;.*d&quot;</span>
-<span class="n">result6</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isMatch</span><span class="p">(</span><span class="n">s6</span><span class="p">,</span> <span class="n">p6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: s=&#39;</span><span class="si">{</span><span class="n">s6</span><span class="si">}</span><span class="s2">&#39;, p=&#39;</span><span class="si">{</span><span class="n">p6</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result6</span><span class="si">}</span><span class="s2"> (Expected: True)&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h2 id="10-regular-expression-matching">10. Regular Expression Matching<a class="headerlink" href="#10-regular-expression-matching" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-key-features">Problem Statement and Key Features<a class="headerlink" href="#problem-statement-and-key-features" title="Permanent link">&para;</a></h3>

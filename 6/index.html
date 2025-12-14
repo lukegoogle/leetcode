@@ -2569,78 +2569,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p><a target="__blank" href="https://leetcode.com/problems/zigzag-conversion/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">numRows</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">numRows</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">numRows</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">s</span>
-
-        <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">numRows</span>
-        <span class="n">current_row</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">going_down</span> <span class="o">=</span> <span class="kc">False</span>
-
-        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-            <span class="n">rows</span><span class="p">[</span><span class="n">current_row</span><span class="p">]</span> <span class="o">+=</span> <span class="n">char</span>
-
-            <span class="k">if</span> <span class="n">current_row</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">current_row</span> <span class="o">==</span> <span class="n">numRows</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">going_down</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">going_down</span>
-
-            <span class="k">if</span> <span class="n">going_down</span><span class="p">:</span>
-                <span class="n">current_row</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">current_row</span> <span class="o">-=</span> <span class="mi">1</span>
-
-        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
-
-<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Zigzag Conversion Examples ---&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 1: Standard Example (numRows=3)</span>
-<span class="c1"># P   A   H   N</span>
-<span class="c1"># A P L S I I G</span>
-<span class="c1"># Y   I   R</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;PAYPALISHIRING&quot;</span>
-<span class="n">numRows1</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">numRows1</span><span class="p">)</span>
-<span class="c1"># Expected: &quot;PAHNAPLSIIGYIR&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: s=&#39;</span><span class="si">{</span><span class="n">s1</span><span class="si">}</span><span class="s2">&#39;, numRows=</span><span class="si">{</span><span class="n">numRows1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;PAHNAPLSIIGYIR&#39;)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 2: Example with 4 rows</span>
-<span class="c1"># P     I     N</span>
-<span class="c1"># A   L S   I G</span>
-<span class="c1"># Y A   H R</span>
-<span class="c1"># P     I</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;PAYPALISHIRING&quot;</span>
-<span class="n">numRows2</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">numRows2</span><span class="p">)</span>
-<span class="c1"># Expected: &quot;PINALSIGYAHRPI&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: s=&#39;</span><span class="si">{</span><span class="n">s2</span><span class="si">}</span><span class="s2">&#39;, numRows=</span><span class="si">{</span><span class="n">numRows2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;PINALSIGYAHRPI&#39;)&quot;</span><span class="p">)</span>
-<span class="c1"># </span>
-
-<span class="c1"># Test Case 3: Simple 2-row case</span>
-<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGH&quot;</span>
-<span class="n">numRows3</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="n">numRows3</span><span class="p">)</span>
-<span class="c1"># Expected: &quot;ACEGBDFH&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: s=&#39;</span><span class="si">{</span><span class="n">s3</span><span class="si">}</span><span class="s2">&#39;, numRows=</span><span class="si">{</span><span class="n">numRows3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;ACEGBDFH&#39;)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 4: numRows = 1 (Edge Case)</span>
-<span class="n">s4</span> <span class="o">=</span> <span class="s2">&quot;ABCDE&quot;</span>
-<span class="n">numRows4</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">s4</span><span class="p">,</span> <span class="n">numRows4</span><span class="p">)</span>
-<span class="c1"># Expected: &quot;ABCDE&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: s=&#39;</span><span class="si">{</span><span class="n">s4</span><span class="si">}</span><span class="s2">&#39;, numRows=</span><span class="si">{</span><span class="n">numRows4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;ABCDE&#39;)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 5: numRows &gt;= len(s) (Edge Case)</span>
-<span class="n">s5</span> <span class="o">=</span> <span class="s2">&quot;ABC&quot;</span>
-<span class="n">numRows5</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">s5</span><span class="p">,</span> <span class="n">numRows5</span><span class="p">)</span>
-<span class="c1"># Expected: &quot;ABC&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: s=&#39;</span><span class="si">{</span><span class="n">s5</span><span class="si">}</span><span class="s2">&#39;, numRows=</span><span class="si">{</span><span class="n">numRows5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;ABC&#39;)&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h2 id="6-zigzag-conversion">6. Zigzag Conversion<a class="headerlink" href="#6-zigzag-conversion" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-visualization">Problem Statement and Visualization<a class="headerlink" href="#problem-statement-and-visualization" title="Permanent link">&para;</a></h3>

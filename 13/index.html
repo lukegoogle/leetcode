@@ -2585,72 +2585,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p><a target="__blank" href="https://leetcode.com/problems/roman-to-integer/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">romanToInt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-
-        <span class="n">value_map</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-            <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">1000</span>
-        <span class="p">}</span>
-
-        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">prev_value</span> <span class="o">=</span> <span class="mi">0</span>
-
-        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-            <span class="n">current_value</span> <span class="o">=</span> <span class="n">value_map</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
-
-            <span class="k">if</span> <span class="n">current_value</span> <span class="o">&lt;</span> <span class="n">prev_value</span><span class="p">:</span>
-                <span class="n">total</span> <span class="o">-=</span> <span class="n">current_value</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">total</span> <span class="o">+=</span> <span class="n">current_value</span>
-
-            <span class="n">prev_value</span> <span class="o">=</span> <span class="n">current_value</span>
-
-        <span class="k">return</span> <span class="n">total</span>
-
-<span class="c1"># --- Example Usage Code ---</span>
-
-<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Roman to Integer Examples ---&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 1: Simple addition</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;III&quot;</span>
-<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">romanToInt</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s1</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2"> (Expected: 3)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 2: Subtractive notation (IV = 5 - 1 = 4)</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;IV&quot;</span>
-<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">romanToInt</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s2</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: 4)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 3: Subtractive notation (IX = 10 - 1 = 9)</span>
-<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;IX&quot;</span>
-<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">romanToInt</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s3</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2"> (Expected: 9)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 4: Mixed addition and subtraction</span>
-<span class="n">s4</span> <span class="o">=</span> <span class="s2">&quot;LVIII&quot;</span>
-<span class="c1"># L (50) + V (5) + I (1) + I (1) + I (1) = 58</span>
-<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">romanToInt</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s4</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2"> (Expected: 58)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 5: Complex number using multiple subtractive rules</span>
-<span class="n">s5</span> <span class="o">=</span> <span class="s2">&quot;MCMXCIV&quot;</span>
-<span class="c1"># M (1000) + CM (900) + XC (90) + IV (4) = 1994</span>
-<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">romanToInt</span><span class="p">(</span><span class="n">s5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s5</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2"> (Expected: 1994)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 6: Maximum number</span>
-<span class="n">s6</span> <span class="o">=</span> <span class="s2">&quot;MMMCMXCIX&quot;</span>
-<span class="c1"># 3999</span>
-<span class="n">result6</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">romanToInt</span><span class="p">(</span><span class="n">s6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s6</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result6</span><span class="si">}</span><span class="s2"> (Expected: 3999)&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h2 id="13-roman-to-integer">13. Roman to Integer<a class="headerlink" href="#13-roman-to-integer" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-the-subtraction-rule-challenge">Problem Statement and The Subtraction Rule Challenge<a class="headerlink" href="#problem-statement-and-the-subtraction-rule-challenge" title="Permanent link">&para;</a></h3>

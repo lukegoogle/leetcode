@@ -2457,66 +2457,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p><a target="__blank" href="https://leetcode.com/problems/divide-two-integers/"><input class="verify-button" type="button" value="Verify on LeetCode"/></a></p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dividend</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">divisor</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-
-        <span class="n">MAX_INT</span> <span class="o">=</span> <span class="mi">2147483647</span>
-        <span class="n">MIN_INT</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2147483648</span>
-
-        <span class="k">if</span> <span class="n">dividend</span> <span class="o">==</span> <span class="n">MIN_INT</span> <span class="ow">and</span> <span class="n">divisor</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">MAX_INT</span>
-
-        <span class="n">negative</span> <span class="o">=</span> <span class="p">(</span><span class="n">dividend</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="n">divisor</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
-
-        <span class="n">abs_dividend</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">dividend</span><span class="p">)</span>
-        <span class="n">abs_divisor</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">divisor</span><span class="p">)</span>
-
-        <span class="n">quotient</span> <span class="o">=</span> <span class="mi">0</span>
-
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">abs_dividend</span> <span class="o">&gt;&gt;</span> <span class="n">i</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">abs_divisor</span><span class="p">:</span>
-                <span class="n">quotient</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">)</span>
-                <span class="n">abs_dividend</span> <span class="o">-=</span> <span class="p">(</span><span class="n">abs_divisor</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">negative</span><span class="p">:</span>
-            <span class="k">return</span> <span class="o">-</span><span class="n">quotient</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">quotient</span>
-
-<span class="c1"># --- Example Usage Code ---</span>
-
-<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Divide Two Integers Examples ---&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 1: Standard positive division</span>
-<span class="n">dividend1</span><span class="p">,</span> <span class="n">divisor1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span>
-<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">dividend1</span><span class="p">,</span> <span class="n">divisor1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">dividend1</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">divisor1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2"> (Expected: 3)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 2: Negative result</span>
-<span class="n">dividend2</span><span class="p">,</span> <span class="n">divisor2</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span>
-<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">dividend2</span><span class="p">,</span> <span class="n">divisor2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">dividend2</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">divisor2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: -2)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 3: Overflow edge case (MAX_INT)</span>
-<span class="n">dividend3</span><span class="p">,</span> <span class="n">divisor3</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2147483648</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
-<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">dividend3</span><span class="p">,</span> <span class="n">divisor3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">dividend3</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">divisor3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2"> (Expected: 2147483647)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 4: Dividend is smaller than divisor</span>
-<span class="n">dividend4</span><span class="p">,</span> <span class="n">divisor4</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
-<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">dividend4</span><span class="p">,</span> <span class="n">divisor4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">dividend4</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">divisor4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2"> (Expected: 0)&quot;</span><span class="p">)</span>
-
-<span class="c1"># Test Case 5: Large division</span>
-<span class="n">dividend5</span><span class="p">,</span> <span class="n">divisor5</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span>
-<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">dividend5</span><span class="p">,</span> <span class="n">divisor5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">dividend5</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">divisor5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2"> (Expected: 10)&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
 
