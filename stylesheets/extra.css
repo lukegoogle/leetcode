@@ -1,0 +1,12 @@
+.md-grid {
+  max-width: 100%; /* Stretches to the full available width */
+}
+
+:root {
+  /* Primary color (e.g., a specific shade of red) */
+  --md-primary-fg-color: #113768;
+  /* Accent color */
+  --md-accent-fg-color: #113768;
+  /* Background color for code blocks */
+  --md-code-bg-color: #113768;
+}
