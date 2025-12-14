@@ -8,6 +8,6 @@ Browse source code here (sidebar to the left) or visit [GitHub](https://github.c
 
 Luke Clark
 
-Contact at me [lukeclarksf@gmail.com](mailto:lukeclarksf@gmail.com). See my [Resume](https://lukeclarksf.com).
+Send me an email at [lukeclarksf@gmail.com](mailto:lukeclarksf@gmail.com). See my [Resume](https://lukeclarksf.com).
 
 <img src="images/Python.png" width="600" style="margin:50px 0 50px 100px;">
