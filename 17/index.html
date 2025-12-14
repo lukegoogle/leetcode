@@ -2524,7 +2524,42 @@
                 path.pop()
 
         backtrack(0, [])
-        return result</pre></div>
+        return result
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Letter Combinations of a Phone Number Examples ---")
+
+# Test Case 1: Standard two-digit input
+digits1 = "23"
+result1 = sol.letterCombinations(digits1)
+# Expected: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+print(f"Input: '{digits1}'")
+print(f"Output: {result1}")
+print(f"Count: {len(result1)} (Expected: 9)")
+
+# Test Case 2: Empty input
+digits2 = ""
+result2 = sol.letterCombinations(digits2)
+print(f"Input: '{digits2}'")
+print(f"Output: {result2} (Expected: [])")
+
+# Test Case 3: Single digit input (7 has 4 letters)
+digits3 = "7"
+result3 = sol.letterCombinations(digits3)
+# Expected: ["p", "q", "r", "s"]
+print(f"Input: '{digits3}'")
+print(f"Output: {result3}")
+print(f"Count: {len(result3)} (Expected: 4)")
+
+# Test Case 4: Longer input (3 digits)
+digits4 = "567"
+result4 = sol.letterCombinations(digits4)
+# Expected count: 3 * 3 * 4 = 36
+print(f"Input: '{digits4}'")
+print(f"Output: {result4[:5]}... (Showing first 5 combinations)")
+print(f"Count: {len(result4)} (Expected: 36)")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-9--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2539,8 +2574,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=28,
-        maxLines=28,
+        minLines=63,
+        maxLines=63,
     );
 });
 </script>
@@ -2575,6 +2610,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         <span class="n">backtrack</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[])</span>
         <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Letter Combinations of a Phone Number Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard two-digit input</span>
+<span class="n">digits1</span> <span class="o">=</span> <span class="s2">&quot;23&quot;</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">letterCombinations</span><span class="p">(</span><span class="n">digits1</span><span class="p">)</span>
+<span class="c1"># Expected: [&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;be&quot;, &quot;bf&quot;, &quot;cd&quot;, &quot;ce&quot;, &quot;cf&quot;]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">digits1</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">result1</span><span class="p">)</span><span class="si">}</span><span class="s2"> (Expected: 9)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Empty input</span>
+<span class="n">digits2</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">letterCombinations</span><span class="p">(</span><span class="n">digits2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">digits2</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: [])&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Single digit input (7 has 4 letters)</span>
+<span class="n">digits3</span> <span class="o">=</span> <span class="s2">&quot;7&quot;</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">letterCombinations</span><span class="p">(</span><span class="n">digits3</span><span class="p">)</span>
+<span class="c1"># Expected: [&quot;p&quot;, &quot;q&quot;, &quot;r&quot;, &quot;s&quot;]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">digits3</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">result3</span><span class="p">)</span><span class="si">}</span><span class="s2"> (Expected: 4)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Longer input (3 digits)</span>
+<span class="n">digits4</span> <span class="o">=</span> <span class="s2">&quot;567&quot;</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">letterCombinations</span><span class="p">(</span><span class="n">digits4</span><span class="p">)</span>
+<span class="c1"># Expected count: 3 * 3 * 4 = 36</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">digits4</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s2">... (Showing first 5 combinations)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Count: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">result4</span><span class="p">)</span><span class="si">}</span><span class="s2"> (Expected: 36)&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="17-letter-combinations-of-a-phone-number">17. Letter Combinations of a Phone Number<a class="headerlink" href="#17-letter-combinations-of-a-phone-number" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-the-mapping">Problem Statement and The Mapping<a class="headerlink" href="#problem-statement-and-the-mapping" title="Permanent link">&para;</a></h3>

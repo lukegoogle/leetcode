@@ -2398,7 +2398,72 @@ class Solution:
 
         slow.next = slow.next.next
 
-        return dummy.next</pre></div>
+        return dummy.next
+
+# --- Helper function for list creation and printing ---
+
+def create_linked_list(arr: list[int]) -> ListNode | None:
+    if not arr:
+        return None
+    head = ListNode(arr[0])
+    current = head
+    for val in arr[1:]:
+        current.next = ListNode(val)
+        current = current.next
+    return head
+
+def print_linked_list(head: ListNode | None):
+    if not head:
+        return "[]"
+
+    nodes = []
+    current = head
+    while current:
+        nodes.append(str(current.val))
+        current = current.next
+    return "[" + " -> ".join(nodes) + "]"
+
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Remove Nth Node From End of List Examples ---")
+
+# Test Case 1: Standard case
+arr1 = [1, 2, 3, 4, 5]
+n1 = 2
+head1 = create_linked_list(arr1)
+result1 = sol.removeNthFromEnd(head1, n1)
+# Expected: [1 -> 2 -> 3 -> 5]
+print(f"Input List: {print_linked_list(create_linked_list(arr1))}, n={n1}")
+print(f"Output List: {print_linked_list(result1)}")
+
+# Test Case 2: Remove the head (n = list length)
+arr2 = [1]
+n2 = 1
+head2 = create_linked_list(arr2)
+result2 = sol.removeNthFromEnd(head2, n2)
+# Expected: []
+print(f"Input List: {print_linked_list(create_linked_list(arr2))}, n={n2}")
+print(f"Output List: {print_linked_list(result2)}")
+
+# Test Case 3: List with two nodes, remove the first one
+arr3 = [1, 2]
+n3 = 2
+head3 = create_linked_list(arr3)
+result3 = sol.removeNthFromEnd(head3, n3)
+# Expected: [2]
+print(f"Input List: {print_linked_list(create_linked_list(arr3))}, n={n3}")
+print(f"Output List: {print_linked_list(result3)}")
+
+# Test Case 4: Larger example, remove node in the middle
+arr4 = [10, 20, 30, 40, 50, 60]
+n4 = 3 # Removes 40
+head4 = create_linked_list(arr4)
+result4 = sol.removeNthFromEnd(head4, n4)
+# Expected: [10 -> 20 -> 30 -> 50 -> 60]
+print(f"Input List: {print_linked_list(create_linked_list(arr4))}, n={n4}")
+print(f"Output List: {print_linked_list(result4)}")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-11--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2413,8 +2478,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=24,
-        maxLines=24,
+        minLines=89,
+        maxLines=89,
     );
 });
 </script>
@@ -2445,6 +2510,71 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="n">slow</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
 
         <span class="k">return</span> <span class="n">dummy</span><span class="o">.</span><span class="n">next</span>
+
+<span class="c1"># --- Helper function for list creation and printing ---</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_linked_list</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">head</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">head</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">print_linked_list</span><span class="p">(</span><span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">head</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;[]&quot;</span>
+
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">head</span>
+    <span class="k">while</span> <span class="n">current</span><span class="p">:</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">val</span><span class="p">))</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="s2">&quot; -&gt; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span>
+
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Remove Nth Node From End of List Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Standard case</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">head1</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">removeNthFromEnd</span><span class="p">(</span><span class="n">head1</span><span class="p">,</span> <span class="n">n1</span><span class="p">)</span>
+<span class="c1"># Expected: [1 -&gt; 2 -&gt; 3 -&gt; 5]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input List: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr1</span><span class="p">))</span><span class="si">}</span><span class="s2">, n=</span><span class="si">{</span><span class="n">n1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output List: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">result1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Remove the head (n = list length)</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">head2</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">removeNthFromEnd</span><span class="p">(</span><span class="n">head2</span><span class="p">,</span> <span class="n">n2</span><span class="p">)</span>
+<span class="c1"># Expected: []</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input List: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr2</span><span class="p">))</span><span class="si">}</span><span class="s2">, n=</span><span class="si">{</span><span class="n">n2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output List: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">result2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: List with two nodes, remove the first one</span>
+<span class="n">arr3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">n3</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">head3</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr3</span><span class="p">)</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">removeNthFromEnd</span><span class="p">(</span><span class="n">head3</span><span class="p">,</span> <span class="n">n3</span><span class="p">)</span>
+<span class="c1"># Expected: [2]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input List: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr3</span><span class="p">))</span><span class="si">}</span><span class="s2">, n=</span><span class="si">{</span><span class="n">n3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output List: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">result3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Larger example, remove node in the middle</span>
+<span class="n">arr4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+<span class="n">n4</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># Removes 40</span>
+<span class="n">head4</span> <span class="o">=</span> <span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr4</span><span class="p">)</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">removeNthFromEnd</span><span class="p">(</span><span class="n">head4</span><span class="p">,</span> <span class="n">n4</span><span class="p">)</span>
+<span class="c1"># Expected: [10 -&gt; 20 -&gt; 30 -&gt; 50 -&gt; 60]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input List: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">create_linked_list</span><span class="p">(</span><span class="n">arr4</span><span class="p">))</span><span class="si">}</span><span class="s2">, n=</span><span class="si">{</span><span class="n">n4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output List: </span><span class="si">{</span><span class="n">print_linked_list</span><span class="p">(</span><span class="n">result4</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
