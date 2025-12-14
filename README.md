@@ -1,6 +1,6 @@
 ## Python LeetCode
 
-This repository holds my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment. LeetCode includes Data Structures and Alghorithms to practice.
+This repository holds my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment. LeetCode includes Data Structures and Algorithms to practice.
 
 Browse source code via sidebar on [lukeclarkca.com](https://lukeclarkca.com) or here. Run your code with Pyodide.
 

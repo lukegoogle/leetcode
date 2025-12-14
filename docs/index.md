@@ -7,7 +7,7 @@ hide:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qoQtq1uVRkM?si=x_tVu9k1P5xXXMDi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Here you will find my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment. LeetCode includes Data Structures and Alghorithms to practice.
+Here you will find my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment. LeetCode includes Data Structures and Algorithms to practice.
 
 Browse source code here (sidebar to the left) or visit [GitHub](https://github.com/lukeclarksf/leetcode). Run your code with Pyodide.
 
