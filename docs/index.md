@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Python LeetCode
 
 Here you will find my Python solutions for LeetCode problems, typically developed and tested within the Visual Studio Code integrated development environment.
@@ -14,6 +19,6 @@ Luke Clark
 
 Send me an email at [lukeclarksf@gmail.com](mailto:lukeclarksf@gmail.com). See my [Resume](https://lukeclarksf.com).
 
-<img src="images/Verify.png" width="600" style="margin:50px 0 50px 100px;">
+<img src="images/Python.png" width="600" style="margin:10px 0 10px 0">
 
-<img src="images/Python.png" width="600" style="margin:50px 0 50px 100px;">
+<img src="images/Verify.png" width="600" style="margin:10px 0 10px 0">
