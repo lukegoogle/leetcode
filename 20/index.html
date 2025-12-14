@@ -2390,7 +2390,48 @@
             else:
                 stack.append(char)
 
-        return not stack</pre></div>
+        return not stack
+
+# --- Example Usage Code ---
+
+sol = Solution()
+print("--- Valid Parentheses Examples ---")
+
+# Test Case 1: Valid string
+s1 = "()[]{}"
+result1 = sol.isValid(s1)
+print(f"Input: '{s1}'")
+print(f"Output: {result1} (Expected: True)")
+
+# Test Case 2: Invalid order
+s2 = "(]"
+result2 = sol.isValid(s2)
+print(f"Input: '{s2}'")
+print(f"Output: {result2} (Expected: False)")
+
+# Test Case 3: Invalid closing type
+s3 = "([)]"
+result3 = sol.isValid(s3)
+print(f"Input: '{s3}'")
+print(f"Output: {result3} (Expected: False)")
+
+# Test Case 4: Valid nested string
+s4 = "{[]}"
+result4 = sol.isValid(s4)
+print(f"Input: '{s4}'")
+print(f"Output: {result4} (Expected: True)")
+
+# Test Case 5: Unclosed bracket (stack not empty at end)
+s5 = "([{"
+result5 = sol.isValid(s5)
+print(f"Input: '{s5}'")
+print(f"Output: {result5} (Expected: False)")
+
+# Test Case 6: Closed bracket with empty stack (placeholder mismatch)
+s6 = ")))"
+result6 = sol.isValid(s6)
+print(f"Input: '{s6}'")
+print(f"Output: {result6} (Expected: False)")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-13--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2405,8 +2446,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=16,
-        maxLines=16,
+        minLines=57,
+        maxLines=57,
     );
 });
 </script>
@@ -2429,6 +2470,47 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="ow">not</span> <span class="n">stack</span>
+
+<span class="c1"># --- Example Usage Code ---</span>
+
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Valid Parentheses Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 1: Valid string</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;()[]</span><span class="si">{}</span><span class="s2">&quot;</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isValid</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s1</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2"> (Expected: True)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 2: Invalid order</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;(]&quot;</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isValid</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s2</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2"> (Expected: False)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Invalid closing type</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;([)]&quot;</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isValid</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s3</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2"> (Expected: False)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Valid nested string</span>
+<span class="n">s4</span> <span class="o">=</span> <span class="s2">&quot;{[]}&quot;</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isValid</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s4</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2"> (Expected: True)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 5: Unclosed bracket (stack not empty at end)</span>
+<span class="n">s5</span> <span class="o">=</span> <span class="s2">&quot;([{&quot;</span>
+<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isValid</span><span class="p">(</span><span class="n">s5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s5</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2"> (Expected: False)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 6: Closed bracket with empty stack (placeholder mismatch)</span>
+<span class="n">s6</span> <span class="o">=</span> <span class="s2">&quot;)))&quot;</span>
+<span class="n">result6</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">isValid</span><span class="p">(</span><span class="n">s6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s6</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: </span><span class="si">{</span><span class="n">result6</span><span class="si">}</span><span class="s2"> (Expected: False)&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
