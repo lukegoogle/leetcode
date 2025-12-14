@@ -2519,7 +2519,50 @@
             if len(palindrome2) > len(longest):
                 longest = palindrome2
 
-        return longest</pre></div>
+        return longest
+
+# --- Output Examples Code ---
+
+print("--- Longest Palindromic Substring Examples ---")
+
+# Create an instance of the Solution class
+sol = Solution()
+
+# Test Case 1: Odd length palindrome (bab or aba)
+s1 = "babad"
+result1 = sol.longestPalindrome(s1)
+print(f"Input: '{s1}'")
+print(f"Output: '{result1}' (Expected: 'bab' or 'aba')") 
+
+# Test Case 2: Even length palindrome
+s2 = "cbbd"
+result2 = sol.longestPalindrome(s2)
+print(f"Input: '{s2}'")
+print(f"Output: '{result2}' (Expected: 'bb')")
+
+# Test Case 3: Whole string is a palindrome
+s3 = "racecar"
+result3 = sol.longestPalindrome(s3)
+print(f"Input: '{s3}'")
+print(f"Output: '{result3}' (Expected: 'racecar')")
+
+# Test Case 4: Long even length palindrome in the middle
+s4 = "forgeeksskeegfor"
+result4 = sol.longestPalindrome(s4)
+print(f"Input: '{s4}'")
+print(f"Output: '{result4}' (Expected: 'geeksskeeg')")
+
+# Test Case 5: Single character string
+s5 = "x"
+result5 = sol.longestPalindrome(s5)
+print(f"Input: '{s5}'")
+print(f"Output: '{result5}' (Expected: 'x')")
+
+# Test Case 6: Empty string
+s6 = ""
+result6 = sol.longestPalindrome(s6)
+print(f"Input: '{s6}'")
+print(f"Output: '{result6}' (Expected: '')")</pre></div>
 <div class="pyodide-editor-bar">
 <span class="pyodide-bar-item">Output</span><span id="exec-36--clear" class="pyodide-bar-item pyodide-clickable"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.14 3c-.51 0-1.02.2-1.41.59L2.59 14.73c-.78.77-.78 2.04 0 2.83L5.03 20h7.66l8.72-8.73c.79-.77.79-2.04 0-2.83l-4.85-4.85c-.39-.39-.91-.59-1.42-.59M17 18l-2 2h7v-2"></path></svg></span> Clear</span>
 </div>
@@ -2534,8 +2577,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         themeLight='tomorrow',
         themeDark='tomorrow_night',
         session='default',
-        minLines=23,
-        maxLines=23,
+        minLines=66,
+        maxLines=66,
     );
 });
 </script>
@@ -2565,6 +2608,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 <span class="n">longest</span> <span class="o">=</span> <span class="n">palindrome2</span>
 
         <span class="k">return</span> <span class="n">longest</span>
+
+<span class="c1"># --- Output Examples Code ---</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Longest Palindromic Substring Examples ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create an instance of the Solution class</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">Solution</span><span class="p">()</span>
+
+<span class="c1"># Test Case 1: Odd length palindrome (bab or aba)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;babad&quot;</span>
+<span class="n">result1</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s1</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;bab&#39; or &#39;aba&#39;)&quot;</span><span class="p">)</span> 
+
+<span class="c1"># Test Case 2: Even length palindrome</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;cbbd&quot;</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s2</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;bb&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 3: Whole string is a palindrome</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;racecar&quot;</span>
+<span class="n">result3</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s3</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result3</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;racecar&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 4: Long even length palindrome in the middle</span>
+<span class="n">s4</span> <span class="o">=</span> <span class="s2">&quot;forgeeksskeegfor&quot;</span>
+<span class="n">result4</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s4</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result4</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;geeksskeeg&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 5: Single character string</span>
+<span class="n">s5</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span>
+<span class="n">result5</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s5</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result5</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;x&#39;)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Test Case 6: Empty string</span>
+<span class="n">s6</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">result6</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">longestPalindrome</span><span class="p">(</span><span class="n">s6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: &#39;</span><span class="si">{</span><span class="n">s6</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output: &#39;</span><span class="si">{</span><span class="n">result6</span><span class="si">}</span><span class="s2">&#39; (Expected: &#39;&#39;)&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="5-longest-palindromic-substring">5. Longest Palindromic Substring<a class="headerlink" href="#5-longest-palindromic-substring" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-core-challenge">Problem Statement and Core Challenge<a class="headerlink" href="#problem-statement-and-core-challenge" title="Permanent link">&para;</a></h3>
