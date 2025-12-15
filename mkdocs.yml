@@ -129,56 +129,156 @@ nav:
       - 48. Rotate Image (Medium): '48.md'
       - 49. Group Anagrams (Medium): '49.md'
       - 50. Pow(x, n) (Medium): '50.md'
-      - '51. N-Queens (Hard)': 51.md
-      - '52. N-Queens II (Hard)': 52.md
-      - '53. Maximum Subarray (Easy)': 53.md
-      - '54. Spiral Matrix (Medium)': 54.md
-      - '55. Jump Game (Medium)': 55.md
-      - '56. Merge Intervals (Medium)': 56.md
-      - '57. Insert Interval (Medium)': 57.md
-      - '58. Length of Last Word (Easy)': 58.md
-      - '59. Spiral Matrix II (Medium)': 59.md
-      - '60. Permutation Sequence (Hard)': 60.md
-      - '61. Rotate List (Medium)': 61.md
-      - '62. Unique Paths (Medium)': 62.md
-      - '63. Unique Paths II (Medium)': 63.md
-      - '64. Minimum Path Sum (Medium)': 64.md
-      - '65. Valid Number (Hard)': 65.md
-      - '66. Plus One (Easy)': 66.md
-      - '67. Add Binary (Easy)': 67.md
-      - '68. Text Justification (Hard)': 68.md
-      - '69. Sqrt(x) (Easy)': 69.md
-      - '70. Climbing Stairs (Easy)': 70.md
-      - '71. Simplify Path (Medium)': 71.md
-      - '72. Edit Distance (Hard)': 72.md
-      - '73. Set Matrix Zeroes (Medium)': 73.md
-      - '74. Search a 2D Matrix (Medium)': 74.md
-      - '75. Sort Colors (Medium)': 75.md
-      - '76. Minimum Window Substring (Hard)': 76.md
-      - '77. Combinations (Medium)': 77.md
-      - '78. Subsets (Medium)': 78.md
-      - '79. Word Search (Medium)': 79.md
-      - '80. Remove Duplicates from Sorted Array II (Medium)': 80.md
-      - '81. Search in Rotated Sorted Array II (Medium)': 81.md
-      - '82. Remove Duplicates from Sorted List II (Medium)': 82.md
-      - '83. Remove Duplicates from Sorted List (Easy)': 83.md
-      - '84. Largest Rectangle in Histogram (Hard)': 84.md
-      - '85. Maximal Rectangle (Hard)': 85.md
-      - '86. Partition List (Medium)': 86.md
-      - '87. Scramble String (Hard)': 87.md
-      - '88. Merge Sorted Array (Easy)': 88.md
-      - '89. Gray Code (Medium)': 89.md
-      - '90. Subsets II (Medium)': 90.md
-      - '91. Decode Ways (Medium)': 91.md
-      - '92. Reverse Linked List II (Medium)': 92.md
-      - '93. Restore IP Addresses (Medium)': 93.md
-      - '94. Binary Tree Inorder Traversal (Easy)': 94.md
-      - '95. Unique Binary Search Trees II (Medium)': 95.md
-      - '96. Unique Binary Search Trees (Medium)': 96.md
-      - '97. Interleaving String (Hard)': 97.md
-      - '98. Validate Binary Search Tree (Medium)': 98.md
-      - '99. Recover Binary Search Tree (Medium)': 99.md
-      - '100. Same Tree (Easy)': 100.md
+      - '51. N-Queens (Hard)': part1/51.md
+      - '52. N-Queens II (Hard)': part1/52.md
+      - '53. Maximum Subarray (Easy)': part1/53.md
+      - '54. Spiral Matrix (Medium)': part1/54.md
+      - '55. Jump Game (Medium)': part1/55.md
+      - '56. Merge Intervals (Medium)': part1/56.md
+      - '57. Insert Interval (Medium)': part1/57.md
+      - '58. Length of Last Word (Easy)': part1/58.md
+      - '59. Spiral Matrix II (Medium)': part1/59.md
+      - '60. Permutation Sequence (Hard)': part1/60.md
+      - '61. Rotate List (Medium)': part1/61.md
+      - '62. Unique Paths (Medium)': part1/62.md
+      - '63. Unique Paths II (Medium)': part1/63.md
+      - '64. Minimum Path Sum (Medium)': part1/64.md
+      - '65. Valid Number (Hard)': part1/65.md
+      - '66. Plus One (Easy)': part1/66.md
+      - '67. Add Binary (Easy)': part1/67.md
+      - '68. Text Justification (Hard)': part1/68.md
+      - '69. Sqrt(x) (Easy)': part1/69.md
+      - '70. Climbing Stairs (Easy)': part1/70.md
+      - '71. Simplify Path (Medium)': part1/71.md
+      - '72. Edit Distance (Hard)': part1/72.md
+      - '73. Set Matrix Zeroes (Medium)': part1/73.md
+      - '74. Search a 2D Matrix (Medium)': part1/74.md
+      - '75. Sort Colors (Medium)': part1/75.md
+      - '76. Minimum Window Substring (Hard)': part1/76.md
+      - '77. Combinations (Medium)': part1/77.md
+      - '78. Subsets (Medium)': part1/78.md
+      - '79. Word Search (Medium)': part1/79.md
+      - '80. Remove Duplicates from Sorted Array II (Medium)': part1/80.md
+      - '81. Search in Rotated Sorted Array II (Medium)': part1/81.md
+      - '82. Remove Duplicates from Sorted List II (Medium)': part1/82.md
+      - '83. Remove Duplicates from Sorted List (Easy)': part1/83.md
+      - '84. Largest Rectangle in Histogram (Hard)': part1/84.md
+      - '85. Maximal Rectangle (Hard)': part1/85.md
+      - '86. Partition List (Medium)': part1/86.md
+      - '87. Scramble String (Hard)': part1/87.md
+      - '88. Merge Sorted Array (Easy)': part1/88.md
+      - '89. Gray Code (Medium)': part1/89.md
+      - '90. Subsets II (Medium)': part1/90.md
+      - '91. Decode Ways (Medium)': part1/91.md
+      - '92. Reverse Linked List II (Medium)': part1/92.md
+      - '93. Restore IP Addresses (Medium)': part1/93.md
+      - '94. Binary Tree Inorder Traversal (Easy)': part1/94.md
+      - '95. Unique Binary Search Trees II (Medium)': part1/95.md
+      - '96. Unique Binary Search Trees (Medium)': part1/96.md
+      - '97. Interleaving String (Hard)': part1/97.md
+      - '98. Validate Binary Search Tree (Medium)': part1/98.md
+      - '99. Recover Binary Search Tree (Medium)': part1/99.md
+      - '100. Same Tree (Easy)': part1/100.md
+      - '101. Symmetric Tree (Easy)': part1/101.md
+      - '102. Binary Tree Level Order Traversal (Medium)': part1/102.md
+      - '103. Binary Tree Zigzag Level Order Traversal (Medium)': part1/103.md
+      - '104. Maximum Depth of Binary Tree (Easy)': part1/104.md
+      - '105. Construct Binary Tree from Preorder and Inorder Traversal (Medium)': part1/105.md
+      - '106. Construct Binary Tree from Inorder and Postorder Traversal (Medium)': part1/106.md
+      - '107. Binary Tree Level Order Traversal II (Medium)': part1/107.md
+      - '108. Convert Sorted Array to Binary Search Tree (Easy)': part1/108.md
+      - '109. Convert Sorted List to Binary Search Tree (Medium)': part1/109.md
+      - '110. Balanced Binary Tree (Easy)': part1/110.md
+      - '111. Minimum Depth of Binary Tree (Easy)': part1/111.md
+      - '112. Path Sum (Easy)': part1/112.md
+      - '113. Path Sum II (Medium)': part1/113.md
+      - '114. Flatten Binary Tree to Linked List (Medium)': part1/114.md
+      - '115. Distinct Subsequences (Hard)': part1/115.md
+      - '116. Populating Next Right Pointers in Each Node (Medium)': part1/116.md
+      - '117. Populating Next Right Pointers in Each Node II (Medium)': part1/117.md
+      - 118. Pascal's Triangle (Easy): 'part1/118.md'
+      - 119. Pascal's Triangle II (Easy): 'part1/119.md'
+      - '120. Triangle (Medium)': part1/120.md
+      - '121. Best Time to Buy and Sell Stock (Easy)': part1/121.md
+      - '122. Best Time to Buy and Sell Stock II (Medium)': part1/122.md
+      - '123. Best Time to Buy and Sell Stock III (Hard)': part1/123.md
+      - '124. Binary Tree Maximum Path Sum (Hard)': part1/124.md
+      - '125. Valid Palindrome (Easy)': part1/125.md
+      - '126. Word Ladder II (Hard)': part1/126.md
+      - '127. Word Ladder (Medium)': part1/127.md
+      - '128. Longest Consecutive Sequence (Medium)': part1/128.md
+      - '129. Sum Root to Leaf Numbers (Medium)': part1/129.md
+      - '130. Surrounded Regions (Medium)': part1/130.md
+      - '131. Palindrome Partitioning (Medium)': part1/131.md
+      - '132. Palindrome Partitioning II (Hard)': part1/132.md
+      - '133. Clone Graph (Medium)': part1/133.md
+      - '134. Gas Station (Medium)': part1/134.md
+      - '135. Candy (Hard)': part1/135.md
+      - '136. Single Number (Easy)': part1/136.md
+      - '137. Single Number II (Medium)': part1/137.md
+      - '138. Copy List with Random Pointer (Medium)': part1/138.md
+      - '139. Word Break (Medium)': part1/139.md
+      - '140. Word Break II (Hard)': part1/140.md
+      - '141. Linked List Cycle (Easy)': part1/141.md
+      - '142. Linked List Cycle II (Medium)': part1/142.md
+      - '143. Reorder List (Medium)': part1/143.md
+      - '144. Binary Tree Preorder Traversal (Easy)': part1/144.md
+      - '145. Binary Tree Postorder Traversal (Easy)': part1/145.md
+      - '146. LRU Cache (Medium)': part1/146.md
+      - '147. Insertion Sort List (Medium)': part1/147.md
+      - '148. Sort List (Medium)': part1/148.md
+      - '149. Max Points on a Line (Hard)': part1/149.md
+      - '150. Evaluate Reverse Polish Notation (Medium)': part1/150.md
+      - '151. Reverse Words in a String (Medium)': part1/151.md
+      - '152. Maximum Product Subarray (Medium)': part1/152.md
+      - '153. Find Minimum in Rotated Sorted Array (Medium)': part1/153.md
+      - '154. Find Minimum in Rotated Sorted Array II (Hard)': part1/154.md
+      - '155. Min Stack (Medium)': part1/155.md
+      - '156. Binary Tree Upside Down (Medium)': part1/156.md
+      - '157. Read N Characters Given Read4 (Easy)': part1/157.md
+      - '158. Read N Characters Given Read4 II - Call multiple times (Hard)': part1/158.md
+      - '159. Longest Substring with At Most Two Distinct Characters (Medium)': part1/159.md
+      - '160. Intersection of Two Linked Lists (Easy)': part1/160.md
+      - '161. One Edit Distance (Medium)': part1/161.md
+      - '162. Find Peak Element (Medium)': part1/162.md
+      - '163. Missing Ranges (Easy)': part1/163.md
+      - '164. Maximum Gap (Hard)': part1/164.md
+      - '165. Compare Version Numbers (Medium)': part1/165.md
+      - '166. Fraction to Recurring Decimal (Medium)': part1/166.md
+      - '167. Two Sum II - Input Array Is Sorted (Medium)': part1/167.md
+      - '168. Excel Sheet Column Title (Easy)': part1/168.md
+      - '169. Majority Element (Easy)': part1/169.md
+      - '170. Two Sum III - Data structure design (Easy)': part1/170.md
+      - '171. Excel Sheet Column Number (Easy)': part1/171.md
+      - '172. Factorial Trailing Zeroes (Easy)': part1/172.md
+      - '173. Binary Search Tree Iterator (Medium)': part1/173.md
+      - '174. Dungeon Game (Hard)': part1/174.md
+      - '175. Combine Two Tables (Easy)': part1/175.md
+      - '176. Second Highest Salary (Easy)': part1/176.md
+      - '177. Nth Highest Salary (Medium)': part1/177.md
+      - '178. Rank Scores (Medium)': part1/178.md
+      - '179. Largest Number (Medium)': part1/179.md
+      - '180. Consecutive Numbers (Medium)': part1/180.md
+      - '181. Employees Earning More Than Their Managers (Easy)': part1/181.md
+      - '182. Duplicate Emails (Easy)': part1/182.md
+      - '183. Customers Who Never Order (Easy)': part1/183.md
+      - '184. Department Highest Salary (Medium)': part1/184.md
+      - '185. Department Top Three Salaries (Hard)': part1/185.md
+      - '186. Reverse Words in a String II (Medium)': part1/186.md
+      - '187. Repeated DNA Sequences (Medium)': part1/187.md
+      - '188. Best Time to Buy and Sell Stock IV (Hard)': part1/188.md
+      - '189. Rotate Array (Medium)': part1/189.md
+      - '190. Reverse Bits (Easy)': part1/190.md
+      - '191. Number of 1 Bits (Easy)': part1/191.md
+      - '192. Word Frequency (Medium)': part1/192.md
+      - '193. Valid Phone Numbers (Easy)': part1/193.md
+      - '194. Transpose File (Medium)': part1/194.md
+      - '195. Tenth Line (Easy)': part1/195.md
+      - '196. Delete Duplicate Emails (Easy)': part1/196.md
+      - '197. Rising Temperature (Easy)': part1/197.md
+      - '198. House Robber (Medium)': part1/198.md
+      - '199. Binary Tree Right Side View (Medium)': part1/199.md
+      - '200. Number of Islands (Medium)': part1/200.md
   - Pyodide: 'pyodide.md'
   - Gemini: 'https://gemini.google.com/'
   - Vitae: 'https://lukeclarksf.com'

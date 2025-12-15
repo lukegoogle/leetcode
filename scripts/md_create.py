@@ -21,7 +21,7 @@ def create_md_files(start_num, end_num, directory, part):
 \n\
 ```pyodide\n\
 {% \n\
-    include "../../python1_run/'+f"{part}"+'/_'+f"{i}"+'.py" \n\
+    include "../../'+f"{part}"+'/python_run/_'+f"{i}"+'.py" \n\
     preserve-includer-indent=false \n\
 %}\n\
 ```\n\
@@ -30,7 +30,7 @@ def create_md_files(start_num, end_num, directory, part):
 \n\
 ```python\n\
 {% \n\
-    include "../../python1_mod/'+f"{part}"+'/_'+f"{i}"+'.py" \n\
+    include "../../'+f"{part}"+'/python_mod/_'+f"{i}"+'.py" \n\
     preserve-includer-indent=false \n\
 %}\n\
 ```\n\
@@ -64,7 +64,7 @@ def create_md_files(start_num, end_num, directory, part):
     print("File creation complete!")
 
 # Create the markdown files.
-create_md_files(51, 500, "docs/part1", "part1")
+create_md_files(51, 200, "docs/part1", "part1")
 #create_md_files(1001, 2000, "docs/part2", "part2")
 #create_md_files(2001, 3000, "docs/part3", "part3")
 #create_md_files(3001, 3778, "docs/part4", "part4")
