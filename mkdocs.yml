@@ -279,6 +279,212 @@ nav:
       - '198. House Robber (Medium)': part1/198.md
       - '199. Binary Tree Right Side View (Medium)': part1/199.md
       - '200. Number of Islands (Medium)': part1/200.md
+    - Problems 201 - 400:
+      # --- Problems 201-250 ---
+      - '201. Bitwise AND of Numbers Range (Medium)': part2/201.md
+      - '202. Happy Number (Easy)': part2/202.md
+      - '203. Remove Linked List Elements (Easy)': part2/203.md
+      - '204. Count Primes (Medium)': part2/204.md
+      - '205. Isomorphic Strings (Easy)': part2/205.md
+      - '206. Reverse Linked List (Easy)': part2/206.md
+      - '207. Course Schedule (Medium)': part2/207.md
+      - '208. Implement Trie (Prefix Tree) (Medium)': part2/208.md
+      - '209. Minimum Size Subarray Sum (Medium)': part2/209.md
+      - '210. Course Schedule II (Medium)': part2/210.md
+      - '211. Design Add and Search Words Data Structure (Medium)': part2/211.md
+      - '212. Word Search II (Hard)': part2/212.md
+      - '213. House Robber II (Medium)': part2/213.md
+      - '214. Shortest Palindrome (Hard)': part2/214.md
+      - '215. Kth Largest Element in an Array (Medium)': part2/215.md
+      - '216. Combination Sum III (Medium)': part2/216.md
+      - '217. Contains Duplicate (Easy)': part2/217.md
+      - '218. The Skyline Problem (Hard)': part2/218.md
+      - '219. Contains Duplicate II (Easy)': part2/219.md
+      - '220. Contains Duplicate III (Hard)': part2/220.md
+      - '221. Maximal Square (Medium)': part2/221.md
+      - '222. Count Complete Tree Nodes (Medium)': part2/222.md
+      - '223. Rectangle Area (Medium)': part2/223.md
+      - '224. Basic Calculator (Hard)': part2/224.md
+      - '225. Implement Stack using Queues (Easy)': part2/225.md
+      - '226. Invert Binary Tree (Easy)': part2/226.md
+      - '227. Basic Calculator II (Medium)': part2/227.md
+      - '228. Summary Ranges (Easy)': part2/228.md
+      - '229. Majority Element II (Medium)': part2/229.md
+      - '230. Kth Smallest Element in a BST (Medium)': part2/230.md
+      - '231. Power of Two (Easy)': part2/231.md
+      - '232. Implement Queue using Stacks (Easy)': part2/232.md
+      - '233. Number of Digit One (Hard)': part2/233.md
+      - '234. Palindrome Linked List (Easy)': part2/234.md
+      - '235. Lowest Common Ancestor of a Binary Search Tree (Easy)': part2/235.md
+      - '236. Lowest Common Ancestor of a Binary Tree (Medium)': part2/236.md
+      - '237. Delete Node in a Linked List (Easy)': part2/237.md
+      - '238. Product of Array Except Self (Medium)': part2/238.md
+      - '239. Sliding Window Maximum (Hard)': part2/239.md
+      - '240. Search a 2D Matrix II (Medium)': part2/240.md
+      - '241. Different Ways to Add Parentheses (Medium)': part2/241.md
+      - '242. Valid Anagram (Easy)': part2/242.md
+      - '243. Shortest Word Distance (Easy)': part2/243.md
+      - '244. Shortest Word Distance II (Medium)': part2/244.md
+      - '245. Shortest Word Distance III (Medium)': part2/245.md
+      - '246. Strobogrammatic Number (Easy)': part2/246.md
+      - '247. Strobogrammatic Number II (Medium)': part2/247.md
+      - '248. Strobogrammatic Number III (Hard)': part2/248.md
+      - '249. Group Shifted Strings (Medium)': part2/249.md
+      - '250. Count Univalue Subtrees (Medium)': part2/250.md
+      # --- Problems 251-300 ---
+      - '251. Flatten 2D Vector (Medium)': part2/251.md
+      - '252. Meeting Rooms (Easy)': part2/252.md
+      - '253. Meeting Rooms II (Medium)': part2/253.md
+      - '254. Factor Combinations (Medium)': part2/254.md
+      - '255. Verify Preorder Sequence in Binary Search Tree (Medium)': part2/255.md
+      - '256. Paint House (Easy)': part2/256.md
+      - '257. Binary Tree Paths (Easy)': part2/257.md
+      - '258. Add Digits (Easy)': part2/258.md
+      - '259. 3Sum Smaller (Medium)': part2/259.md
+      - '260. Single Number III (Medium)': part2/260.md
+      - '261. Graph Valid Tree (Medium)': part2/261.md
+      - '262. Trips and Users (Hard)': part2/262.md
+      - '263. Ugly Number (Easy)': part2/263.md
+      - '264. Ugly Number II (Medium)': part2/264.md
+      - '265. Paint House II (Hard)': part2/265.md
+      - '266. Palindrome Permutation (Easy)': part2/266.md
+      - '267. Palindrome Permutation II (Medium)': part2/267.md
+      - '268. Missing Number (Easy)': part2/268.md
+      - '269. Alien Dictionary (Hard)': part2/269.md
+      - '270. Closest Binary Search Tree Value (Easy)': part2/270.md
+      - '271. Encode and Decode Strings (Medium)': part2/271.md
+      - '272. Closest Binary Search Tree Value II (Hard)': part2/272.md
+      - '273. Integer to English Words (Hard)': part2/273.md
+      - '274. H-Index (Medium)': part2/274.md
+      - '275. H-Index II (Medium)': part2/275.md
+      - '276. Paint Fence (Medium)': part2/276.md
+      - '277. Find the Celebrity (Medium)': part2/277.md
+      - '278. First Bad Version (Easy)': part2/278.md
+      - '279. Perfect Squares (Medium)': part2/279.md
+      - '280. Wiggle Sort (Medium)': part2/280.md
+      - '281. Zigzag Iterator (Medium)': part2/281.md
+      - '282. Expression Add Operators (Hard)': part2/282.md
+      - '283. Move Zeroes (Easy)': part2/283.md
+      - '284. Peeking Iterator (Medium)': part2/284.md
+      - '285. Inorder Successor in BST (Medium)': part2/285.md
+      - '286. Walls and Gates (Medium)': part2/286.md
+      - '287. Find the Duplicate Number (Medium)': part2/287.md
+      - '288. Unique Word Abbreviation (Medium)': part2/288.md
+      - '289. Game of Life (Medium)': part2/289.md
+      - '290. Word Pattern (Easy)': part2/290.md
+      - '291. Word Pattern II (Hard)': part2/291.md
+      - '292. Nim Game (Easy)': part2/292.md
+      - '293. Flip Game (Easy)': part2/293.md
+      - '294. Flip Game II (Medium)': part2/294.md
+      - '295. Find Median from Data Stream (Hard)': part2/295.md
+      - '296. Best Meeting Point (Hard)': part2/296.md
+      - '297. Serialize and Deserialize Binary Tree (Hard)': part2/297.md
+      - '298. Binary Tree Longest Consecutive Sequence (Medium)': part2/298.md
+      - '299. Bulls and Cows (Medium)': part2/299.md
+      - '300. Longest Increasing Subsequence (Medium)': part2/300.md
+      # --- Problems 301-350 ---
+      - '301. Remove Invalid Parentheses (Hard)': part2/301.md
+      - '302. Smallest Rectangle Enclosing Black Pixels (Hard)': part2/302.md
+      - '303. Range Sum Query - Immutable (Easy)': part2/303.md
+      - '304. Range Sum Query 2D - Immutable (Medium)': part2/304.md
+      - '305. Number of Islands II (Hard)': part2/305.md
+      - '306. Additive Number (Medium)': part2/306.md
+      - '307. Range Sum Query - Mutable (Medium)': part2/307.md
+      - '308. Range Sum Query 2D - Mutable (Hard)': part2/308.md
+      - '309. Best Time to Buy and Sell Stock with Cooldown (Medium)': part2/309.md
+      - '310. Minimum Height Trees (Medium)': part2/310.md
+      - '311. Sparse Matrix Multiplication (Medium)': part2/311.md
+      - '312. Burst Balloons (Hard)': part2/312.md
+      - '313. Super Ugly Number (Medium)': part2/313.md
+      - '314. Binary Tree Vertical Order Traversal (Medium)': part2/314.md
+      - '315. Count of Smaller Numbers After Self (Hard)': part2/315.md
+      - '316. Remove Duplicate Letters (Medium)': part2/316.md
+      - '317. Shortest Distance from All Buildings (Hard)': part2/317.md
+      - '318. Maximum Product of Word Lengths (Medium)': part2/318.md
+      - '319. Bulb Switcher (Medium)': part2/319.md
+      - '320. Generalized Abbreviation (Medium)': part2/320.md
+      - '321. Create Maximum Number (Hard)': part2/321.md
+      - '322. Coin Change (Medium)': part2/322.md
+      - '323. Number of Connected Components in an Undirected Graph (Medium)': part2/323.md
+      - '324. Wiggle Sort II (Medium)': part2/324.md
+      - '325. Maximum Size Subarray Sum Equals k (Medium)': part2/325.md
+      - '326. Power of Three (Easy)': part2/326.md
+      - '327. Count of Range Sum (Hard)': part2/327.md
+      - '328. Odd Even Linked List (Medium)': part2/328.md
+      - '329. Longest Increasing Path in a Matrix (Hard)': part2/329.md
+      - '330. Patching Array (Hard)': part2/330.md
+      - '331. Verify Preorder Serialization of a Binary Tree (Medium)': part2/331.md
+      - '332. Reconstruct Itinerary (Medium)': part2/332.md
+      - '333. Largest BST Subtree (Medium)': part2/333.md
+      - '334. Increasing Triplet Subsequence (Medium)': part2/334.md
+      - '335. Self Crossing (Hard)': part2/335.md
+      - '336. Palindrome Pairs (Hard)': part2/336.md
+      - '337. House Robber III (Medium)': part2/337.md
+      - '338. Counting Bits (Medium)': part2/338.md
+      - '339. Nested List Weight Sum (Easy)': part2/339.md
+      - '340. Longest Substring with At Most K Distinct Characters (Hard)': part2/340.md
+      - '341. Flatten Nested List Iterator (Medium)': part2/341.md
+      - '342. Power of Four (Easy)': part2/342.md
+      - '343. Integer Break (Medium)': part2/343.md
+      - '344. Reverse String (Easy)': part2/344.md
+      - '345. Reverse Vowels of a String (Medium)': part2/345.md
+      - '346. Moving Average from Data Stream (Easy)': part2/346.md
+      - '347. Top K Frequent Elements (Medium)': part2/347.md
+      - '348. Design Tic-Tac-Toe (Medium)': part2/348.md
+      - '349. Intersection of Two Arrays (Easy)': part2/349.md
+      - '350. Intersection of Two Arrays II (Easy)': part2/350.md
+      # --- Problems 351-400 ---
+      - '351. Android Unlock Patterns (Medium)': part2/351.md
+      - '352. Data Stream as Disjoint Intervals (Hard)': part2/352.md
+      - '353. Design Snake Game (Medium)': part2/353.md
+      - '354. Russian Doll Envelopes (Hard)': part2/354.md
+      - '355. Design Twitter (Medium)': part2/355.md
+      - '356. Line Reflection (Medium)': part2/356.md
+      - '357. Count Numbers with Unique Digits (Medium)': part2/357.md
+      - '358. Rearrange String k Distance Apart (Hard)': part2/358.md
+      - '359. Logger Rate Limiter (Easy)': part2/359.md
+      - '360. Sort Transformed Array (Medium)': part2/360.md
+      - '361. Bomb Enemy (Medium)': part2/361.md
+      - '362. Design Hit Counter (Medium)': part2/362.md
+      - '363. Max Sum of Rectangle No Larger Than K (Hard)': part2/363.md
+      - '364. Nested List Weight Sum II (Medium)': part2/364.md
+      - '365. Water and Jug Problem (Medium)': part2/365.md
+      - '366. Find Leaves of Binary Tree (Medium)': part2/366.md
+      - '367. Valid Perfect Square (Easy)': part2/367.md
+      - '368. Largest Divisible Subset (Medium)': part2/368.md
+      - '369. Plus One Linked List (Medium)': part2/369.md
+      - '370. Range Addition (Medium)': part2/370.md
+      - '371. Sum of Two Integers (Medium)': part2/371.md
+      - '372. Super Pow (Medium)': part2/372.md
+      - '373. Find K Pairs with Smallest Sums (Medium)': part2/373.md
+      - '374. Guess Number Higher or Lower (Easy)': part2/374.md
+      - '375. Guess Number Higher or Lower II (Medium)': part2/375.md
+      - '376. Wiggle Subsequence (Medium)': part2/376.md
+      - '377. Combination Sum IV (Medium)': part2/377.md
+      - '378. Kth Smallest Element in a Sorted Matrix (Medium)': part2/378.md
+      - '379. Design Phone Directory (Medium)': part2/379.md
+      - '380. Insert Delete GetRandom O(1) (Medium)': part2/380.md
+      - '381. Insert Delete GetRandom O(1) - Duplicates allowed (Hard)': part2/381.md
+      - '382. Linked List Random Node (Medium)': part2/382.md
+      - '383. Ransom Note (Easy)': part2/383.md
+      - '384. Shuffle an Array (Medium)': part2/384.md
+      - '385. Mini Parser (Medium)': part2/385.md
+      - '386. Lexicographical Numbers (Medium)': part2/386.md
+      - '387. First Unique Character in a String (Easy)': part2/387.md
+      - '388. Longest Absolute File Path (Medium)': part2/388.md
+      - '389. Find the Difference (Easy)': part2/389.md
+      - '390. Elimination Game (Medium)': part2/390.md
+      - '391. Perfect Rectangle (Hard)': part2/391.md
+      - '392. Is Subsequence (Easy)': part2/392.md
+      - '393. UTF-8 Validation (Medium)': part2/393.md
+      - '394. Decode String (Medium)': part2/394.md
+      - '395. Longest Substring with At Least K Repeating Characters (Medium)': part2/395.md
+      - '396. Rotate Function (Medium)': part2/396.md
+      - '397. Integer Replacement (Medium)': part2/397.md
+      - '398. Random Pick Index (Medium)': part2/398.md
+      - '399. Evaluate Division (Medium)': part2/399.md
+      - '400. Nth Digit (Medium)': part2/400.md
+
   - Pyodide: 'pyodide.md'
   - Gemini: 'https://gemini.google.com/'
   - Vitae: 'https://lukeclarksf.com'
