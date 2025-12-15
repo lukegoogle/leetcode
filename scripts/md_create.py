@@ -64,7 +64,7 @@ def create_md_files(start_num, end_num, directory, part):
     print("File creation complete!")
 
 # Create the markdown files.
-create_md_files(51, 1000, "docs/part1", "part1")
-create_md_files(1001, 2000, "docs/part2", "part2")
-create_md_files(2001, 3000, "docs/part3", "part3")
-create_md_files(3001, 3778, "docs/part4", "part4")
+create_md_files(51, 500, "docs/part1", "part1")
+#create_md_files(1001, 2000, "docs/part2", "part2")
+#create_md_files(2001, 3000, "docs/part3", "part3")
+#create_md_files(3001, 3778, "docs/part4", "part4")

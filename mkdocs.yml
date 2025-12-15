@@ -129,7 +129,56 @@ nav:
       - 48. Rotate Image (Medium): '48.md'
       - 49. Group Anagrams (Medium): '49.md'
       - 50. Pow(x, n) (Medium): '50.md'
-  
+      - '51. N-Queens (Hard)': 51.md
+      - '52. N-Queens II (Hard)': 52.md
+      - '53. Maximum Subarray (Easy)': 53.md
+      - '54. Spiral Matrix (Medium)': 54.md
+      - '55. Jump Game (Medium)': 55.md
+      - '56. Merge Intervals (Medium)': 56.md
+      - '57. Insert Interval (Medium)': 57.md
+      - '58. Length of Last Word (Easy)': 58.md
+      - '59. Spiral Matrix II (Medium)': 59.md
+      - '60. Permutation Sequence (Hard)': 60.md
+      - '61. Rotate List (Medium)': 61.md
+      - '62. Unique Paths (Medium)': 62.md
+      - '63. Unique Paths II (Medium)': 63.md
+      - '64. Minimum Path Sum (Medium)': 64.md
+      - '65. Valid Number (Hard)': 65.md
+      - '66. Plus One (Easy)': 66.md
+      - '67. Add Binary (Easy)': 67.md
+      - '68. Text Justification (Hard)': 68.md
+      - '69. Sqrt(x) (Easy)': 69.md
+      - '70. Climbing Stairs (Easy)': 70.md
+      - '71. Simplify Path (Medium)': 71.md
+      - '72. Edit Distance (Hard)': 72.md
+      - '73. Set Matrix Zeroes (Medium)': 73.md
+      - '74. Search a 2D Matrix (Medium)': 74.md
+      - '75. Sort Colors (Medium)': 75.md
+      - '76. Minimum Window Substring (Hard)': 76.md
+      - '77. Combinations (Medium)': 77.md
+      - '78. Subsets (Medium)': 78.md
+      - '79. Word Search (Medium)': 79.md
+      - '80. Remove Duplicates from Sorted Array II (Medium)': 80.md
+      - '81. Search in Rotated Sorted Array II (Medium)': 81.md
+      - '82. Remove Duplicates from Sorted List II (Medium)': 82.md
+      - '83. Remove Duplicates from Sorted List (Easy)': 83.md
+      - '84. Largest Rectangle in Histogram (Hard)': 84.md
+      - '85. Maximal Rectangle (Hard)': 85.md
+      - '86. Partition List (Medium)': 86.md
+      - '87. Scramble String (Hard)': 87.md
+      - '88. Merge Sorted Array (Easy)': 88.md
+      - '89. Gray Code (Medium)': 89.md
+      - '90. Subsets II (Medium)': 90.md
+      - '91. Decode Ways (Medium)': 91.md
+      - '92. Reverse Linked List II (Medium)': 92.md
+      - '93. Restore IP Addresses (Medium)': 93.md
+      - '94. Binary Tree Inorder Traversal (Easy)': 94.md
+      - '95. Unique Binary Search Trees II (Medium)': 95.md
+      - '96. Unique Binary Search Trees (Medium)': 96.md
+      - '97. Interleaving String (Hard)': 97.md
+      - '98. Validate Binary Search Tree (Medium)': 98.md
+      - '99. Recover Binary Search Tree (Medium)': 99.md
+      - '100. Same Tree (Easy)': 100.md
   - Pyodide: 'pyodide.md'
   - Gemini: 'https://gemini.google.com/'
   - Vitae: 'https://lukeclarksf.com'
