@@ -2510,29 +2510,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="n">slow</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
 
         <span class="k">return</span> <span class="n">dummy</span><span class="o">.</span><span class="n">next</span>
-
-<span class="c1"># --- Helper function for list creation and printing ---</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">create_linked_list</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">arr</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
-    <span class="n">head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">current</span> <span class="o">=</span> <span class="n">head</span>
-    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-        <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
-    <span class="k">return</span> <span class="n">head</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">print_linked_list</span><span class="p">(</span><span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span> <span class="o">|</span> <span class="kc">None</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">head</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;[]&quot;</span>
-
-    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">current</span> <span class="o">=</span> <span class="n">head</span>
-    <span class="k">while</span> <span class="n">current</span><span class="p">:</span>
-        <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">val</span><span class="p">))</span>
-        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
-    <span class="k">return</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="s2">&quot; -&gt; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span>
 </code></pre></div>
 
 
