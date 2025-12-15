@@ -2685,38 +2685,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">lengthOfLongestSubstring</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Finds the length of the longest substring in the given string $s$ without repeating characters.</span>
-
-<span class="sd">        This is solved efficiently using the sliding window approach. A set, `char_set`, is used to keep track</span>
-<span class="sd">        of characters within the current window defined by the two pointers, `left` and `right`. As the</span>
-<span class="sd">        `right` pointer advances, the character is added to the set. If the character is already present</span>
-<span class="sd">        in the set, the `left` pointer is moved forward and characters are removed from the set until</span>
-<span class="sd">        the window contains only unique characters again. The maximum length is calculated at each step.</span>
-
-
-<span class="sd">        Args:</span>
-<span class="sd">            s: The input string.</span>
-
-<span class="sd">        Returns:</span>
-<span class="sd">            The length of the longest substring without repeating characters.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">char_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">max_length</span> <span class="o">=</span> <span class="mi">0</span>
@@ -2757,67 +2727,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     <div class="doc doc-contents ">
 
-        <p>Finds the length of the longest substring in the given string <span class="arithmatex">\(s\)</span> without repeating characters.</p>
-<p>This is solved efficiently using the sliding window approach. A set, <code>char_set</code>, is used to keep track
-of characters within the current window defined by the two pointers, <code>left</code> and <code>right</code>. As the
-<code>right</code> pointer advances, the character is added to the set. If the character is already present
-in the set, the <code>left</code> pointer is moved forward and characters are removed from the set until
-the window contains only unique characters again. The maximum length is calculated at each step.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>s</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The input string.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                  <code><span title="int">int</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The length of the longest substring without repeating characters.</p>
-              </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>python/_3.py</code></summary>
@@ -2834,37 +2743,7 @@ the window contains only unique characters again. The maximum length is calculat
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lengthOfLongestSubstring</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Finds the length of the longest substring in the given string $s$ without repeating characters.</span>
-
-<span class="sd">    This is solved efficiently using the sliding window approach. A set, `char_set`, is used to keep track</span>
-<span class="sd">    of characters within the current window defined by the two pointers, `left` and `right`. As the</span>
-<span class="sd">    `right` pointer advances, the character is added to the set. If the character is already present</span>
-<span class="sd">    in the set, the `left` pointer is moved forward and characters are removed from the set until</span>
-<span class="sd">    the window contains only unique characters again. The maximum length is calculated at each step.</span>
-
-
-<span class="sd">    Args:</span>
-<span class="sd">        s: The input string.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        The length of the longest substring without repeating characters.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lengthOfLongestSubstring</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="n">char_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">max_length</span> <span class="o">=</span> <span class="mi">0</span>
