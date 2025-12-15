@@ -78,7 +78,7 @@ nav:
   #- Part 4: !projects part4/
   - Python:
     - Introduction: 'index.md'
-    - Part 0:
+    - Problems 1-200:
       - 1. Two Sum (Easy): '1.md'
       - 2. Add Two Numbers (Medium): '2.md'
       - 3. Longest Substring Without Repeating Characters (Medium): '3.md'
