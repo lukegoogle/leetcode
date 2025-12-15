@@ -608,6 +608,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3.Solution.lengthOfLongestSubstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lengthOfLongestSubstring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#3-longest-substring-without-repeating-characters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2403,6 +2436,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3.Solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3.Solution.lengthOfLongestSubstring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lengthOfLongestSubstring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#3-longest-substring-without-repeating-characters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2556,7 +2622,315 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         <span class="k">return</span> <span class="n">max_length</span>
 </code></pre></div>
-<h2 id="3-longest-substring-without-repeating-characters">3. Longest Substring Without Repeating Characters<a class="headerlink" href="#3-longest-substring-without-repeating-characters" title="Permanent link">&para;</a></h2>
+<h2 id="function-description">Function Description<a class="headerlink" href="#function-description" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<a id="_3.Solution"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>python/_3.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">lengthOfLongestSubstring</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Finds the length of the longest substring without repeating characters.</span>
+
+<span class="sd">        This function uses a sliding window approach with a set to keep track of </span>
+<span class="sd">        characters within the current window $s[left:right+1]$.</span>
+
+<span class="sd">        The algorithm works as follows:</span>
+<span class="sd">        1. Initialize `char_set` (a set for the current window&#39;s characters), </span>
+<span class="sd">           `left` (the start of the window), and `max_length` (the longest </span>
+<span class="sd">           found length).</span>
+<span class="sd">        2. Iterate through the string with `right` (the end of the window).</span>
+<span class="sd">        3. **Sliding:** If the character $s[right]$ is already in `char_set`, </span>
+<span class="sd">           it means we have a duplicate. We shrink the window from the `left` </span>
+<span class="sd">           by removing $s[left]$ from `char_set` and incrementing `left` until </span>
+<span class="sd">           the duplicate character $s[right]$ is removed from the window </span>
+<span class="sd">           (i.e., $s[right]$ is no longer in `char_set`).</span>
+<span class="sd">        4. **Expansion:** Add $s[right]$ to `char_set` to expand the window.</span>
+<span class="sd">        5. **Update Max:** Calculate the current window length (`right - left + 1`) </span>
+<span class="sd">           and update `max_length` if the current length is greater.</span>
+<span class="sd">        6. Return `max_length` after iterating through the entire string.</span>
+
+
+
+<span class="sd">        :param s: The input string.</span>
+<span class="sd">        :type s: str</span>
+<span class="sd">        :raises TypeError: If the input `s` is not a string.</span>
+<span class="sd">        :return: The length of the longest substring without repeating characters.</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">        &gt;&gt;&gt; sol = Solution()</span>
+<span class="sd">        &gt;&gt;&gt; sol.lengthOfLongestSubstring(&quot;abcabcbb&quot;)</span>
+<span class="sd">        3  # The longest substring is &quot;abc&quot;</span>
+<span class="sd">        &gt;&gt;&gt; sol.lengthOfLongestSubstring(&quot;bbbbb&quot;)</span>
+<span class="sd">        1  # The longest substring is &quot;b&quot;</span>
+<span class="sd">        &gt;&gt;&gt; sol.lengthOfLongestSubstring(&quot;pwwkew&quot;)</span>
+<span class="sd">        3  # The longest substring is &quot;wke&quot;. Note that &quot;pwke&quot; is a subsequence, not a substring.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">char_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">max_length</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+            <span class="k">while</span> <span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="ow">in</span> <span class="n">char_set</span><span class="p">:</span>
+                <span class="n">char_set</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">left</span><span class="p">])</span>
+                <span class="n">left</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="n">char_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">])</span>
+            <span class="n">max_length</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_length</span><span class="p">,</span> <span class="n">right</span> <span class="o">-</span> <span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">max_length</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="_3.Solution.lengthOfLongestSubstring" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">lengthOfLongestSubstring</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></code>
+
+<a href="#_3.Solution.lengthOfLongestSubstring" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Finds the length of the longest substring without repeating characters.</p>
+<p>This function uses a sliding window approach with a set to keep track of 
+characters within the current window <span class="arithmatex">\(s[left:right+1]\)</span>.</p>
+<p>The algorithm works as follows:
+1. Initialize <code>char_set</code> (a set for the current window's characters), 
+   <code>left</code> (the start of the window), and <code>max_length</code> (the longest 
+   found length).
+2. Iterate through the string with <code>right</code> (the end of the window).
+3. <strong>Sliding:</strong> If the character <span class="arithmatex">\(s[right]\)</span> is already in <code>char_set</code>, 
+   it means we have a duplicate. We shrink the window from the <code>left</code> 
+   by removing <span class="arithmatex">\(s[left]\)</span> from <code>char_set</code> and incrementing <code>left</code> until 
+   the duplicate character <span class="arithmatex">\(s[right]\)</span> is removed from the window 
+   (i.e., <span class="arithmatex">\(s[right]\)</span> is no longer in <code>char_set</code>).
+4. <strong>Expansion:</strong> Add <span class="arithmatex">\(s[right]\)</span> to <code>char_set</code> to expand the window.
+5. <strong>Update Max:</strong> Calculate the current window length (<code>right - left + 1</code>) 
+   and update <code>max_length</code> if the current length is greater.
+6. Return <code>max_length</code> after iterating through the entire string.</p>
+<p>:param s: The input string.
+:type s: str
+:raises TypeError: If the input <code>s</code> is not a string.
+:return: The length of the longest substring without repeating characters.
+:rtype: int</p>
+<p>Example:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>sol = Solution()
+sol.lengthOfLongestSubstring("abcabcbb")
+3  # The longest substring is "abc"
+sol.lengthOfLongestSubstring("bbbbb")
+1  # The longest substring is "b"
+sol.lengthOfLongestSubstring("pwwkew")
+3  # The longest substring is "wke". Note that "pwke" is a subsequence, not a substring.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>python/_3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lengthOfLongestSubstring</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Finds the length of the longest substring without repeating characters.</span>
+
+<span class="sd">    This function uses a sliding window approach with a set to keep track of </span>
+<span class="sd">    characters within the current window $s[left:right+1]$.</span>
+
+<span class="sd">    The algorithm works as follows:</span>
+<span class="sd">    1. Initialize `char_set` (a set for the current window&#39;s characters), </span>
+<span class="sd">       `left` (the start of the window), and `max_length` (the longest </span>
+<span class="sd">       found length).</span>
+<span class="sd">    2. Iterate through the string with `right` (the end of the window).</span>
+<span class="sd">    3. **Sliding:** If the character $s[right]$ is already in `char_set`, </span>
+<span class="sd">       it means we have a duplicate. We shrink the window from the `left` </span>
+<span class="sd">       by removing $s[left]$ from `char_set` and incrementing `left` until </span>
+<span class="sd">       the duplicate character $s[right]$ is removed from the window </span>
+<span class="sd">       (i.e., $s[right]$ is no longer in `char_set`).</span>
+<span class="sd">    4. **Expansion:** Add $s[right]$ to `char_set` to expand the window.</span>
+<span class="sd">    5. **Update Max:** Calculate the current window length (`right - left + 1`) </span>
+<span class="sd">       and update `max_length` if the current length is greater.</span>
+<span class="sd">    6. Return `max_length` after iterating through the entire string.</span>
+
+
+
+<span class="sd">    :param s: The input string.</span>
+<span class="sd">    :type s: str</span>
+<span class="sd">    :raises TypeError: If the input `s` is not a string.</span>
+<span class="sd">    :return: The length of the longest substring without repeating characters.</span>
+<span class="sd">    :rtype: int</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">    &gt;&gt;&gt; sol = Solution()</span>
+<span class="sd">    &gt;&gt;&gt; sol.lengthOfLongestSubstring(&quot;abcabcbb&quot;)</span>
+<span class="sd">    3  # The longest substring is &quot;abc&quot;</span>
+<span class="sd">    &gt;&gt;&gt; sol.lengthOfLongestSubstring(&quot;bbbbb&quot;)</span>
+<span class="sd">    1  # The longest substring is &quot;b&quot;</span>
+<span class="sd">    &gt;&gt;&gt; sol.lengthOfLongestSubstring(&quot;pwwkew&quot;)</span>
+<span class="sd">    3  # The longest substring is &quot;wke&quot;. Note that &quot;pwke&quot; is a subsequence, not a substring.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">char_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_length</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+        <span class="k">while</span> <span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="ow">in</span> <span class="n">char_set</span><span class="p">:</span>
+            <span class="n">char_set</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">left</span><span class="p">])</span>
+            <span class="n">left</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">char_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">])</span>
+        <span class="n">max_length</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_length</span><span class="p">,</span> <span class="n">right</span> <span class="o">-</span> <span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">max_length</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="3-longest-substring-without-repeating-characters">3. Longest Substring Without Repeating Characters<a class="headerlink" href="#3-longest-substring-without-repeating-characters" title="Permanent link">&para;</a></h2>
 <h3 id="problem-statement-and-definition">Problem Statement and Definition<a class="headerlink" href="#problem-statement-and-definition" title="Permanent link">&para;</a></h3>
 <p>LeetCode problem 3, "Longest Substring Without Repeating Characters," is a classic string manipulation challenge. The objective is to determine the length of the longest substring within a given string <span class="arithmatex">\(s\)</span> that does not contain any repeating characters. A <strong>substring</strong> must be a contiguous sequence of characters, meaning the characters must appear consecutively in the original string. The challenge is to find the maximum possible length of such a unique sequence.</p>
 <p>For instance, if the input string is "abcabcbb", the substrings without repeating characters are "abc", "bca", "cab", and "cbb". The longest among these is "abc", with a length of 3. If the input is "pwwkew", the longest substring is "wke" or "kew" (not "pwke" as 'w' repeats, and not "pwwkew" as 'w' repeats), which has a length of 3. The distinction between a <em>substring</em> and a <em>subsequence</em> is crucial: "pwke" is a subsequence but not a substring because the 'w's are separated in the original string by 'k' and 'e', thus violating the contiguity rule.</p>
