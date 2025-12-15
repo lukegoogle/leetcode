@@ -129,7 +129,7 @@ nav:
         - 49. Group Anagrams (Medium): '49.md'
         - 50. Pow(x, n) (Medium): '50.md'
   
-  - Run: 'pyodide.md'
-  - Verify: 'https://leetcode.com/problems/add-two-numbers/'
+  - Pyodide: 'pyodide.md'
+  - LeetCode: 'https://leetcode.com/problems/add-two-numbers/'
   - Gemini: 'https://gemini.google.com/'
   - Vitae: 'https://lukeclarksf.com'
