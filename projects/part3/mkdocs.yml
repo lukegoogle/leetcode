@@ -58,8 +58,8 @@ extra_javascript:
 
 # 3.1 Plugins
 plugins:
-  - search
   - projects
+  - search
   - include-markdown # <--- Add the plugin here
   - markdown-exec
   - mkdocstrings:
@@ -72,10 +72,6 @@ plugins:
 # ... (other sections like theme, extensions, and plugins) ...
 
 nav:
-  #- Part 1: !projects part1/
-  #- Part 2: !projects part2/
-  #- Part 3: !projects part3/
-  #- Part 4: !projects part4/
   - Python:
     - Introduction: 'index.md'
     - Part 0:

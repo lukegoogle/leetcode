@@ -1,0 +1,7 @@
+{
+  ".": "mkdocs.yml",
+  ".part1": "projects/part1/mkdocs.yml",
+  ".part2": "projects/part2/mkdocs.yml",
+  ".part3": "projects/part3/mkdocs.yml",
+  ".part4": "projects/part4/mkdocs.yml"
+}

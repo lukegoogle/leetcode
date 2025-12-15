@@ -1,0 +1,96 @@
+.md-grid {
+  max-width: 100%; /* Stretches to the full available width */
+}
+
+/* Cards */
+.intro {
+  display: flex;
+}
+.intro p {
+  width: 300px;
+  padding: 40px 0; 
+  margin: 20px 40px;
+}
+.intro-video
+{
+    margin: 20px 20px;
+}
+
+body {background: #fafafa;}
+
+.content-paras
+{
+  background: white;
+  border: 1px solid #eee;
+  margin: 10px 20px;
+  padding: 50px;
+}
+
+.cards {
+  display: flex;
+  margin: 40px 0px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #eee;
+  margin: 10px 20px;
+  width: 300px;
+}
+
+.card h2 {
+  padding: 5px 20px;
+  font-weight: bold;
+}
+
+.card p {
+  padding: 10px 20px;
+}
+
+/* Verify button */
+.verify-button {
+  padding: 12px 50px;
+  background: #113768;
+  color: white;
+  cursor: pointer;
+  margin: 10px 0 10px 0;
+}
+
+.verify-button:hover {
+  background: #1956a4;
+}
+
+:root {
+  /* Primary color (e.g., a specific shade of red) */
+  --md-primary-fg-color: #113768;
+  /* Accent color */
+  --md-accent-fg-color: #113768;
+  /* Background color for code blocks */
+  --md-code-bg-color: #f0f0f0;
+}
+
+.md-header__topic:first-child{
+  font-weight: normal;
+  font-size: 13pt;
+}
+.md-header__button.md-logo,
+.md-nav--primary .md-nav__title .md-logo
+{
+  display: none;
+}
+
+/*.md-header__inner {
+  padding-bottom: 50px;
+}*/
+
+.md-tabs__link {
+  margin: 10px;
+}
+
+/*.md-tabs__item:hover {
+  background: #112233;
+}*/
+
+.md-footer {
+  display: none;
+}
