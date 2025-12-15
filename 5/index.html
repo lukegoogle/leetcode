@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pyodide" class="md-skip">
+        <a href="#run" class="md-skip">
           Skip to content
         </a>
       
@@ -642,10 +642,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pyodide" class="md-nav__link">
+  <a href="#run" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pyodide
+        Run
       
     </span>
   </a>
@@ -664,63 +664,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-longest-palindromic-substring" class="md-nav__link">
+  <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Longest Palindromic Substring
+        Explanation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="5. Longest Palindromic Substring">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-statement-and-core-challenge" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem Statement and Core Challenge
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dynamic-programming-solution-the-formal-approach" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dynamic Programming Solution (The Formal Approach)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-expand-around-center-approach-the-practical-on2-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Expand Around Center Approach (The Practical \(O(N^2)\) Solution)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#center-based-expansion-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Center-Based Expansion Details
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2381,10 +2331,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pyodide" class="md-nav__link">
+  <a href="#run" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pyodide
+        Run
       
     </span>
   </a>
@@ -2403,63 +2353,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-longest-palindromic-substring" class="md-nav__link">
+  <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Longest Palindromic Substring
+        Explanation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="5. Longest Palindromic Substring">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-statement-and-core-challenge" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem Statement and Core Challenge
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dynamic-programming-solution-the-formal-approach" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dynamic Programming Solution (The Formal Approach)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-expand-around-center-approach-the-practical-on2-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Expand Around Center Approach (The Practical \(O(N^2)\) Solution)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#center-based-expansion-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Center-Based Expansion Details
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2485,7 +2385,7 @@
 
   <h1>5. Longest Palindromic Substring (Medium)</h1>
 
-<h2 id="pyodide">Pyodide<a class="headerlink" href="#pyodide" title="Permanent link">&para;</a></h2>
+<h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h2>
 <p>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.16.0/ace.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -2609,25 +2509,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <span class="k">return</span> <span class="n">longest</span>
 </code></pre></div>
 <p><a target="__blank" href="https://leetcode.com/problems/longest-palindromic-substring/"><input class="verify-button" type="button" value="Verify"/></a></p>
-<h2 id="5-longest-palindromic-substring">5. Longest Palindromic Substring<a class="headerlink" href="#5-longest-palindromic-substring" title="Permanent link">&para;</a></h2>
-<h3 id="problem-statement-and-core-challenge">Problem Statement and Core Challenge<a class="headerlink" href="#problem-statement-and-core-challenge" title="Permanent link">&para;</a></h3>
-<p>LeetCode problem 5, "Longest Palindromic Substring," requires finding the longest contiguous substring within a given string <span class="arithmatex">\(s\)</span> that reads the same forwards and backwards. A string that exhibits this property is called a <strong>palindrome</strong>. The challenge lies in efficiently identifying this longest palindromic segment among all possible substrings.</p>
-<p>While the problem seems simple at first glance, the potentially large number of substrings makes a naive approach computationally prohibitive. For a string of length <span class="arithmatex">\(N\)</span>, there are <span class="arithmatex">\(O(N^2)\)</span> possible substrings. Checking each substring for the palindromic property takes <span class="arithmatex">\(O(N)\)</span> time, leading to an overall <strong>Brute Force</strong> complexity of <span class="arithmatex">\(O(N^3)\)</span>. We must seek an optimized solution that can handle input constraints effectively, ideally aiming for <span class="arithmatex">\(O(N^2)\)</span> time or better.</p>
-<h3 id="dynamic-programming-solution-the-formal-approach">Dynamic Programming Solution (The Formal Approach)<a class="headerlink" href="#dynamic-programming-solution-the-formal-approach" title="Permanent link">&para;</a></h3>
-<p>One structured way to solve this is using <strong>Dynamic Programming (DP)</strong>, which offers an <span class="arithmatex">\(O(N^2)\)</span> time complexity. We define a 2D boolean array, <span class="arithmatex">\(\text{dp}[i][j]\)</span>, where <span class="arithmatex">\(\text{dp}[i][j]\)</span> is <code>true</code> if the substring <span class="arithmatex">\(s[i \dots j]\)</span> is a palindrome, and <code>false</code> otherwise.</p>
-<p>The base cases are:
-1.  Single-character substrings: <span class="arithmatex">\(\text{dp}[i][i] = \text{true}\)</span>.
-2.  Two-character substrings: <span class="arithmatex">\(\text{dp}[i][i+1] = (s[i] == s[i+1])\)</span>.</p>
-<p>The transition relation is recursive: a substring <span class="arithmatex">\(s[i \dots j]\)</span> is a palindrome if and only if two conditions are met: 1. The outer characters match: <span class="arithmatex">\(s[i] == s[j]\)</span>. 2. The inner substring <span class="arithmatex">\(s[i+1 \dots j-1]\)</span> is also a palindrome (i.e., <span class="arithmatex">\(\text{dp}[i+1][j-1]\)</span> is true). By iterating through substrings of increasing lengths, we can fill the DP table and track the longest palindrome found. [Diagram showing DP transitions for Palindromic Substring] While effective and providing <span class="arithmatex">\(O(N^2)\)</span> time and <span class="arithmatex">\(O(N^2)\)</span> space complexity, the approach below is often simpler to implement.</p>
-<h3 id="the-expand-around-center-approach-the-practical-on2-solution">The Expand Around Center Approach (The Practical <span class="arithmatex">\(O(N^2)\)</span> Solution)<a class="headerlink" href="#the-expand-around-center-approach-the-practical-on2-solution" title="Permanent link">&para;</a></h3>
-<p>A more practical and generally preferred <span class="arithmatex">\(O(N^2)\)</span> solution is the <strong>Expand Around Center</strong> technique. This method exploits the symmetry inherent in palindromes: every palindrome is defined by its center. The center can be a single character (for odd-length palindromes like "racecar") or the space between two identical characters (for even-length palindromes like "abba").</p>
-<p>This approach avoids the overhead of the DP table by immediately checking for palindromes outward from every potential center. The overall algorithm iterates through every index <span class="arithmatex">\(i\)</span> in the string <span class="arithmatex">\(s\)</span>, and for each <span class="arithmatex">\(i\)</span>, it performs two independent expansion checks:</p>
-<h3 id="center-based-expansion-details">Center-Based Expansion Details<a class="headerlink" href="#center-based-expansion-details" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Odd-Length Palindromes:</strong> We treat the single character at index <span class="arithmatex">\(i\)</span> as the center. We initialize two pointers, <span class="arithmatex">\(L=i\)</span> and <span class="arithmatex">\(R=i\)</span>. We expand outward, decrementing <span class="arithmatex">\(L\)</span> and incrementing <span class="arithmatex">\(R\)</span>, as long as <span class="arithmatex">\(L \ge 0\)</span>, <span class="arithmatex">\(R &lt; N\)</span>, and <span class="arithmatex">\(s[L] == s[R]\)</span>.</li>
-<li><strong>Even-Length Palindromes:</strong> We treat the space between <span class="arithmatex">\(s[i]\)</span> and <span class="arithmatex">\(s[i+1]\)</span> as the center (if <span class="arithmatex">\(i+1\)</span> is a valid index). We initialize <span class="arithmatex">\(L=i\)</span> and <span class="arithmatex">\(R=i+1\)</span>. We expand outward similarly, decrementing <span class="arithmatex">\(L\)</span> and incrementing <span class="arithmatex">\(R\)</span>, as long as the boundary and character equality conditions hold. </li>
-</ol>
-<p>In both expansion processes, we calculate the length of the current palindrome found <span class="arithmatex">\((R - L - 1)\)</span> and continuously update a global record tracking the start index and length of the longest palindrome encountered so far. Since we check <span class="arithmatex">\(2N-1\)</span> possible centers (N single-character centers and N-1 between-character centers), and each expansion takes at most <span class="arithmatex">\(O(N)\)</span> time, the total time complexity remains <span class="arithmatex">\(O(N^2)\)</span>. However, this method uses only <span class="arithmatex">\(O(1)\)</span> auxiliary space, making it spatially superior to the standard DP approach.</p>
+<h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
+<p>Given a string <span class="arithmatex">\(s\)</span>, the goal is to find the longest substring of <span class="arithmatex">\(s\)</span> that is a <strong>palindrome</strong>. A palindrome is a sequence of characters that reads the same forwards and backwards. You can assume that the maximum length of <span class="arithmatex">\(s\)</span> is 1000. If there are multiple palindromic substrings of the maximum length, any one of them can be returned as the correct answer. The challenge lies in efficiently identifying this longest substring.</p>
+<p>The most intuitive but less efficient approach is the <strong>Brute-Force method</strong>, which checks every possible substring for the palindrome property, leading to an <span class="arithmatex">\(O(n^3)\)</span> time complexity. A more optimized approach involves dynamic programming, where <span class="arithmatex">\(P(i, j)\)</span> is defined as true if the substring from index <span class="arithmatex">\(i\)</span> to <span class="arithmatex">\(j\)</span> is a palindrome, resulting in an <span class="arithmatex">\(O(n^2)\)</span> solution. </p>
+<p>However, the most commonly discussed optimal <span class="arithmatex">\(O(n^2)\)</span> solution is the <strong>Expand Around Center</strong> technique. In this method, we iterate through every possible character (and between every pair of characters) as the potential center of a palindrome. Since a palindrome can have an odd length (one center) or an even length (two centers), we check both cases and expand outwards from the center(s) as long as the characters match. This method effectively minimizes redundant checks and is often preferred for its conceptual simplicity. The most optimal solution is <strong>Manacher's Algorithm</strong>, which solves the problem in <span class="arithmatex">\(O(n)\)</span> time.</p>
 
 
 
