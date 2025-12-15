@@ -14,7 +14,7 @@ Luke Clark
 
 Send me an email at [lukeclarksf@gmail.com](mailto:lukeclarksf@gmail.com). See my [Resume](https://lukeclarksf.com).
 
-Watch Python LeetCode on  [YouTube](https://www.youtube.com/watch?v=qoQtq1uVRkM)
+Watch Python LeetCode on  [YouTube](https://www.youtube.com/watch?v=bKbqjK6mM5o&t=59s)
 
 ## Learn Data Structures and Algorithms
 
