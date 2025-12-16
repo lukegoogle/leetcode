@@ -1,0 +1,1 @@
+mkdocs mkdocs-material mkdocs-include-markdown-plugin mkdocs-execute-plugin pymdown-extensions markdown-exec mkdocstrings mkdocstrings-python monorepo
