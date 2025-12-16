@@ -1,0 +1,7 @@
+site_name: Problems 3001 - 3778
+
+theme:
+  name: material
+
+nav:
+  - Problem 1: 'index.html'

@@ -1,0 +1,7 @@
+site_name: Problems 1001 - 2000
+
+theme:
+  name: material
+
+nav:
+  - Problem 1: 'index.html'
