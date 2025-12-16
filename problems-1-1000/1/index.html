@@ -15120,13 +15120,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         <span class="k">return</span> <span class="p">[]</span>
 </code></pre></div>
-<p><a target="_blank" href="https://leetcode.com/problems/two-sum/"><input class="verify-button" type="button" value="Verify"/></a></p>
-<p><a target="_blank" href="https://gemini.google.com"><input class="verify-button" type="button" value="Gemini"/></a></p>
+<div>
+<a target="_blank" href="https://leetcode.com/problems/two-sum/"><input class="verify-button" type="button" value="Verify"/></a>
+
+<a target="_blank" href="https://gemini.google.com"><input class="verify-button" type="button" value="Gemini"/></a>
+</div>
+
 <h4 id="function">Function</h4>
 <h4 id="analysis">Analysis</h4>
 <p>The "Two Sum" problem is universally recognized as the introductory problem in algorithmic interviews and a foundational concept for understanding time complexity trade-offs. The requirement is straightforward: given an array of integers, <code>nums</code>, and a specific target integer, identify and return the indices of the two numbers within the array that sum up exactly to the target. The problem is generally constrained by the guarantee that exactly one valid solution exists, and the same element cannot be used twice.</p>
-<p>A simple, though professionally unacceptable, solution involves a <strong>brute-force approach</strong> using nested loops. The outer loop iterates over each element $nums[i]$, and the inner loop checks every subsequent element $nums[j]$ to see if $nums[i] + nums[j]$ equals the target. While correct, this method results in a quadratic time complexity of $O(n^2)$. This inefficiency means the execution time increases dramatically as the input array size grows, failing to meet the performance standards required in production systems.</p>
-<p>The definitive, industry-standard solution achieves linear time complexity, $O(n)$, by utilizing a <strong>hash map</strong> (or dictionary). This method performs a single pass through the array. For each number $nums[i]$, the algorithm calculates the <em>complement</em> needed to reach the target ($complement = target - nums[i]$). Before inserting the current element into the hash map, the algorithm checks if the required $complement$ already exists as a key in the map.  If the complement is found, the current index $i$ and the index stored in the map (which belongs to the complement) are returned. If not found, the number $nums[i]$ and its index $i$ are added to the map. This leverages the $O(1)$ average-time complexity of hash map lookups to ensure maximum efficiency.</p>
+<p>A simple, though professionally unacceptable, solution involves a <strong>brute-force approach</strong> using nested loops. The outer loop iterates over each element <span class="arithmatex">\(nums[i]\)</span>, and the inner loop checks every subsequent element <span class="arithmatex">\(nums[j]\)</span> to see if <span class="arithmatex">\(nums[i] + nums[j]\)</span> equals the target. While correct, this method results in a quadratic time complexity of <span class="arithmatex">\(O(n^2)\)</span>. This inefficiency means the execution time increases dramatically as the input array size grows, failing to meet the performance standards required in production systems.</p>
+<p>The definitive, industry-standard solution achieves linear time complexity, <span class="arithmatex">\(O(n)\)</span>, by utilizing a <strong>hash map</strong> (or dictionary). This method performs a single pass through the array. For each number <span class="arithmatex">\(nums[i]\)</span>, the algorithm calculates the <em>complement</em> needed to reach the target (<span class="arithmatex">\(complement = target - nums[i]\)</span>). Before inserting the current element into the hash map, the algorithm checks if the required <span class="arithmatex">\(complement\)</span> already exists as a key in the map.  If the complement is found, the current index <span class="arithmatex">\(i\)</span> and the index stored in the map (which belongs to the complement) are returned. If not found, the number <span class="arithmatex">\(nums[i]\)</span> and its index <span class="arithmatex">\(i\)</span> are added to the map. This leverages the <span class="arithmatex">\(O(1)\)</span> average-time complexity of hash map lookups to ensure maximum efficiency.</p>
 <h2 id="_1"></h2>
 <h2 id="_2"></h2>
 
@@ -15188,6 +15192,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         <script src="https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.js"></script>
       
         <script src="../../javascripts/pyodide_setup.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
