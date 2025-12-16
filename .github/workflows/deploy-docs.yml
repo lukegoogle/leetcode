@@ -1,0 +1,41 @@
+# .github/workflows/deploy-docs.yml
+name: Deploy MkDocs Documentation
+
+# Controls when the workflow will run. This runs on every push to the main or master branch.
+on:
+  push:
+    branches:
+      - main
+      - master
+
+# Sets permissions for the GITHUB_TOKEN to allow deployment
+permissions:
+  contents: write # To allow the action to push to the gh-pages branch
+  pages: write    # To allow deployment to GitHub Pages
+  id-token: write # To allow configuration with GitHub's OpenID Connect
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checks out your repository code
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Fetch all history for deployment to gh-pages branch
+          fetch-depth: 0
+
+      # 2. Sets up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # 3. Installs MkDocs and any required plugins/themes (like Material for MkDocs)
+      - name: Install dependencies
+        run: |
+          pip install mkdocs mkdocs-material mkdocs-include-markdown-plugin mkdocs-execute-plugin pymdown-extensions markdown-exec mkdocstrings mkdocstrings-python
+
+      # 4. Deploys the documentation using the built-in MkDocs gh-deploy command
+      - name: Deploy MkDocs site
+        run: mkdocs gh-deploy --force
